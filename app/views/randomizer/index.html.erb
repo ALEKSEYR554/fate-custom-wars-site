@@ -1,0 +1,744 @@
+<style>
+  /* === УМНЫЙ СЕЛЕКТ ТРЕЙТОВ (Ant-Design Style) === */
+  .multi-select-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: var(--bg-base); 
+    border: 1px solid var(--border-color); 
+    padding: 4px 8px;
+    border-radius: 4px; 
+    min-height: 35px;
+    box-sizing: border-box;
+    gap: 6px;
+    cursor: text;
+  }
+  
+  .multi-select-container:focus-within {
+    border-color: var(--atlas-blue);
+  }
+  
+  /* Бейджики выбранных тегов */
+  .selected-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  
+  .selected-tag-badge {
+    display: inline-flex;
+    align-items: center;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-color);
+    color: var(--atlas-blue);
+    font-size: 0.8rem;
+    padding: 2px 6px;
+    border-radius: 2px;
+    gap: 6px;
+    font-weight: 500;
+    
+    /* Новые свойства для защиты от разрыва: */
+    max-width: 100%;
+    word-break: break-all;
+  }
+  
+  .selected-tag-badge .remove-btn {
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1;
+  }
+  
+  .selected-tag-badge .remove-btn:hover {
+    color: var(--danger);
+  }
+
+  /* Инпут внутри контейнера */
+  #in-traits-search {
+    border: none !important;
+    background: transparent !important;
+    color: var(--text-primary);
+    outline: none;
+    flex-grow: 1;
+    padding: 4px 0;
+    font-family: var(--font-stack);
+    font-size: 0.875rem;
+    min-width: 120px;
+  }
+
+  /* Выпадающий список подсказок */
+  .dropdown-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+    margin-top: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  }
+  
+  .dropdown-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    color: var(--text-primary);
+    transition: background 0.15s;
+  }
+  
+  .dropdown-item:hover {
+    background: var(--bg-elevated);
+    color: #fff;
+  }
+  /* === БАЗОВЫЕ НАСТРОЙКИ (Стиль Atlas Academy) === */
+  :root {
+    --bg-base: #121212;
+    --bg-surface: #1e1e1e;
+    --bg-elevated: #2d2d2d;
+    --text-primary: rgba(255, 255, 255, 0.87);
+    --text-secondary: rgba(255, 255, 255, 0.60);
+    --border-color: #424242;
+    --atlas-blue: #90caf9;
+    --atlas-blue-hover: #64b5f6;
+    --danger: #ef5350;
+    --font-stack: 'Roboto', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  body { 
+    background-color: var(--bg-base); 
+    color: var(--text-primary); 
+    font-family: var(--font-stack); 
+    margin: 0; 
+    padding: 20px; 
+    line-height: 1.5;
+  }
+
+  /* === ПАНЕЛЬ УПРАВЛЕНИЯ === */
+  .control-panel {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+  .control-panel-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0 0 15px 0;
+    color: var(--atlas-blue);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+  }
+
+  .filters-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-end;
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .input-group label { 
+    font-size: 0.75rem; 
+    color: var(--text-secondary); 
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .input-group input {
+    background: var(--bg-base); 
+    color: var(--text-primary);
+    border: 1px solid var(--border-color); 
+    padding: 8px 12px;
+    border-radius: 4px; 
+    outline: none;
+    font-family: var(--font-stack);
+    transition: border-color 0.2s;
+  }
+
+  .input-group input:focus { border-color: var(--atlas-blue); }
+
+  .generate-btn {
+    background: transparent; 
+    color: var(--atlas-blue);
+    border: 1px solid var(--atlas-blue); 
+    padding: 8px 16px;
+    border-radius: 4px; 
+    cursor: pointer;
+    font-weight: 500; 
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .generate-btn:hover { 
+    background: rgba(144, 202, 249, 0.08); 
+  }
+
+  /* === КОМАНДЫ (СЕТКА С ПОРТРЕТАМИ) === */
+  .teams-container { 
+    display: flex;
+    flex-direction: column;
+    gap: 25px; 
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .team { 
+    background: var(--bg-surface); 
+    border: 1px solid var(--border-color); 
+    border-radius: 4px; 
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  }
+
+  .team-header {
+    background: var(--bg-elevated);
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 500;
+    color: var(--text-primary);
+    font-size: 1rem;
+  }
+
+  /* Сетка портретов внутри команды */
+  .team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px;
+  }
+  
+  /* ВЕРТИКАЛЬНАЯ КАРТОЧКА СЛУГИ */
+  .servant-card {
+    display: flex; 
+    flex-direction: column;
+    width: 220px; /* Увеличено со 120px до 180px */
+    background: var(--bg-base);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  
+  .servant-card:hover { 
+    transform: translateY(-3px); 
+    border-color: var(--atlas-blue);
+  }
+  
+  /* Увеличенное превью */
+  .servant-avatar { 
+    width: 220px; /* Увеличено со 120px до 180px */
+    height: 220px; /* Увеличено со 120px до 180px */
+    object-fit: contain; 
+    background: #000;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .servant-info { 
+    padding: 8px; 
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 75px;
+  }
+  
+  .servant-id {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    font-family: monospace;
+    margin-bottom: 2px;
+  }
+
+  .servant-name { 
+    font-weight: bold; 
+    font-size: 0.85rem; 
+    margin: 0 0 5px 0; 
+    color: var(--text-primary); 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Не дает имени сломать сетку */
+  }
+
+  .badges { 
+    display: flex; 
+    gap: 3px; 
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .badge {
+    font-size: 0.65rem;
+    padding: 1px 4px;
+    border-radius: 2px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+  }
+
+  .badge.rarity { color: #ffd700; border-color: #ffd700; background: rgba(255, 215, 0, 0.05); }
+  
+  /* Кнопка Reroll внизу портрета */
+  .reroll-btn { 
+    background: var(--bg-elevated); 
+    color: var(--text-secondary); 
+    border: none;
+    border-top: 1px solid var(--border-color);
+    padding: 6px 0; 
+    cursor: pointer; 
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    width: 100%;
+    transition: 0.2s;
+  }
+
+  .reroll-btn:hover { 
+    background: var(--danger); 
+    color: #000; 
+    font-weight: bold;
+  }
+  
+  #status-box { 
+    text-align: center; 
+    font-size: 0.9rem; 
+    margin-bottom: 20px; 
+    color: var(--text-secondary);
+    padding: 10px;
+    border-radius: 4px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    max-width: 900px;
+    margin: 0 auto 20px auto;
+  }
+
+  .error-text { color: var(--danger) !important; border-color: var(--danger) !important; }
+</style>
+
+<!-- ПАНЕЛЬ УПРАВЛЕНИЯ -->
+<div class="control-panel">
+  <h1 class="control-panel-title">Генератор Команд</h1>
+  
+  <div class="filters-grid">
+    <div class="input-group" style="max-width: 80px;">
+      <label>Команд</label>
+      <input type="number" id="in-teams" value="2" min="1">
+    </div>
+    <div class="input-group" style="max-width: 100px;">
+      <label>Всего игроков</label>
+      <input type="number" id="in-players" value="5" min="1">
+    </div>
+    <div class="input-group">
+      <label>Имя</label>
+      <input type="text" id="in-name" placeholder="Часть имени">
+    </div>
+    <div class="input-group">
+      <label>Класс</label>
+      <input type="text" id="in-class" placeholder="Любой">
+    </div>
+    <div class="input-group" style="max-width: 100px;">
+      <label>Редкость</label>
+      <input type="text" id="in-rarity" placeholder="Любая">
+    </div>
+    <div class="input-group" style="flex: 2; position: relative;">
+      <label>Трейты</label>
+      
+      <!-- Контейнер, который имитирует инпут (внутри будут бейджи и строка ввода) -->
+      <div class="multi-select-container" id="traits-select-container" onclick="document.getElementById('in-traits-search').focus()">
+        <div class="selected-tags" id="selected-traits-tags"></div>
+        <input type="text" id="in-traits-search" placeholder="Поиск трейтов..." autocomplete="off">
+      </div>
+      
+      <!-- Скрытый инпут, значение которого (через запятую) пойдет в запрос к API -->
+      <input type="hidden" id="in-traits" placeholder="Разделитель: запятая">
+      
+      <!-- Выпадающий список, который наполняется трейтами из нашей базы данных -->
+      <div class="dropdown-list" id="traits-dropdown">
+        <% @unique_traits.each do |trait| %>
+          <div class="dropdown-item" data-value="<%= trait %>"><%= trait %></div>
+        <% end %>
+      </div>
+    </div>
+    
+    <button class="generate-btn" onclick="generateTeams()">Сгенерировать</button>
+  </div>
+</div>
+
+<div id="status-box" style="display: none;"></div>
+<div class="teams-container" id="teams-container"></div>
+
+<script>
+  const baseDomain = "<%= Rails.configuration.x.base_domain %>";
+  let availablePool = [];
+  let currentPoolIndex = 0;
+  let seenServantIds = new Set();
+
+  let bannedCount = 0;
+  
+  let teamsCount = 2;
+  let totalPlayersCount = 5;
+  let baseSize = 2;
+  let leftoversCount = 1;
+
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+    // Функция для динамического обновления текста статистики
+  function updateStatusText() {
+    const statusBox = document.getElementById('status-box');
+    
+    // Доступно для замен — это размер пула минус уже показанные/отброшенные слуги
+    const remainingRerolls = Math.max(0, availablePool.length - seenServantIds.size);
+    const usedPlayers = Math.min(totalPlayersCount, availablePool.length);
+
+    statusBox.innerText = `Найдено слуг в базе: ${availablePool.length} (Исключено банов: ${bannedCount}) | Использовано игроков: ${usedPlayers} | Доступно для замен: ${remainingRerolls}`;
+
+    if (availablePool.length < totalPlayersCount) {
+      statusBox.innerText += " (Недостаточно слуг для распределения!)";
+      statusBox.className = 'error-text';
+    } else {
+      statusBox.className = '';
+    }
+  }
+  async function generateTeams() {
+    const statusBox = document.getElementById('status-box');
+    const container = document.getElementById('teams-container');
+    
+    statusBox.style.display = 'block';
+    statusBox.className = '';
+    statusBox.innerText = "Выполнение запроса к API...";
+    container.innerHTML = '';
+    
+    // Считываем значения
+    seenServantIds.clear();
+    teamsCount = parseInt(document.getElementById('in-teams').value) || 2;
+    totalPlayersCount = parseInt(document.getElementById('in-players').value) || 5;
+    
+    // Новая логика расчета:
+    baseSize = Math.floor(totalPlayersCount / teamsCount);
+    leftoversCount = totalPlayersCount % teamsCount;
+    
+    const servantClass = document.getElementById('in-class').value.trim();
+    const rarity = document.getElementById('in-rarity').value.trim();
+    const traits = document.getElementById('in-traits').value.trim();
+    const servantName = document.getElementById('in-name').value.trim();
+
+    const params = new URLSearchParams();
+    if (servantClass) params.append('servant_class', servantClass);
+    if (rarity) params.append('rarity', rarity);
+    if (traits) params.append('traits', `[${traits}]`);
+    if (servantName) params.append('name', servantName);
+
+    const apiUrl = `http://api.${baseDomain}/get_servant_with_traits?${params.toString()}`;
+
+    try {
+      const response = await fetch(apiUrl);
+      const data = await response.json();
+
+      if (!data.success) {
+        statusBox.className = 'error-text';
+        statusBox.innerText = `[Ошибка API] ${data.error}`;
+        return;
+      }
+
+      // === ХАРДКОДНЫЙ БАН-ЛИСТ ===
+      // Исключаем всех слуг, у которых в имени есть "БАН" или "BAN"
+      let rawResult = data.result;
+      let beforeBanCount = rawResult.length;
+
+      availablePool = rawResult.filter(s => {
+        if (!s.name) return false;
+        const nameUpper = s.name.toUpperCase();
+        const classUpper = s.servant_class.toUpperCase();
+        const gameCodeUpper = s.game_id.toUpperCase();
+        return !nameUpper.includes('БАН') && !nameUpper.includes('BAN') && !classUpper.includes("БАН") && !gameCodeUpper.includes("A");
+      });
+
+      let bannedCount = beforeBanCount - availablePool.length;
+      if (bannedCount > 0) {
+        console.log(`[Бан-лист] Исключено персонажей: ${bannedCount}`);
+      }
+
+      // Перемешиваем очищенный пул
+      availablePool = shuffleArray(availablePool);
+      currentPoolIndex = 0;
+      
+      updateStatusText();
+      renderTeams();
+
+    } catch (error) {
+      console.error(error);
+      statusBox.className = 'error-text';
+      statusBox.innerText = "[Сетевая ошибка] Не удалось получить данные. Проверьте консоль браузера.";
+    }
+  }
+
+  function renderTeams() {
+    const container = document.getElementById('teams-container');
+
+    // 1. Отрисовка основных команд
+    for (let i = 1; i <= teamsCount; i++) {
+      const teamDiv = document.createElement('div');
+      teamDiv.className = 'team';
+      
+      const teamHeader = document.createElement('div');
+      teamHeader.className = 'team-header';
+      teamHeader.innerText = `Команда ${i} (Размер: ${baseSize})`;
+      teamDiv.appendChild(teamHeader);
+      
+      const teamGrid = document.createElement('div');
+      teamGrid.className = 'team-grid';
+      
+      for (let j = 0; j < baseSize; j++) {
+        if (currentPoolIndex >= availablePool.length) break;
+        const servant = availablePool[currentPoolIndex++];
+        
+        seenServantIds.add(servant.game_id); // <-- ДОБАВЛЕНО: Запоминаем слугу
+        
+        teamGrid.appendChild(createServantCard(servant));
+      }
+      
+      teamDiv.appendChild(teamGrid);
+      container.appendChild(teamDiv);
+    }
+
+    // 2. Отрисовка Соло-игроков (остаток)
+    if (leftoversCount > 0 && currentPoolIndex < availablePool.length) {
+      const soloDiv = document.createElement('div');
+      soloDiv.className = 'team';
+      soloDiv.style.borderColor = 'var(--danger)'; 
+      
+      const soloHeader = document.createElement('div');
+      soloHeader.className = 'team-header';
+      soloHeader.style.background = 'rgba(239, 83, 80, 0.1)';
+      soloHeader.style.color = 'var(--danger)';
+      soloHeader.innerText = `Соло / Вне команд (Остаток: ${leftoversCount})`;
+      soloDiv.appendChild(soloHeader);
+      
+      const soloGrid = document.createElement('div');
+      soloGrid.className = 'team-grid';
+      
+      for (let j = 0; j < leftoversCount; j++) {
+        if (currentPoolIndex >= availablePool.length) break;
+        const servant = availablePool[currentPoolIndex++];
+        
+        seenServantIds.add(servant.game_id); // <-- ДОБАВЛЕНО: Запоминаем соло-слугу
+        
+        soloGrid.appendChild(createServantCard(servant));
+      }
+      
+      soloDiv.appendChild(soloGrid);
+      container.appendChild(soloDiv);
+    }
+  }
+
+  function createServantCard(servant) {
+    const card = document.createElement('div');
+    card.className = 'servant-card';
+    
+    const previewUrl = `http://servant-data.${baseDomain}/sprite/${servant.game_id}/preview.png`;
+
+    // Оборачиваем верхнюю часть в ссылку. 
+    // display: flex и flex-direction: column сохраняют структуру карточки.
+    card.innerHTML = `
+      <a href="/servants/${servant.game_id}" target="_blank" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+        <img src="${previewUrl}" class="servant-avatar" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'180\\' height=\\'180\\'><rect width=\\'180\\' height=\\'180\\' fill=\\'%232d2d2d\\'/><text x=\\'50%\\' y=\\'50%\\' fill=\\'%23555\\' font-family=\\'sans-serif\\' font-size=\\'14\\' text-anchor=\\'middle\\' dy=\\'4\\'>No Image</text></svg>'">
+        <div class="servant-info">
+          <div class="servant-id">${servant.game_id}</div>
+          <div class="servant-name" title="${servant.name}">${servant.name}</div>
+          <div class="badges">
+            <span class="badge">${servant.servant_class}</span>
+            <span class="badge rarity">${servant.rarity}★</span>
+          </div>
+        </div>
+      </a>
+      <button class="reroll-btn" title="Заменить на другого">Reroll</button>
+    `;
+
+    const rerollBtn = card.querySelector('.reroll-btn');
+    rerollBtn.onclick = () => {
+      let newServant = null;
+
+      while (currentPoolIndex < availablePool.length) {
+        const candidate = availablePool[currentPoolIndex++];
+        if (!seenServantIds.has(candidate.game_id)) {
+          newServant = candidate;
+          break;
+        }
+      }
+
+      if (!newServant) {
+        alert("В пуле больше не осталось слуг для замены!");
+        return;
+      }
+      
+      seenServantIds.add(newServant.game_id);
+      updateStatusText();
+
+      const newCard = createServantCard(newServant);
+      card.replaceWith(newCard);
+    };
+
+    return card;
+  }
+  // === ИНТЕРФЕЙС АВТОДОПОЛНЕНИЯ ТРЕЙТОВ ===
+  document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById("in-traits-search");
+    const dropdown = document.getElementById("traits-dropdown");
+    const selectedContainer = document.getElementById("selected-traits-tags");
+    const hiddenInput = document.getElementById("in-traits");
+    const dropdownItems = Array.from(document.querySelectorAll(".dropdown-item"));
+
+    let selectedTraits = new Set();
+
+    // Показываем список при фокусе
+    searchInput.addEventListener("focus", () => {
+      dropdown.style.display = "block";
+      filterDropdown();
+    });
+
+    // Закрываем список, если кликнули вне контейнера
+    document.addEventListener("click", (e) => {
+      const container = document.getElementById("traits-select-container");
+      if (!container.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.style.display = "none";
+      }
+    });
+
+    // Фильтрация вариантов по мере ввода текста
+    searchInput.addEventListener("input", () => {
+      filterDropdown();
+    });
+
+    function filterDropdown() {
+      const query = searchInput.value.toLowerCase().trim();
+      dropdownItems.forEach(item => {
+        const val = item.getAttribute("data-value");
+        const matchesQuery = val.toLowerCase().includes(query);
+        const isAlreadySelected = selectedTraits.has(val);
+
+        // Показываем только те, которые подходят под запрос и еще не выбраны
+        if (matchesQuery && !isAlreadySelected) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    }
+
+    // Клик по элементу выпадающего списка
+    // Используем mousedown вместо click, чтобы выбор сработал до того, как инпут потеряет фокус
+    dropdownItems.forEach(item => {
+      item.addEventListener("mousedown", (e) => {
+        e.preventDefault(); // Предотвращаем потерю фокуса инпутом
+        const val = item.getAttribute("data-value");
+        addTag(val);
+      });
+    });
+
+    // Добавление тега-бейджа
+    function addTag(val) {
+      if (selectedTraits.has(val)) return;
+
+      selectedTraits.add(val);
+
+      const badge = document.createElement("span");
+      badge.className = "selected-tag-badge";
+      badge.innerHTML = `${val} <span class="remove-btn">&times;</span>`;
+
+      // Удаление по клику на крестик
+      badge.querySelector(".remove-btn").addEventListener("click", (e) => {
+        e.stopPropagation(); // Чтобы не фокусить инпут при удалении
+        removeTag(val, badge);
+      });
+
+      selectedContainer.appendChild(badge);
+      
+      searchInput.value = "";
+      updateHiddenInput();
+      dropdown.style.display = "none";
+    }
+
+    function removeTag(val, badgeElement) {
+      selectedTraits.delete(val);
+      badgeElement.remove();
+      updateHiddenInput();
+    }
+
+    function updateHiddenInput() {
+      // Собираем все теги через запятую и кладем в скрытый input для отправки в API
+      hiddenInput.value = Array.from(selectedTraits).join(",");
+    }
+    const urlParams = new URLSearchParams(window.location.search);
+    let autoStart = false;
+
+    if (urlParams.has('teams')) {
+      document.getElementById('in-teams').value = urlParams.get('teams');
+      autoStart = true;
+    }
+    
+    // Поддерживаем и players, и total_players для удобства
+    if (urlParams.has('players') || urlParams.has('total_players')) {
+      document.getElementById('in-players').value = urlParams.get('players') || urlParams.get('total_players');
+      autoStart = true;
+    }
+
+    if (urlParams.has('name')) {
+      document.getElementById('in-name').value = urlParams.get('name');
+      autoStart = true;
+    }
+
+    if (urlParams.has('servant_class')) {
+      document.getElementById('in-class').value = urlParams.get('servant_class');
+      autoStart = true;
+    }
+
+    if (urlParams.has('rarity')) {
+      document.getElementById('in-rarity').value = urlParams.get('rarity');
+      autoStart = true;
+    }
+
+    if (urlParams.has('traits')) {
+      // Убираем квадратные скобки, если они есть, и режем по запятой
+      const traitsRaw = urlParams.get('traits').replace(/^\[|\]$/g, '');
+      traitsRaw.split(',').forEach(t => {
+        const cleanTrait = t.trim();
+        if (cleanTrait) addTag(cleanTrait); // Функция addTag сама создаст бейджик!
+      });
+      autoStart = true;
+    }
+
+    // Если был передан хоть один параметр - автоматически запускаем генерацию
+    if (autoStart) {
+      // Небольшая задержка, чтобы UI успел обновиться
+      setTimeout(generateTeams, 100);
+    }
+  });
+</script>

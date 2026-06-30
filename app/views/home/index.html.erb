@@ -1,0 +1,233 @@
+<style>
+  :root {
+    --bg-base: #121212;
+    --bg-surface: #1e1e1e;
+    --bg-elevated: #2d2d2d;
+    --text-primary: rgba(255, 255, 255, 0.87);
+    --text-secondary: rgba(255, 255, 255, 0.60);
+    --border-color: #424242;
+    --atlas-blue: #90caf9;
+    --danger: #ef5350;
+    --font-stack: 'Roboto', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  body {
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    font-family: var(--font-stack);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  h1 {
+    color: var(--atlas-blue);
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin: 0 0 10px 0;
+  }
+
+  header p {
+    color: var(--text-secondary);
+    margin: 10px 0 0 0;
+  }
+
+  .status-badge {
+    display: inline-block;
+    background-color: rgba(239, 83, 80, 0.1);
+    color: var(--danger);
+    border: 1px solid var(--danger);
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .section {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 24px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.12);
+  }
+
+  .section h2 {
+    margin-top: 0;
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    font-weight: 500;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+  }
+
+  .video-container {
+    width: 100%;
+    max-height: 500px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  video {
+    max-width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    display: block;
+  }
+
+  .projects-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .project-card {
+    background-color: var(--bg-elevated);
+    border: 1px solid var(--border-color);
+    padding: 16px;
+    border-radius: 4px;
+    border-left: 4px solid var(--atlas-blue);
+    transition: transform 0.2s, border-color 0.2s;
+  }
+
+  .project-card:hover {
+    transform: translateX(4px);
+    border-color: var(--atlas-blue);
+  }
+
+  .project-card a {
+    color: var(--atlas-blue);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+
+  .project-card a:hover {
+    text-decoration: underline;
+  }
+
+  .project-card p {
+    margin: 5px 0 0 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  .api-placeholder {
+    background-color: var(--bg-elevated);
+    border: 1px dashed var(--atlas-blue);
+    text-align: center;
+    padding: 32px;
+    border-radius: 4px;
+  }
+
+  .api-placeholder h3 {
+    margin-top: 0;
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  .api-placeholder p {
+    color: var(--text-secondary);
+  }
+
+  .api-placeholder button {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: not-allowed;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+  }
+</style>
+
+<div class="container">
+  <!-- Заголовок и статус -->
+  <header>
+    <h1>Fate Custom Wars</h1>
+    <div class="status-badge">Сайт находится в разработке 🚧</div>
+    <p>Официальный портал игры. Глобальное обновление данных и контента в процессе.</p>
+  </header>
+
+  <!-- Секция с видео (тянет файл с поддомена content!) -->
+  <div class="section">
+    <h2>Трейлер / Геймплей</h2>
+    <p>Их пока что нет, так что смотрите какой-то видос</p>
+    <div class="video-container">
+      <!-- Обрати внимание на ссылку! Она использует наш роут. -->
+      <!-- Если файла intro.mp4 там нет, плеер просто будет пустым -->
+      <video controls poster="">
+        <source src="http://content.<%= Rails.configuration.x.base_domain %>/videos/random?cb=<%= Time.now.to_f %>" type="video/mp4">
+        Ваш браузер не поддерживает HTML5 видео.
+      </video>
+    </div>
+  </div>
+
+  <!-- Документация API -->
+  <div class="section">
+    <h2>Для разработчиков (лол)</h2>
+    <div class="api-placeholder">
+      <h3>API (Swagger)</h3>
+      <p>Api запросы (целый один метод на момент написания).</p>
+      
+      <!-- Ссылка ведет на поддомен api с использованием динамического базового домена -->
+      <a href="http://api.<%= Rails.configuration.x.base_domain %>/" 
+         target="_blank" 
+         style="background: transparent; color: var(--atlas-blue); border: 1px solid var(--atlas-blue); padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: 500; font-size: 0.875rem; text-transform: uppercase; text-decoration: none; display: inline-block; transition: all 0.2s;">
+        Открыть Swagger UI
+      </a>
+    </div>
+  </div>
+
+  <!-- Ссылки на другие проекты -->
+  <div class="section">
+    <h2>Ссылки</h2>
+    <p>хз че писать уже:</p>
+    
+    <div class="projects-list">
+      <div class="project-card">
+        <a href="/randomizer">🎲 Генератор команд (Рандомайзер)</a>
+        <p>Рандомайзер для игры.</p>
+      </div>
+      <div class="project-card">
+        <!-- Позже заменишь href на локальный путь, когда перенесешь проекты -->
+        <a href="https://git.fate-custom-wars.com/ALEKSEYR554/fate_custom_wars" target="_blank">⚔️ Fate Custom Wars</a>
+        <p style="margin: 5px 0 0 0; font-size: 0.9em; color: #aaa;">Основа</p>
+      </div>
+
+      <div class="project-card">
+        <a href="http://<%= Rails.configuration.x.base_domain %>/smeshariki/index.html" target="_blank">🎨 Smeshariki Title Generator</a>
+        <p style="margin: 5px 0 0 0; font-size: 0.9em; color: #aaa;">смешарики, все любят их</p>
+      </div>
+
+      <div class="project-card">
+        <a href="http://<%= Rails.configuration.x.base_domain %>/corona/index.html" target="_blank">⚡ Miraculous Energy Corona REVIVE (RUS)</a>
+        <p margin: 5px 0 0 0; font-size: 0.9em; color: #aaa;">Локализация проекта Miraculous Energy Corona.</p>
+      </div>
+
+    </div>
+  </div>
+
+</div>

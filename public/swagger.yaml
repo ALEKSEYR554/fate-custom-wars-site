@@ -1,0 +1,79 @@
+openapi: 3.0.0
+info:
+  title: Fate Custom Wars - API Specification
+  version: 1.0.0
+  description: Официальная документация игрового API для работы со Слугами и рандомизатором.
+paths:
+  /get_servant_with_traits:
+    get:
+      summary: Получить список слуг по фильтрам и трейтам
+      description: Возвращает отфильтрованный и перемешанный список персонажей.
+      parameters:
+        - name: name
+          in: query
+          description: Имя персонажа (например, Артурия)
+          required: false
+          schema:
+          type: string
+        - name: servant_class
+          in: query
+          description: Класс персонажа (например, Сейбер, Арчер)
+          required: false
+          schema:
+            type: string
+        - name: rarity
+          in: query
+          description: Фильтр редкости (например, "5" или ">3")
+          required: false
+          schema:
+            type: string
+        - name: traits
+          in: query
+          description: Список трейтов через запятую в скобках (например, "[humanoid,summerModeServant]")
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Успешная выборка персонажей
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  result_count:
+                    type: integer
+                    example: 1
+                  result:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        game_id:
+                          type: string
+                          example: "1S-001"
+                        name:
+                          type: string
+                          example: "Араш"
+                        servant_class:
+                          type: string
+                          example: "Арчер"
+                        rarity:
+                          type: integer
+                          example: 1
+        '404':
+          description: Ни один персонаж не подошел под критерии фильтра
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  error:
+                    type: string
+                    example: "По вашему запросу не найдено ни одного слуги."

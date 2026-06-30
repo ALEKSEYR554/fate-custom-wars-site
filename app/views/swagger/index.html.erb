@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Fate Custom Wars - API Docs</title>
+  <!-- Подключаем официальные стили Swagger UI -->
+  <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5/swagger-ui.css" />
+  
+  <style>
+    /* Кастомизация Swagger под темную тему Atlas Academy */
+    body { margin: 0; background-color: #121212; }
+    .swagger-ui { background-color: #121212; color: rgba(255, 255, 255, 0.87); font-family: sans-serif; }
+    .swagger-ui .info .title { color: #90caf9 !important; }
+    .swagger-ui .info p, .swagger-ui .info li, .swagger-ui .info table { color: rgba(255, 255, 255, 0.60) !important; }
+    .swagger-ui .scheme-container { background: #1e1e1e !important; box-shadow: none !important; border-bottom: 1px solid #424242; }
+    .swagger-ui .opblock { background: #1e1e1e !important; border: 1px solid #424242 !important; }
+    .swagger-ui .opblock .opblock-summary-path { color: #90caf9 !important; }
+    .swagger-ui .opblock-description-wrapper p, .swagger-ui .opblock-title, .swagger-ui .tab li button { color: rgba(255, 255, 255, 0.87) !important; }
+    .swagger-ui select, .swagger-ui input[type=text] { background: #2d2d2d !important; color: #fff !important; border: 1px solid #424242 !important; }
+    .swagger-ui .response-col_status, .swagger-ui .parameter__name, .swagger-ui .parameter__type { color: #fff !important; }
+    .swagger-ui .response-col_description__inner div p { color: rgba(41, 31, 31, 0.7) !important; }
+    .swagger-ui table.headers td, .swagger-ui .model-box { background: #2d2d2d !important; color: #fff !important; }
+  </style>
+</head>
+<body>
+  <div id="swagger-ui"></div>
+
+  <!-- Подключаем JS библиотеку Swagger UI -->
+  <script src="https://unpkg.com/swagger-ui-dist@5/swagger-ui-bundle.js"></script>
+  <script>
+    window.onload = () => {
+      window.ui = SwaggerUIBundle({
+        url: '/swagger.yaml', // Путь к нашей спецификации в папке public/
+        dom_id: '#swagger-ui',
+        presets: [
+          SwaggerUIBundle.presets.apis,
+          SwaggerUIBundle.presets.OAS30
+        ],
+        layout: "BaseLayout"
+      });
+    };
+  </script>
+</body>
+</html>

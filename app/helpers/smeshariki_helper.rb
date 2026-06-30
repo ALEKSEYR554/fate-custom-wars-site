@@ -1,0 +1,2 @@
+module SmesharikiHelper
+end
