@@ -193,7 +193,7 @@
       <p>Api запросы (целый один метод на момент написания).</p>
       
       <!-- Ссылка ведет на поддомен api с использованием динамического базового домена -->
-      <a href="#{Rails.configuration.x.protocol}//api.<%= Rails.configuration.x.base_domain %>/" 
+      <a href="<%=Rails.configuration.x.protocol%>//api.<%= Rails.configuration.x.base_domain %>/" 
          target="_blank" 
          style="background: transparent; color: var(--atlas-blue); border: 1px solid var(--atlas-blue); padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: 500; font-size: 0.875rem; text-transform: uppercase; text-decoration: none; display: inline-block; transition: all 0.2s;">
         Открыть Swagger UI
