@@ -2,6 +2,15 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  config.hosts << "fate-custom-wars.ru"
+  config.hosts << "api.fate-custom-wars.ru"
+  config.hosts << "content.fate-custom-wars.ru"
+  config.hosts << "servant-data.fate-custom-wars.ru"
+  # so it works hidden under nginx
+  config.force_ssl = false
+  config.assume_ssl = true
+  config.x.base_domain = "fate-custom-wars.ru"
+  config.x.protocol = "https:"
 
   # Code is not reloaded between requests.
   config.enable_reloading = false

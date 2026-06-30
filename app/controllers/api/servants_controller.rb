@@ -4,7 +4,7 @@ module Api
       servant = Servant.find_by(game_id: params[:servant_code])
 
       if servant
-        content_url = "http://servant-data.#{Rails.configuration.x.base_domain}/servant-page/#{servant.game_id}"
+        content_url = "#{Rails.configuration.x.protocol}//servant-data.#{Rails.configuration.x.base_domain}/servant-page/#{servant.game_id}"
 
         # Отвечаем успешным JSON'ом
         render json: {

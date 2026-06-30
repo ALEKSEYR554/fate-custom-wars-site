@@ -95,7 +95,7 @@
       
       <% if @servant.image_url.present? %>
         <div class="section">
-          <img src="http://servant-data.<%= Rails.configuration.x.base_domain %>/sprite/<%= @servant.game_id %>/preview.png" class="preview-image" alt="<%= @servant.name %>">
+          <img src="<%=Rails.configuration.x.protocol%>://servant-data.<%= Rails.configuration.x.base_domain %>/sprite/<%= @servant.game_id %>/preview.png" class="preview-image" alt="<%= @servant.name %>">
           <a href="https://apps.atlasacademy.io/db/JP/servant/<%= @servant.atlas_id %>/traits">Проверить Трейты</a>
         </div>
       <% end %>
@@ -165,7 +165,7 @@
         <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; padding: 15px; border-radius: 8px;">
           <% sprites.each do |sprite_file| %>
             <%# Формируем ссылку на твой поддомен servant-data, используя динамический домен %>
-            <% sprite_url = "http://servant-data.#{Rails.configuration.x.base_domain}/sprite/#{@servant.game_id}/#{sprite_file}.png" %>
+            <% sprite_url = "#{Rails.configuration.x.protocol}://servant-data.#{Rails.configuration.x.base_domain}/sprite/#{@servant.game_id}/#{sprite_file}.png" %>
             
             <img src="<%= sprite_url %>" alt="<%= sprite_file %>" style="max-height: 400px; max-width: 100%; object-fit: contain;">
           <% end %>
@@ -193,7 +193,7 @@
             <% file, caption = item.split(':', 2).map(&:strip) %>
             <% next if file.blank? %>
             
-            <% sprite_url = "http://servant-data.#{Rails.configuration.x.base_domain}/sprite/#{@servant.game_id}/#{file}.png" %>
+            <% sprite_url = "#{Rails.configuration.x.protocol}://servant-data.#{Rails.configuration.x.base_domain}/sprite/#{@servant.game_id}/#{file}.png" %>
             
             <figure style="margin: 0; text-align: center; max-width: 300px;">
               <img src="<%= sprite_url %>" alt="<%= file %>" style="max-height: 350px; max-width: 100%; object-fit: contain; border-radius: 4px;">

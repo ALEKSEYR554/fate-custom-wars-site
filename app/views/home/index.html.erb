@@ -179,7 +179,7 @@
       <!-- Обрати внимание на ссылку! Она использует наш роут. -->
       <!-- Если файла intro.mp4 там нет, плеер просто будет пустым -->
       <video controls poster="">
-        <source src="http://content.<%= Rails.configuration.x.base_domain %>/videos/random?cb=<%= Time.now.to_f %>" type="video/mp4">
+        <source src="//content.<%= Rails.configuration.x.base_domain %>/videos/random?cb=<%= Time.now.to_f %>" type="video/mp4">
         Ваш браузер не поддерживает HTML5 видео.
       </video>
     </div>
@@ -193,7 +193,7 @@
       <p>Api запросы (целый один метод на момент написания).</p>
       
       <!-- Ссылка ведет на поддомен api с использованием динамического базового домена -->
-      <a href="http://api.<%= Rails.configuration.x.base_domain %>/" 
+      <a href="#{Rails.configuration.x.protocol}//api.<%= Rails.configuration.x.base_domain %>/" 
          target="_blank" 
          style="background: transparent; color: var(--atlas-blue); border: 1px solid var(--atlas-blue); padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: 500; font-size: 0.875rem; text-transform: uppercase; text-decoration: none; display: inline-block; transition: all 0.2s;">
         Открыть Swagger UI
@@ -218,12 +218,12 @@
       </div>
 
       <div class="project-card">
-        <a href="http://<%= Rails.configuration.x.base_domain %>/smeshariki/index.html" target="_blank">🎨 Smeshariki Title Generator</a>
+        <a href="<%=Rails.configuration.x.protocol%>//<%= Rails.configuration.x.base_domain %>/smeshariki/index.html" target="_blank">🎨 Smeshariki Title Generator</a>
         <p style="margin: 5px 0 0 0; font-size: 0.9em; color: #aaa;">смешарики, все любят их</p>
       </div>
 
       <div class="project-card">
-        <a href="http://<%= Rails.configuration.x.base_domain %>/corona/index.html" target="_blank">⚡ Miraculous Energy Corona REVIVE (RUS)</a>
+        <a href="<%=Rails.configuration.x.protocol%>//<%= Rails.configuration.x.base_domain %>/corona/index.html" target="_blank">⚡ Miraculous Energy Corona REVIVE (RUS)</a>
         <p margin: 5px 0 0 0; font-size: 0.9em; color: #aaa;">Локализация проекта Miraculous Energy Corona.</p>
       </div>
 

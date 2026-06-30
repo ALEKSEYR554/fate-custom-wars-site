@@ -50,7 +50,7 @@ Rails.application.routes.draw do
 
   get "corona/*filename", to: "corona#serve", format: false
   get "corona", to: redirect("/corona/index.html")
-
+  post "webhook/gitea", to: "webhooks#gitea"
 
   root "home#index"
   # Defines the root path route ("/")

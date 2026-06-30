@@ -19,6 +19,7 @@ Rails.application.configure do
   config.hosts << "api.fate-custom-wars.com"
   config.hosts << "content.fate-custom-wars.com"
   config.hosts << "servant-data.fate-custom-wars.com"
+  config.x.protocol = "http:"
 
   # Enable/disable Action Controller caching. By default Action Controller caching is disabled.
   # Run rails dev:cache to toggle Action Controller caching.

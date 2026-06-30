@@ -456,7 +456,7 @@
     if (traits) params.append('traits', `[${traits}]`);
     if (servantName) params.append('name', servantName);
 
-    const apiUrl = `http://api.${baseDomain}/get_servant_with_traits?${params.toString()}`;
+    const apiUrl = `<%=Rails.configuration.x.protocol%>//api.${baseDomain}/get_servant_with_traits?${params.toString()}`;
 
     try {
       const response = await fetch(apiUrl);
@@ -563,7 +563,7 @@
     const card = document.createElement('div');
     card.className = 'servant-card';
     
-    const previewUrl = `http://servant-data.${baseDomain}/sprite/${servant.game_id}/preview.png`;
+    const previewUrl = `<%=Rails.configuration.x.protocol%>//servant-data.${baseDomain}/sprite/${servant.game_id}/preview.png`;
 
     // Оборачиваем верхнюю часть в ссылку. 
     // display: flex и flex-direction: column сохраняют структуру карточки.
