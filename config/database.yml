@@ -90,7 +90,7 @@ production:
   primary: &primary_production
     <<: *default
     database: fate_custom_wars_site_rails_production
-    username: fate_custom_wars_site_rails
+    username: ALEKSEYR554
     password: <%= ENV["FATE_CUSTOM_WARS_SITE_RAILS_DATABASE_PASSWORD"] %>
     host: 127.0.0.1
   cache:
