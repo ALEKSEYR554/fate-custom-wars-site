@@ -93,7 +93,7 @@
     <% case tag 
        when '[preview_image]' %>
       
-      <% if @servant.image_url.present? %>
+      <% if @servant.game_id.present? %>
         <div class="section">
           <img src="<%=Rails.configuration.x.protocol%>://servant-data.<%= Rails.configuration.x.base_domain %>/sprite/<%= @servant.game_id %>/preview.png" class="preview-image" alt="<%= @servant.name %>">
           <a href="https://apps.atlasacademy.io/db/JP/servant/<%= @servant.atlas_id %>/traits">Проверить Трейты</a>
