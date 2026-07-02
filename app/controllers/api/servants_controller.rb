@@ -28,7 +28,6 @@ module Api
       # Начинаем с выборки всех слуг. Запрос в базу еще НЕ отправляется,
       # Рельсы ждут, пока мы не добавим все фильтры.
       @servants = Servant.all
-
       if params[:name].present?
         @servants = @servants.where("name ILIKE ?", "%#{params[:name]}%")
       end
@@ -88,17 +87,23 @@ module Api
           error: "Слуги с заданными параметрами не найдены"
         }, status: :not_found
       else
-        formated_servants = @servants.map do |servant|
-          attrs = servant.attributes.except("id", "created_at", "updated_at")
-          ordered_data = {
-            "game_id"       => attrs.delete("game_id"),
-            "name"          => attrs.delete("name"),
-            "servant_class" => attrs.delete("servant_class"),
-            "rarity"        => attrs.delete("rarity"),
-            "region"        => attrs.delete("region"),
-            "alignment"     => attrs.delete("alignment")
-          }
-          ordered_data.merge(attrs)
+        if params[:short] == "true"
+          # База данных не читает тяжелые тексты (select). Рельсы сразу делают JSON.
+          formated_servants = @servants.select(:game_id, :name, :servant_class, :rarity)
+                                        .as_json(only: [ :game_id, :name, :servant_class, :rarity ])
+        else
+          formated_servants = @servants.map do |servant|
+            attrs = servant.attributes.except("id", "created_at", "updated_at")
+            ordered_data = {
+              "game_id"       => attrs.delete("game_id"),
+              "name"          => attrs.delete("name"),
+              "servant_class" => attrs.delete("servant_class"),
+              "rarity"        => attrs.delete("rarity"),
+              "region"        => attrs.delete("region"),
+              "alignment"     => attrs.delete("alignment")
+            }
+            ordered_data.merge(attrs)
+          end
         end
         # Формируем и отправляем JSON-ответ, как в Telegram API
         render json: {

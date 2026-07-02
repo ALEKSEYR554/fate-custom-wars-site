@@ -1,0 +1,395 @@
+<style>
+  /* === УМНЫЙ СЕЛЕКТ ТРЕЙТОВ (Ant-Design Style) === */
+  .multi-select-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: var(--bg-base); 
+    border: 1px solid var(--border-color); 
+    padding: 4px 8px;
+    border-radius: 4px; 
+    min-height: 35px;
+    box-sizing: border-box;
+    gap: 6px;
+    cursor: text;
+  }
+  
+  .multi-select-container:focus-within {
+    border-color: var(--atlas-blue);
+  }
+  
+  /* Бейджики выбранных тегов */
+  .selected-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  
+  .selected-tag-badge {
+    display: inline-flex;
+    align-items: center;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-color);
+    color: var(--atlas-blue);
+    font-size: 0.8rem;
+    padding: 2px 6px;
+    border-radius: 2px;
+    gap: 6px;
+    font-weight: 500;
+    
+    /* Новые свойства для защиты от разрыва: */
+    max-width: 100%;
+    word-break: break-all;
+  }
+  
+  .selected-tag-badge .remove-btn {
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1;
+  }
+  
+  .selected-tag-badge .remove-btn:hover {
+    color: var(--danger);
+  }
+
+  /* Инпут внутри контейнера */
+  #in-traits-search {
+    border: none !important;
+    background: transparent !important;
+    color: var(--text-primary);
+    outline: none;
+    flex-grow: 1;
+    padding: 4px 0;
+    font-family: var(--font-stack);
+    font-size: 0.875rem;
+    min-width: 120px;
+  }
+
+  /* Выпадающий список подсказок */
+  .dropdown-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+    margin-top: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  }
+  
+  .dropdown-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    color: var(--text-primary);
+    transition: background 0.15s;
+  }
+  
+  .dropdown-item:hover {
+    background: var(--bg-elevated);
+    color: #fff;
+  }
+  /* === БАЗОВЫЕ НАСТРОЙКИ (Стиль Atlas Academy) === */
+  :root {
+    --bg-base: #121212;
+    --bg-surface: #1e1e1e;
+    --bg-elevated: #2d2d2d;
+    --text-primary: rgba(255, 255, 255, 0.87);
+    --text-secondary: rgba(255, 255, 255, 0.60);
+    --border-color: #424242;
+    --atlas-blue: #90caf9;
+    --atlas-blue-hover: #64b5f6;
+    --danger: #ef5350;
+    --font-stack: 'Roboto', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  body { 
+    background-color: var(--bg-base); 
+    color: var(--text-primary); 
+    font-family: var(--font-stack); 
+    margin: 0; 
+    padding: 20px; 
+    line-height: 1.5;
+  }
+
+  /* === ПАНЕЛЬ УПРАВЛЕНИЯ === */
+  .control-panel {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+  .control-panel-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0 0 15px 0;
+    color: var(--atlas-blue);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+  }
+
+  .filters-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-end;
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .input-group label { 
+    font-size: 0.75rem; 
+    color: var(--text-secondary); 
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .input-group input {
+    background: var(--bg-base); 
+    color: var(--text-primary);
+    border: 1px solid var(--border-color); 
+    padding: 8px 12px;
+    border-radius: 4px; 
+    outline: none;
+    font-family: var(--font-stack);
+    transition: border-color 0.2s;
+  }
+
+  .input-group input:focus { border-color: var(--atlas-blue); }
+
+  .generate-btn {
+    background: transparent; 
+    color: var(--atlas-blue);
+    border: 1px solid var(--atlas-blue); 
+    padding: 8px 16px;
+    border-radius: 4px; 
+    cursor: pointer;
+    font-weight: 500; 
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .generate-btn:hover { 
+    background: rgba(144, 202, 249, 0.08); 
+  }
+
+  /* === КОМАНДЫ (СЕТКА С ПОРТРЕТАМИ) === */
+  .teams-container { 
+    display: flex;
+    flex-direction: column;
+    gap: 25px; 
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .team { 
+    background: var(--bg-surface); 
+    border: 1px solid var(--border-color); 
+    border-radius: 4px; 
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  }
+
+  .team-header {
+    background: var(--bg-elevated);
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 500;
+    color: var(--text-primary);
+    font-size: 1rem;
+  }
+
+  /* Сетка портретов внутри команды */
+  .team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px;
+  }
+  
+  /* ВЕРТИКАЛЬНАЯ КАРТОЧКА СЛУГИ */
+  .servant-card {
+    display: flex; 
+    flex-direction: column;
+    width: 220px; /* Увеличено со 120px до 180px */
+    background: var(--bg-base);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  
+  .servant-card:hover { 
+    transform: translateY(-3px); 
+    border-color: var(--atlas-blue);
+  }
+  
+  /* Увеличенное превью */
+  .servant-avatar { 
+    width: 220px; /* Увеличено со 120px до 180px */
+    height: 220px; /* Увеличено со 120px до 180px */
+    object-fit: contain; 
+    background: #000;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .servant-info { 
+    padding: 8px; 
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 75px;
+  }
+  
+  .servant-id {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    font-family: monospace;
+    margin-bottom: 2px;
+  }
+
+  .servant-name { 
+    font-weight: bold; 
+    font-size: 0.85rem; 
+    margin: 0 0 5px 0; 
+    color: var(--text-primary); 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Не дает имени сломать сетку */
+  }
+
+  .badges { 
+    display: flex; 
+    gap: 3px; 
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .badge {
+    font-size: 0.65rem;
+    padding: 1px 4px;
+    border-radius: 2px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+  }
+
+  .badge.rarity { color: #ffd700; border-color: #ffd700; background: rgba(255, 215, 0, 0.05); }
+  
+  /* Кнопка Reroll внизу портрета */
+  .reroll-btn { 
+    background: var(--bg-elevated); 
+    color: var(--text-secondary); 
+    border: none;
+    border-top: 1px solid var(--border-color);
+    padding: 6px 0; 
+    cursor: pointer; 
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    width: 100%;
+    transition: 0.2s;
+  }
+
+  .reroll-btn:hover { 
+    background: var(--danger); 
+    color: #000; 
+    font-weight: bold;
+  }
+  
+  #status-box { 
+    text-align: center; 
+    font-size: 0.9rem; 
+    margin-bottom: 20px; 
+    color: var(--text-secondary);
+    padding: 10px;
+    border-radius: 4px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    max-width: 900px;
+    margin: 0 auto 20px auto;
+  }
+
+  .error-text { color: var(--danger) !important; border-color: var(--danger) !important; }
+</style>
+
+<div class="control-panel">
+  <h1 class="control-panel-title">
+    Комбинация Слуг 
+    <span style="font-size: 0.8rem; color: var(--text-secondary);">
+      (Действительна до: <span id="expire-time" data-expires="<%= @session.expires_at.iso8601 %>">вычисление...</span>)
+    </span>
+  </h1>
+  <p style="color: var(--text-secondary);">Если хост сделал реролл, просто обновите страницу (F5).</p>
+</div>
+
+<div class="teams-container">
+  <% player['servants'].each do |servant| %>
+        <div class="servant-card">
+        <a href="/servants/<%= servant['game_id'] %>" target="_blank" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+            <img src="//servant-data.<%= Rails.configuration.x.base_domain %>/sprite/<%= servant['game_id'] %>/preview.png" class="servant-avatar" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'180\' height=\'180\'><rect width=\'180\' height=\'180\' fill=\'%232d2d2d\'/><text x=\'50%\' y=\'50%\' fill=\'%23555\' font-family=\'sans-serif\' font-size=\'14\' text-anchor=\'middle\' dy=\'4\'>No Image</text></svg>'">
+            <div class="servant-info">
+            <div class="servant-id"><%= servant['game_id'] %></div>
+            <div class="servant-name" title="<%= servant['name'] %>"><%= servant['name'] %></div>
+            <div class="badges">
+                <span class="badge"><%= servant['servant_class'] %></span>
+                <span class="badge rarity"><%= servant['rarity'] %>★</span>
+            </div>
+            </div>
+        </a>
+        </div>
+    <% end %>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const expireEl = document.getElementById('expire-time');
+    // Берем точное UTC-время из атрибута и превращаем в JS-дату
+    const expireDate = new Date(expireEl.dataset.expires);
+
+    function updateTime() {
+      const now = new Date();
+      const diffMs = expireDate - now;
+
+      if (diffMs <= 0) {
+        expireEl.innerText = "ИСТЕКЛА";
+        expireEl.style.color = "var(--danger)";
+        return;
+      }
+
+      // Переводим в часы и минуты местного времени игрока
+      const localTime = expireDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      const diffMins = Math.ceil(diffMs / 60000);
+
+      expireEl.innerText = `${localTime} (осталось ${diffMins} мин.)`;
+    }
+
+    updateTime();
+    setInterval(updateTime, 60000); // Обновляем счетчик каждую минуту
+  });
+</script>

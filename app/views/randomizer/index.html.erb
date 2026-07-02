@@ -347,9 +347,13 @@
       <label>Команд</label>
       <input type="number" id="in-teams" value="2" min="1">
     </div>
+    <div class="input-group" style="flex: 2;">
+      <label>Имена (через запятую)</label>
+      <input type="text" id="in-names" placeholder="Мастер1, Игрок2, Вася">
+    </div>
     <div class="input-group" style="max-width: 100px;">
-      <label>Всего игроков</label>
-      <input type="number" id="in-players" value="5" min="1">
+      <label>Слуг на 1 чел.</label>
+      <input type="number" id="in-spp" value="1" min="1">
     </div>
     <div class="input-group">
       <label>Имя</label>
@@ -384,6 +388,10 @@
     </div>
     
     <button class="generate-btn" onclick="generateTeams()">Сгенерировать</button>
+    <div id="link-box" style="display: none; text-align: center; margin-bottom: 20px; padding: 15px; background: rgba(144, 202, 249, 0.1); border: 1px dashed var(--atlas-blue); border-radius: 4px;">
+  <strong style="color: var(--atlas-blue);">🔗 Ссылка для игроков (живет 1 час):</strong><br>
+  <a id="share-link" href="#" target="_blank" style="color: #fff; font-size: 1.2rem; text-decoration: none;"></a>
+</div>
   </div>
 </div>
 
@@ -396,12 +404,26 @@
   let currentPoolIndex = 0;
   let seenServantIds = new Set();
 
+  let draftSlug = null;
+  let draftData = { teams: [], solo: [] };
+  let playerNames = [];
+  let servantsPerPlayer = 1;
+
   let bannedCount = 0;
   
   let teamsCount = 2;
   let totalPlayersCount = 5;
   let baseSize = 2;
   let leftoversCount = 1;
+
+  async function syncDraft() {
+    if (!draftSlug) return;
+    await fetch(`/drafts/${draftSlug}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ data: draftData })
+    });
+  }
 
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -430,27 +452,34 @@
   async function generateTeams() {
     const statusBox = document.getElementById('status-box');
     const container = document.getElementById('teams-container');
+    const linkBox = document.getElementById('link-box');
     
     statusBox.style.display = 'block';
     statusBox.className = '';
     statusBox.innerText = "Выполнение запроса к API...";
     container.innerHTML = '';
+    linkBox.style.display = 'none';
     
-    // Считываем значения
-    seenServantIds.clear();
     teamsCount = parseInt(document.getElementById('in-teams').value) || 2;
-    totalPlayersCount = parseInt(document.getElementById('in-players').value) || 5;
+    servantsPerPlayer = parseInt(document.getElementById('in-spp').value) || 1;
     
-    // Новая логика расчета:
+    // Получаем имена, очищаем от пустот
+    const namesRaw = document.getElementById('in-names').value;
+    playerNames = namesRaw.split(',').map(n => n.trim()).filter(n => n.length > 0);
+    if (playerNames.length === 0) playerNames = ["Игрок 1", "Игрок 2"]; // Фолбэк
+
+    totalPlayersCount = playerNames.length;
     baseSize = Math.floor(totalPlayersCount / teamsCount);
     leftoversCount = totalPlayersCount % teamsCount;
     
+    const neededServants = totalPlayersCount * servantsPerPlayer;    
     const servantClass = document.getElementById('in-class').value.trim();
     const rarity = document.getElementById('in-rarity').value.trim();
     const traits = document.getElementById('in-traits').value.trim();
     const servantName = document.getElementById('in-name').value.trim();
 
     const params = new URLSearchParams();
+    params.append('short', 'true');
     if (servantClass) params.append('servant_class', servantClass);
     if (rarity) params.append('rarity', rarity);
     if (traits) params.append('traits', `[${traits}]`);
@@ -489,84 +518,107 @@
       // Перемешиваем очищенный пул
       availablePool = shuffleArray(availablePool);
       currentPoolIndex = 0;
+
+      playerNames = shuffleArray(playerNames);
+      draftData = { teams: [], solo: [] };
       
       updateStatusText();
       renderTeams();
+
+      const draftRes = await fetch('/drafts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ data: draftData })
+      });
+      const draftJson = await draftRes.json();
+      draftSlug = draftJson.slug;
+
+      const shareUrl = `${window.location.origin}/draft/${draftSlug}`;
+      const linkTag = document.getElementById('share-link');
+      linkTag.href = shareUrl;
+      linkTag.innerText = shareUrl;
+      linkBox.style.display = 'block';
 
     } catch (error) {
       console.error(error);
       statusBox.className = 'error-text';
       statusBox.innerText = "[Сетевая ошибка] Не удалось получить данные. Проверьте консоль браузера.";
     }
+
+
   }
 
   function renderTeams() {
     const container = document.getElementById('teams-container');
+    let nameIndex = 0;
 
-    // 1. Отрисовка основных команд
     for (let i = 1; i <= teamsCount; i++) {
       const teamDiv = document.createElement('div');
       teamDiv.className = 'team';
+      teamDiv.innerHTML = `<div class="team-header">Команда ${i}</div>`;
       
-      const teamHeader = document.createElement('div');
-      teamHeader.className = 'team-header';
-      teamHeader.innerText = `Команда ${i} (Размер: ${baseSize})`;
-      teamDiv.appendChild(teamHeader);
-      
-      const teamGrid = document.createElement('div');
-      teamGrid.className = 'team-grid';
+      let teamObj = { name: `Команда ${i}`, players: [] };
       
       for (let j = 0; j < baseSize; j++) {
-        if (currentPoolIndex >= availablePool.length) break;
-        const servant = availablePool[currentPoolIndex++];
+        if (nameIndex >= playerNames.length) break;
+        let pName = playerNames[nameIndex++];
+        let playerObj = { name: pName, servants: [] };
         
-        seenServantIds.add(servant.game_id); // <-- ДОБАВЛЕНО: Запоминаем слугу
-        
-        teamGrid.appendChild(createServantCard(servant));
+        teamDiv.appendChild(renderPlayerBlock(pName, playerObj));
+        teamObj.players.push(playerObj);
       }
-      
-      teamDiv.appendChild(teamGrid);
+      draftData.teams.push(teamObj);
       container.appendChild(teamDiv);
     }
 
-    // 2. Отрисовка Соло-игроков (остаток)
-    if (leftoversCount > 0 && currentPoolIndex < availablePool.length) {
+    // Отрисовка Соло (Остаток)
+    if (leftoversCount > 0) {
       const soloDiv = document.createElement('div');
       soloDiv.className = 'team';
-      soloDiv.style.borderColor = 'var(--danger)'; 
-      
-      const soloHeader = document.createElement('div');
-      soloHeader.className = 'team-header';
-      soloHeader.style.background = 'rgba(239, 83, 80, 0.1)';
-      soloHeader.style.color = 'var(--danger)';
-      soloHeader.innerText = `Соло / Вне команд (Остаток: ${leftoversCount})`;
-      soloDiv.appendChild(soloHeader);
-      
-      const soloGrid = document.createElement('div');
-      soloGrid.className = 'team-grid';
+      soloDiv.style.borderColor = 'var(--danger)';
+      soloDiv.innerHTML = `<div class="team-header" style="color:var(--danger); background:rgba(239,83,80,0.1);">Соло / Вне команд</div>`;
       
       for (let j = 0; j < leftoversCount; j++) {
-        if (currentPoolIndex >= availablePool.length) break;
-        const servant = availablePool[currentPoolIndex++];
+        if (nameIndex >= playerNames.length) break;
+        let pName = playerNames[nameIndex++];
+        let playerObj = { name: pName, servants: [] };
         
-        seenServantIds.add(servant.game_id); // <-- ДОБАВЛЕНО: Запоминаем соло-слугу
-        
-        soloGrid.appendChild(createServantCard(servant));
+        soloDiv.appendChild(renderPlayerBlock(pName, playerObj));
+        draftData.solo.push(playerObj);
       }
-      
-      soloDiv.appendChild(soloGrid);
       container.appendChild(soloDiv);
     }
   }
 
-  function createServantCard(servant) {
+  function renderPlayerBlock(playerName, playerObj) {
+    const block = document.createElement('div');
+    block.style.padding = '10px';
+    block.style.borderBottom = '1px solid var(--border-color)';
+    block.innerHTML = `<h4 style="margin: 0 0 10px 0; color: var(--text-primary);">👤 ${playerName}</h4>`;
+    
+    const grid = document.createElement('div');
+    grid.className = 'team-grid';
+
+    for (let s = 0; s < servantsPerPlayer; s++) {
+      if (currentPoolIndex >= availablePool.length) break;
+      const servant = availablePool[currentPoolIndex++];
+      seenServantIds.add(servant.game_id);
+      
+      playerObj.servants.push(servant);
+      
+      // Передаем playerObj и индекс слуги в массиве, чтобы при реролле заменить именно его!
+      grid.appendChild(createServantCard(servant, playerObj, playerObj.servants.length - 1));
+    }
+    
+    block.appendChild(grid);
+    return block;
+  }
+
+  function createServantCard(servant, playerObj, servantIndex) {
     const card = document.createElement('div');
     card.className = 'servant-card';
-    
-    const previewUrl = `<%=Rails.configuration.x.protocol%>//servant-data.${baseDomain}/sprite/${servant.game_id}/preview.png`;
+    const previewUrl = `//servant-data.${baseDomain}/sprite/${servant.game_id}/preview.png`;
 
-    // Оборачиваем верхнюю часть в ссылку. 
-    // display: flex и flex-direction: column сохраняют структуру карточки.
     card.innerHTML = `
       <a href="/servants/${servant.game_id}" target="_blank" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
         <img src="${previewUrl}" class="servant-avatar" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'180\\' height=\\'180\\'><rect width=\\'180\\' height=\\'180\\' fill=\\'%232d2d2d\\'/><text x=\\'50%\\' y=\\'50%\\' fill=\\'%23555\\' font-family=\\'sans-serif\\' font-size=\\'14\\' text-anchor=\\'middle\\' dy=\\'4\\'>No Image</text></svg>'">
@@ -582,10 +634,8 @@
       <button class="reroll-btn" title="Заменить на другого">Reroll</button>
     `;
 
-    const rerollBtn = card.querySelector('.reroll-btn');
-    rerollBtn.onclick = () => {
+    card.querySelector('.reroll-btn').onclick = () => {
       let newServant = null;
-
       while (currentPoolIndex < availablePool.length) {
         const candidate = availablePool[currentPoolIndex++];
         if (!seenServantIds.has(candidate.game_id)) {
@@ -593,19 +643,17 @@
           break;
         }
       }
-
-      if (!newServant) {
-        alert("В пуле больше не осталось слуг для замены!");
-        return;
-      }
+      if (!newServant) { alert("Слуги кончились!"); return; }
       
       seenServantIds.add(newServant.game_id);
       updateStatusText();
 
-      const newCard = createServantCard(newServant);
-      card.replaceWith(newCard);
-    };
+      // Магия синхронизации
+      playerObj.servants[servantIndex] = newServant;
+      syncDraft();
 
+      card.replaceWith(createServantCard(newServant, playerObj, servantIndex));
+    };
     return card;
   }
   // === ИНТЕРФЕЙС АВТОДОПОЛНЕНИЯ ТРЕЙТОВ ===
