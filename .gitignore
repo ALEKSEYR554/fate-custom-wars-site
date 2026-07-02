@@ -28,6 +28,8 @@
 !/tmp/storage/
 !/tmp/storage/.keep
 
+/db/schema.rb
+
 /public/assets
 /test_local_scripts/*
 # Ignore key files for decrypting credentials and more.
