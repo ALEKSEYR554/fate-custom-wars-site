@@ -358,11 +358,17 @@
           <div class="team-grid">
             <% player['servants'].each do |servant| %>
               <div class="servant-card">
-                <img src="//servant-data.<%= Rails.configuration.x.base_domain %>/sprite/<%= servant['game_id'] %>/preview.png" class="servant-avatar">
-                <div class="servant-info">
-                  <div class="servant-name"><%= servant['name'] %></div>
-                  <div class="badges"><span class="badge"><%= servant['servant_class'] %></span></div>
-                </div>
+                <a href="/servants/<%= servant['game_id'] %>" target="_blank" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+                  <img src="//servant-data.<%= Rails.configuration.x.base_domain %>/sprite/<%= servant['game_id'] %>/preview.png" class="servant-avatar" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'180\' height=\'180\'><rect width=\'180\' height=\'180\' fill=\'%232d2d2d\'/><text x=\'50%\' y=\'50%\' fill=\'%23555\' font-family=\'sans-serif\' font-size=\'14\' text-anchor=\'middle\' dy=\'4\'>No Image</text></svg>'">
+                  <div class="servant-info">
+                    <div class="servant-id"><%= servant['game_id'] %></div>
+                    <div class="servant-name" title="<%= servant['name'] %>"><%= servant['name'] %></div>
+                    <div class="badges">
+                      <span class="badge"><%= servant['servant_class'] %></span>
+                      <span class="badge rarity"><%= servant['rarity'] %>★</span>
+                    </div>
+                  </div>
+                </a>
               </div>
             <% end %>
           </div>
