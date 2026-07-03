@@ -349,21 +349,27 @@
 </div>
 
 <div class="teams-container">
-  <% player['servants'].each do |servant| %>
-        <div class="servant-card">
-        <a href="/servants/<%= servant['game_id'] %>" target="_blank" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
-            <img src="//servant-data.<%= Rails.configuration.x.base_domain %>/sprite/<%= servant['game_id'] %>/preview.png" class="servant-avatar" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'180\' height=\'180\'><rect width=\'180\' height=\'180\' fill=\'%232d2d2d\'/><text x=\'50%\' y=\'50%\' fill=\'%23555\' font-family=\'sans-serif\' font-size=\'14\' text-anchor=\'middle\' dy=\'4\'>No Image</text></svg>'">
-            <div class="servant-info">
-            <div class="servant-id"><%= servant['game_id'] %></div>
-            <div class="servant-name" title="<%= servant['name'] %>"><%= servant['name'] %></div>
-            <div class="badges">
-                <span class="badge"><%= servant['servant_class'] %></span>
-                <span class="badge rarity"><%= servant['rarity'] %>★</span>
-            </div>
-            </div>
-        </a>
+  <% @session.data['teams'].each do |team| %>
+    <div class="team">
+      <div class="team-header"><%= team['name'] %></div>
+      <% team['players'].each do |player| %>
+        <div style="padding: 10px; border-bottom: 1px solid var(--border-color);">
+          <h4 style="margin: 0 0 10px 0; color: var(--text-primary);">👤 <%= player['name'] %></h4>
+          <div class="team-grid">
+            <% player['servants'].each do |servant| %>
+              <div class="servant-card">
+                <img src="//servant-data.<%= Rails.configuration.x.base_domain %>/sprite/<%= servant['game_id'] %>/preview.png" class="servant-avatar">
+                <div class="servant-info">
+                  <div class="servant-name"><%= servant['name'] %></div>
+                  <div class="badges"><span class="badge"><%= servant['servant_class'] %></span></div>
+                </div>
+              </div>
+            <% end %>
+          </div>
         </div>
-    <% end %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 
 <script>
