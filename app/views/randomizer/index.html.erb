@@ -355,6 +355,10 @@
       <label>Слуг на 1 чел.</label>
       <input type="number" id="in-spp" value="1" min="1">
     </div>
+    <div class="input-group" style="justify-content: center; align-items: center; flex-direction: row; gap: 8px;">
+      <input type="checkbox" id="in-rarity-lock" style="width: 18px; height: 18px; cursor: pointer;">
+      <label for="in-rarity-lock" style="margin: 0; cursor: pointer; color: var(--text-primary);">Слуги одной редкости</label>
+    </div>
     <div class="input-group">
       <label>Имя</label>
       <input type="text" id="in-name" placeholder="Часть имени">
@@ -401,7 +405,6 @@
 <script>
   const baseDomain = "<%= Rails.configuration.x.base_domain %>";
   let availablePool = [];
-  let currentPoolIndex = 0;
   let seenServantIds = new Set();
 
   let draftSlug = null;
@@ -423,6 +426,20 @@
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ data: draftData })
     });
+  }
+
+  // Умный поиск следующего свободного слуги (с учетом редкости, если нужно)
+  function getNextServant(lockedRarity = null) {
+    for (let i = 0; i < availablePool.length; i++) {
+      let candidate = availablePool[i];
+      if (!seenServantIds.has(candidate.game_id)) {
+        if (lockedRarity === null || candidate.rarity === lockedRarity) {
+          seenServantIds.add(candidate.game_id);
+          return candidate;
+        }
+      }
+    }
+    return null; // Если подходящих слуг больше нет
   }
 
   function shuffleArray(array) {
@@ -551,6 +568,14 @@
   function renderTeams() {
     const container = document.getElementById('teams-container');
     let nameIndex = 0;
+    const isRarityLocked = document.getElementById('in-rarity-lock').checked;
+
+    // Генерируем и перемешиваем номера ходов
+    let turnNumbers = [];
+    for(let i = 1; i <= totalPlayersCount; i++) {
+      turnNumbers.push(i);
+    }
+    turnNumbers = shuffleArray(turnNumbers);
 
     for (let i = 1; i <= teamsCount; i++) {
       const teamDiv = document.createElement('div');
@@ -561,18 +586,23 @@
       
       for (let j = 0; j < baseSize; j++) {
         if (nameIndex >= playerNames.length) break;
-        let pName = playerNames[nameIndex++];
-        let playerObj = { name: pName, servants: [] };
         
-        teamDiv.appendChild(renderPlayerBlock(pName, playerObj));
+        let pName = playerNames[nameIndex];
+        // Берем случайный номер хода из перемешанного массива
+        let turnNumber = turnNumbers[nameIndex]; 
+        nameIndex++;
+
+        let playerObj = { name: pName, displayName: `Ход ${turnNumber} | 👤 ${pName}`, servants: [], lockedRarity: null };
+        
+        teamDiv.appendChild(renderPlayerBlock(playerObj, isRarityLocked));
         teamObj.players.push(playerObj);
       }
       draftData.teams.push(teamObj);
       container.appendChild(teamDiv);
     }
 
-    // Отрисовка Соло (Остаток)
-    if (leftoversCount > 0) {
+    // Соло / Вне команд
+    if (leftoversCount > 0 && nameIndex < playerNames.length) {
       const soloDiv = document.createElement('div');
       soloDiv.className = 'team';
       soloDiv.style.borderColor = 'var(--danger)';
@@ -580,33 +610,61 @@
       
       for (let j = 0; j < leftoversCount; j++) {
         if (nameIndex >= playerNames.length) break;
-        let pName = playerNames[nameIndex++];
-        let playerObj = { name: pName, servants: [] };
+
+        let pName = playerNames[nameIndex];
+        // Берем случайный номер хода для соло-игроков
+        let turnNumber = turnNumbers[nameIndex];
+        nameIndex++;
+
+        let playerObj = { name: pName, displayName: `Ход ${turnNumber} | 👤 ${pName}`, servants: [], lockedRarity: null };
         
-        soloDiv.appendChild(renderPlayerBlock(pName, playerObj));
+        soloDiv.appendChild(renderPlayerBlock(playerObj, isRarityLocked));
         draftData.solo.push(playerObj);
       }
       container.appendChild(soloDiv);
     }
   }
 
-  function renderPlayerBlock(playerName, playerObj) {
+  function renderPlayerBlock(playerObj, isRarityLocked) {
     const block = document.createElement('div');
     block.style.padding = '10px';
     block.style.borderBottom = '1px solid var(--border-color)';
-    block.innerHTML = `<h4 style="margin: 0 0 10px 0; color: var(--text-primary);">👤 ${playerName}</h4>`;
     
+    // Создаем контейнер для заголовка, текст вставим позже
+    const headerEl = document.createElement('h4');
+    headerEl.style.margin = '0 0 10px 0';
+    headerEl.style.color = 'var(--atlas-blue)';
+    block.appendChild(headerEl);
+
     const grid = document.createElement('div');
     grid.className = 'team-grid';
 
+    // 1. Если включена галочка редкости, определяем её ДО выдачи слуг
+    if (isRarityLocked) {
+      let rarityCounts = {};
+      for (let s of availablePool) {
+        if (!seenServantIds.has(s.game_id)) {
+          rarityCounts[s.rarity] = (rarityCounts[s.rarity] || 0) + 1;
+        }
+      }
+      let validRarities = Object.keys(rarityCounts).filter(r => rarityCounts[r] >= servantsPerPlayer);
+      
+      if (validRarities.length > 0) {
+        playerObj.lockedRarity = parseInt(validRarities[Math.floor(Math.random() * validRarities.length)]);
+      }
+    }
+
+    // 2. Обновляем текст заголовка и сохраняем его в playerObj для синхронизации со зрителями
+    let rarityText = playerObj.lockedRarity ? ` [${playerObj.lockedRarity}★]` : "";
+    playerObj.displayName = playerObj.displayName + rarityText;
+    headerEl.innerText = `🎲 ${playerObj.displayName}`;
+
+    // 3. Выдаем слуг
     for (let s = 0; s < servantsPerPlayer; s++) {
-      if (currentPoolIndex >= availablePool.length) break;
-      const servant = availablePool[currentPoolIndex++];
-      seenServantIds.add(servant.game_id);
+      const servant = getNextServant(playerObj.lockedRarity);
+      if (!servant) break; 
       
       playerObj.servants.push(servant);
-      
-      // Передаем playerObj и индекс слуги в массиве, чтобы при реролле заменить именно его!
       grid.appendChild(createServantCard(servant, playerObj, playerObj.servants.length - 1));
     }
     
@@ -635,20 +693,15 @@
     `;
 
     card.querySelector('.reroll-btn').onclick = () => {
-      let newServant = null;
-      while (currentPoolIndex < availablePool.length) {
-        const candidate = availablePool[currentPoolIndex++];
-        if (!seenServantIds.has(candidate.game_id)) {
-          newServant = candidate;
-          break;
-        }
-      }
-      if (!newServant) { alert("Слуги кончились!"); return; }
+      // Ищем следующего с учетом сохраненной редкости игрока!
+      const newServant = getNextServant(playerObj.lockedRarity);
       
-      seenServantIds.add(newServant.game_id);
+      if (!newServant) { 
+        alert(playerObj.lockedRarity ? `В пуле кончились слуги редкости ${playerObj.lockedRarity}★!` : "Слуги кончились!"); 
+        return; 
+      }
+      
       updateStatusText();
-
-      // Магия синхронизации
       playerObj.servants[servantIndex] = newServant;
       syncDraft();
 

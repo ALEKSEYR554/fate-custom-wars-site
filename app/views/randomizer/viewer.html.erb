@@ -354,7 +354,11 @@
       <div class="team-header"><%= team['name'] %></div>
       <% team['players'].each do |player| %>
         <div style="padding: 10px; border-bottom: 1px solid var(--border-color);">
-          <h4 style="margin: 0 0 10px 0; color: var(--text-primary);">👤 <%= player['name'] %></h4>
+          <div style="padding: 10px; border-bottom: 1px solid var(--border-color);">
+          <!-- Если displayName записан в базу, выводим его (Ход 1 | Вася), иначе фолбэк -->
+          <h4 style="margin: 0 0 10px 0; color: var(--atlas-blue);">
+            🎲 <%= player['displayName'] || "👤 #{player['name']}" %>
+          </h4>
           <div class="team-grid">
             <% player['servants'].each do |servant| %>
               <div class="servant-card">
