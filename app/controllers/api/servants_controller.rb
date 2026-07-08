@@ -44,22 +44,31 @@ module Api
       end
 
       # 2. Фильтр по РЕДКОСТИ (rarity=>3, rarity=5, rarity=<=2)
+      # 2. Фильтр по РЕДКОСТИ
       if params[:rarity].present?
-        rarity_param = params[:rarity]
-
-        # Проверяем, начинается ли строка со знаков неравенства
-        if rarity_param.match?(/^[><=]+/)
-          # Вытаскиваем оператор (например ">") и само число (например "3")
+        rarity_param = params[:rarity].to_s
+        
+        # Если диапазон (например: 3-5)
+        if rarity_param.include?('-')
+          min, max = rarity_param.split('-').map(&:to_i)
+          @servants = @servants.where(rarity: min..max)
+          
+        # Если перечисление (например: 3,4,5)
+        elsif rarity_param.include?(',')
+          rarities = rarity_param.split(',').map(&:to_i)
+          @servants = @servants.where(rarity: rarities)
+          
+        # Если знак больше/меньше (например: >2)
+        elsif rarity_param.match?(/^[><=]+/)
           operator = rarity_param.match(/^[><=]+/)[0]
           value = rarity_param.match(/\d+/)[0].to_i
-
-          # Защита от SQL-инъекций: разрешаем только безопасные математические знаки
           if %w[> < >= <= == =].include?(operator)
-            operator = "=" if operator == "==" # SQL использует = для равенства
+            operator = '=' if operator == '=='
             @servants = @servants.where("rarity #{operator} ?", value)
           end
+          
+        # Если просто цифра (например: 5)
         else
-          # Если передали просто число, например rarity=3
           @servants = @servants.where(rarity: rarity_param.to_i)
         end
       end

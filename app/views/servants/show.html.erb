@@ -82,7 +82,75 @@
 
 
 <div class="container">
-  <h1><%= @servant.game_id %></h1>
+  <%
+    # Формируем чистый текст для копирования
+    copy_lines = []
+    copy_lines << @servant.game_id
+    copy_lines << "Мировоззрение: #{@servant.alignment}" if @servant.alignment.present?
+    copy_lines << "Класс: #{@servant.servant_class}" if @servant.servant_class.present?
+    copy_lines << "Имя: #{@servant.name}" if @servant.name.present?
+    
+    str = "Сила: #{@servant.strength_rank}"
+    str += " (#{@servant.damage} урона)" if @servant.damage.present?
+    copy_lines << str if @servant.strength_rank.present?
+
+    endur = "Выносливость: #{@servant.endurance_rank}"
+    endur += " (Очки Жизни: #{@servant.hp})" if @servant.hp.present?
+    copy_lines << endur if @servant.endurance_rank.present?
+
+    agi = "Ловкость: #{@servant.agility_rank}"
+    agi += " (+#{@servant.agility_modifier})" if @servant.agility_modifier.present?
+    copy_lines << agi if @servant.agility_rank.present?
+
+    luck = "Удача: #{@servant.luck_rank}"
+    luck += " (+#{@servant.luck_modifier})" if @servant.luck_modifier.present?
+    copy_lines << luck if @servant.luck_rank.present?
+
+    mag = "Магия: #{@servant.magic_rank}"
+    if @servant.magic_defense.present? || @servant.magic_damage.present?
+      m_parts = []
+      m_parts << "Магическая Защита - #{@servant.magic_defense}" if @servant.magic_defense.present?
+      m_parts << "Урон - #{@servant.magic_damage}" if @servant.magic_damage.present?
+      mag += " (#{m_parts.join(' / ')})"
+    end
+    copy_lines << mag if @servant.magic_rank.present?
+
+    copy_lines << "Н.Фантазм: #{@servant.np_rank}" if @servant.np_rank.present?
+    copy_lines << "Классовые Навыки:\n#{@servant.class_skills.strip}" if @servant.class_skills.present?
+    copy_lines << "Личные Навыки:\n#{@servant.personal_skills.strip}" if @servant.personal_skills.present?
+    copy_lines << "Небесный Фантазм:\n#{@servant.noble_phantasm.strip}" if @servant.noble_phantasm.present?
+  %>
+
+  <!-- Скрытое поле для хранения текста -->
+  <textarea id="raw-servant-data" style="display: none;"><%= copy_lines.join("\n") %></textarea>
+
+  <!-- Заголовок с кнопкой -->
+  <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+    <h1 style="margin: 0; border: none; padding: 0;"><%= @servant.game_id %> - <%= @servant.name %></h1>
+    
+    <button id="copy-btn" style="background: var(--atlas-blue); color: #000; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-weight: 500; font-size: 0.9rem; transition: 0.2s;">
+      📋 Копировать
+    </button>
+  </div>
+
+  <script>
+    document.getElementById('copy-btn').addEventListener('click', function() {
+      const text = document.getElementById('raw-servant-data').value;
+      
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById('copy-btn');
+        btn.innerText = "✅ Скопировано!";
+        btn.style.background = "#03dac6"; // Зеленый цвет успеха
+        
+        setTimeout(() => {
+          btn.innerText = "📋 Копировать";
+          btn.style.background = "var(--atlas-blue)";
+        }, 2000);
+      }).catch(err => {
+        alert("Ошибка копирования: " + err);
+      });
+    });
+  </script>
   <%# Читаем шаблон построчно %>
   <% @servant.layout_to_use.each_line do |line| %>
     
@@ -230,3 +298,48 @@
   <% end %><%# Конец цикла each_line %>
 
 </div>
+<script>
+    document.getElementById('copy-btn').addEventListener('click', function() {
+      const text = document.getElementById('raw-servant-data').value;
+      const btn = document.getElementById('copy-btn');
+
+      // Функция изменения цвета кнопки
+      function showSuccess() {
+        btn.innerText = "✅ Скопировано!";
+        btn.style.background = "#03dac6"; // Зеленый цвет
+        setTimeout(() => {
+          btn.innerText = "📋 Копировать";
+          btn.style.background = "var(--atlas-blue)";
+        }, 2000);
+      }
+
+      // Попытка 1: Современный метод (только для HTTPS)
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text)
+          .then(showSuccess)
+          .catch(err => alert("Ошибка: " + err));
+      } 
+      // Попытка 2: Резервный метод (для HTTP)
+      else {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        
+        // Прячем элемент с экрана
+        textArea.style.position = "fixed";
+        textArea.style.left = "-9999px";
+        document.body.appendChild(textArea);
+        
+        textArea.focus();
+        textArea.select();
+
+        try {
+          document.execCommand('copy');
+          showSuccess();
+        } catch (err) {
+          alert("Ошибка резервного копирования: " + err);
+        }
+
+        textArea.remove();
+      }
+    });
+  </script>
