@@ -35,15 +35,28 @@ Rails.application.routes.draw do
     end
   end
 
+
+  # === АДМИН-ПАНЕЛЬ ===
+  namespace :admin do
+    resources :servants, param: :game_id, only: [ :index, :edit, :update ] do
+      # Добавляем метод для загрузки спрайтов
+      post :upload_sprite, on: :member
+    end
+  end
+
   get "randomizer", to: "randomizer#index"
   # API для сохранения и обновления сессий рандомайзера
   post "drafts", to: "randomizer#create_draft"
   patch "drafts/:slug", to: "randomizer#update_draft"
 
+  post "drafts/:slug/extend", to: "randomizer#extend_draft"
+
   # Ссылка, которую получают игроки (например, example.com/draft/a1b2c3d4)
   get "draft/:slug", to: "randomizer#viewer", as: :draft_viewer
 
 
+
+  get 'servants', to: 'servants#index'
   # Страница слуги
   get "servants/:game_id", to: "servants#show"
 

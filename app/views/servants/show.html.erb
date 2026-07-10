@@ -92,6 +92,7 @@
     
     str = "Сила: #{@servant.strength_rank}"
     str += " (#{@servant.damage} урона)" if @servant.damage.present?
+    str += " (Радиус Атаки: #{@servant.attack_range})" if @servant.attack_range.present?
     copy_lines << str if @servant.strength_rank.present?
 
     endur = "Выносливость: #{@servant.endurance_rank}"
@@ -178,8 +179,21 @@
             </div>
           <% end %>
           <div class="stat-box"><strong>Класс:</strong> <%= @servant.servant_class %></div>
-          <div class="stat-box"><strong>Имя:</strong> <%= @servant.name %></div>
-          <div class="stat-box"><strong>Сила:</strong> <%= @servant.strength_rank %> (<%= @servant.damage %> очка урона)</div>
+
+          <% if @servant.alignment.present?%>
+            <div class="stat-box"><strong>Имя:</strong> <%= @servant.name %><br><strong>Мировоззрение:</strong> <%= @servant.alignment %> </div>
+            <%else%>
+            <div class="stat-box"><strong>Имя:</strong> <%= @servant.name %></div>
+          <%end%>
+  
+          
+          <div class="stat-box">
+            <strong>Сила:</strong> <%= @servant.strength_rank %> 
+            (Урон: <%= @servant.damage %>)
+            <% if @servant.attack_range.present? %>
+              <br><strong>Радиус:</strong> <%= "#{@servant.attack_range}" %>
+            <% end %>
+          </div>
           <div class="stat-box"><strong>Выносливость:</strong> <%= @servant.endurance_rank %> (Очки Жизни: <%= @servant.hp %>)</div>
           <% if @servant.agility_modifier.present?%>
             <div class="stat-box"><strong>Ловкость:</strong> <%= @servant.agility_rank %> (+<%= @servant.agility_modifier %> к выпавшему результату при уклонении)</div>

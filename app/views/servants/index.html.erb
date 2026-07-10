@@ -1,0 +1,235 @@
+<style>
+  :root {
+    --bg-base: #121212; --bg-surface: #1e1e1e; --bg-elevated: #2d2d2d;
+    --text-primary: rgba(255, 255, 255, 0.87); --text-secondary: rgba(255, 255, 255, 0.60);
+    --border-color: #424242; --atlas-blue: #90caf9; --danger: #ef5350;
+  }
+  body { background: var(--bg-base); color: var(--text-primary); font-family: sans-serif; margin: 0; padding: 0; }
+  
+  /* Вкладки */
+  .top-tabs { display: flex; background: var(--bg-surface); border-bottom: 1px solid var(--border-color); padding: 0 20px; margin-bottom: 20px; }
+  .tab-link { padding: 15px 20px; color: var(--text-secondary); text-decoration: none; border-bottom: 2px solid transparent; font-weight: 500; font-size: 1rem; }
+  .tab-link:hover { color: var(--text-primary); background: var(--bg-elevated); }
+  .tab-link.active { color: var(--atlas-blue); border-bottom-color: var(--atlas-blue); }
+
+  /* Панель */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  .control-panel { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 4px; padding: 20px; margin-bottom: 20px; display: flex; flex-wrap: wrap; gap: 15px; align-items: flex-end; }
+  .input-group { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 120px; }
+  .input-group label { font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; }
+  .input-group input { background: var(--bg-base); color: var(--text-primary); border: 1px solid var(--border-color); padding: 8px; border-radius: 4px; outline: none; }
+  .input-group input:focus { border-color: var(--atlas-blue); }
+
+  /* Смарт-селект Трейтов */
+  .multi-select-container { display: flex; flex-wrap: wrap; align-items: center; background: var(--bg-base); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; min-height: 35px; gap: 6px; cursor: text; }
+  .multi-select-container:focus-within { border-color: var(--atlas-blue); }
+  .selected-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .selected-tag-badge { display: inline-flex; align-items: center; background: var(--bg-elevated); border: 1px solid var(--border-color); color: var(--atlas-blue); font-size: 0.8rem; padding: 2px 6px; border-radius: 2px; gap: 6px; font-weight: 500; max-width: 100%; word-break: break-all; }
+  .selected-tag-badge .remove-btn { cursor: pointer; color: var(--text-secondary); font-weight: bold; font-size: 1rem; line-height: 1; }
+  .selected-tag-badge .remove-btn:hover { color: var(--danger); }
+  #in-traits-search { border: none !important; background: transparent !important; color: var(--text-primary); outline: none; flex-grow: 1; padding: 4px 0; font-size: 0.875rem; min-width: 120px; }
+  .dropdown-list { position: absolute; top: 100%; left: 0; right: 0; background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 4px; max-height: 200px; overflow-y: auto; z-index: 1000; display: none; margin-top: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.5); }
+  .dropdown-item { padding: 8px 12px; cursor: pointer; font-size: 0.875rem; color: var(--text-primary); transition: 0.15s; }
+  .dropdown-item:hover { background: var(--bg-elevated); color: #fff; }
+
+  /* Сетка */
+  .servants-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 15px; padding-bottom: 40px; }
+  .servant-card { background: var(--bg-base); border: 1px solid var(--border-color); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; text-decoration: none; transition: 0.2s; }
+  .servant-card:hover { transform: translateY(-3px); border-color: var(--atlas-blue); }
+  .servant-avatar { width: 100%; aspect-ratio: 1; object-fit: contain; background: #000; border-bottom: 1px solid var(--border-color); }
+  .servant-info { padding: 8px; text-align: center; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; }
+  .servant-id { font-size: 0.7rem; color: var(--text-secondary); font-family: monospace; }
+  .servant-name { font-weight: bold; font-size: 0.85rem; color: var(--text-primary); margin: 5px 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .badges { display: flex; gap: 4px; justify-content: center; }
+  .badge { font-size: 0.65rem; padding: 2px 4px; background: var(--bg-elevated); border: 1px solid var(--border-color); border-radius: 2px; color: var(--text-secondary); }
+  .badge.rarity { color: #ffd700; border-color: #ffd700; background: rgba(255,215,0,0.05); }
+  #status-msg { text-align: center; color: var(--text-secondary); margin-bottom: 20px; }
+</style>
+
+<div class="top-tabs">
+  <a href="/servants" class="tab-link active">🔍 Поиск Слуг</a>
+</div>
+
+<div class="container">
+  <div class="control-panel">
+    <div class="input-group">
+      <label>Имя</label>
+      <input type="text" id="s-name" placeholder="Часть имени">
+    </div>
+    <div class="input-group" style="max-width: 120px;">
+      <label>Класс</label>
+      <input type="text" id="s-class" placeholder="Любой">
+    </div>
+    <div class="input-group" style="max-width: 120px;">
+      <label>Редкость</label>
+      <input type="text" id="s-rarity" placeholder="Напр. >3">
+    </div>
+    <div class="input-group" style="flex: 2; position: relative;">
+      <label>Трейты</label>
+      <div class="multi-select-container" id="traits-select-container" onclick="document.getElementById('in-traits-search').focus()">
+        <div class="selected-tags" id="selected-traits-tags"></div>
+        <input type="text" id="in-traits-search" placeholder="Поиск трейтов..." autocomplete="off">
+      </div>
+      <input type="hidden" id="in-traits">
+      <div class="dropdown-list" id="traits-dropdown">
+        <% @unique_traits.each do |trait| %>
+          <div class="dropdown-item" data-value="<%= trait %>"><%= trait %></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div id="status-msg"></div>
+  <div class="servants-grid" id="results-grid"></div>
+</div>
+
+<script>
+  // Загружаем всех слуг прямо в страницу (работает мгновенно)
+  const baseDomain = "<%= Rails.configuration.x.base_domain %>";
+  const allServants = <%= raw @all_servants.to_json %>;
+
+  // Парсер строки редкости (>, <, тире, запятые)
+  function matchRarity(servantRarity, q) {
+    if (!q) return true;
+    if (q.includes('-')) {
+      const [min, max] = q.split('-').map(Number);
+      return servantRarity >= min && servantRarity <= max;
+    } else if (q.includes(',')) {
+      const arr = q.split(',').map(Number);
+      return arr.includes(servantRarity);
+    } else if (q.startsWith('>=')) return servantRarity >= Number(q.slice(2));
+    else if (q.startsWith('<=')) return servantRarity <= Number(q.slice(2));
+    else if (q.startsWith('>')) return servantRarity > Number(q.slice(1));
+    else if (q.startsWith('<')) return servantRarity < Number(q.slice(1));
+    else return servantRarity === Number(q);
+  }
+
+  // Основная функция локального поиска
+  function performLocalSearch() {
+    const grid = document.getElementById('results-grid');
+    const status = document.getElementById('status-msg');
+    grid.innerHTML = '';
+
+    const qName = document.getElementById('s-name').value.trim().toLowerCase();
+    const qClass = document.getElementById('s-class').value.trim().toLowerCase();
+    const qRarity = document.getElementById('s-rarity').value.trim();
+    const traitsStr = document.getElementById('in-traits').value.trim();
+    const qTraits = traitsStr ? traitsStr.split(',') : [];
+
+    // Мгновенная фильтрация массива в памяти
+    const filtered = allServants.filter(s => {
+      if (qName && !(s.name && s.name.toLowerCase().includes(qName))) return false;
+      if (qClass && !(s.servant_class && s.servant_class.toLowerCase().includes(qClass))) return false;
+      if (qRarity && !matchRarity(s.rarity, qRarity)) return false;
+      
+      // Проверка трейтов (Должны быть ВСЕ указанные трейты)
+      if (qTraits.length > 0) {
+        const sTraits = s.traits || [];
+        const hasAllTraits = qTraits.every(qt => 
+          sTraits.some(st => st.toLowerCase().includes(qt.toLowerCase()))
+        );
+        if (!hasAllTraits) return false;
+      }
+      return true;
+    });
+
+    if (filtered.length === 0) {
+      status.innerText = 'Ничего не найдено';
+      status.style.color = 'var(--danger)';
+      return;
+    }
+
+    status.innerText = `Найдено слуг: ${filtered.length}`;
+    status.style.color = 'var(--text-secondary)';
+
+    // Отрисовка
+    filtered.forEach(servant => {
+      const card = document.createElement('a');
+      card.href = `/servants/${servant.game_id}`;
+      card.target = "_blank";
+      card.className = 'servant-card';
+      
+      card.innerHTML = `
+        <img src="//servant-data.${baseDomain}/sprite/${servant.game_id}/preview.png" class="servant-avatar" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'140\\' height=\\'140\\'><rect width=\\'140\\' height=\\'140\\' fill=\\'%232d2d2d\\'/><text x=\\'50%\\' y=\\'50%\\' fill=\\'%23555\\' font-family=\\'sans-serif\\' font-size=\\'12\\' text-anchor=\\'middle\\' dy=\\'4\\'>No Image</text></svg>'">
+        <div class="servant-info">
+          <div class="servant-id">${servant.game_id}</div>
+          <div class="servant-name" title="${servant.name}">${servant.name}</div>
+          <div class="badges">
+            <span class="badge">${servant.servant_class}</span>
+            <span class="badge rarity">${servant.rarity}★</span>
+          </div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  // Слушатели для живого поиска при вводе
+  ['s-name', 's-class', 's-rarity'].forEach(id => {
+    document.getElementById(id).addEventListener('input', performLocalSearch);
+  });
+
+  // Инициализация выпадающего списка Трейтов
+  const initTraitsSelect = () => {
+    const searchInput = document.getElementById("in-traits-search");
+    const dropdown = document.getElementById("traits-dropdown");
+    const selectedContainer = document.getElementById("selected-traits-tags");
+    const hiddenInput = document.getElementById("in-traits");
+    const dropdownItems = Array.from(document.querySelectorAll(".dropdown-item"));
+
+    let selectedTraits = new Set();
+
+    searchInput.addEventListener("focus", () => { dropdown.style.display = "block"; filterDropdown(); });
+    document.addEventListener("click", (e) => {
+      const container = document.getElementById("traits-select-container");
+      if (container && !container.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.style.display = "none";
+      }
+    });
+
+    searchInput.addEventListener("input", filterDropdown);
+
+    function filterDropdown() {
+      const query = searchInput.value.toLowerCase().trim();
+      dropdownItems.forEach(item => {
+        const val = item.getAttribute("data-value");
+        const matchesQuery = val.toLowerCase().includes(query);
+        const isAlreadySelected = selectedTraits.has(val);
+        item.style.display = (matchesQuery && !isAlreadySelected) ? "block" : "none";
+      });
+    }
+
+    dropdownItems.forEach(item => {
+      item.addEventListener("mousedown", (e) => {
+        e.preventDefault();
+        addTag(item.getAttribute("data-value"));
+      });
+    });
+
+    function addTag(val) {
+      if (selectedTraits.has(val)) return;
+      selectedTraits.add(val);
+
+      const badge = document.createElement("span");
+      badge.className = "selected-tag-badge";
+      badge.innerHTML = `${val} <span class="remove-btn">&times;</span>`;
+
+      badge.querySelector(".remove-btn").addEventListener("click", (e) => {
+        e.stopPropagation();
+        selectedTraits.delete(val);
+        badge.remove();
+        hiddenInput.value = Array.from(selectedTraits).join(",");
+        performLocalSearch(); // Живой поиск при удалении тега
+      });
+
+      selectedContainer.appendChild(badge);
+      searchInput.value = "";
+      hiddenInput.value = Array.from(selectedTraits).join(",");
+      dropdown.style.display = "none";
+      performLocalSearch(); // Живой поиск при добавлении тега
+    }
+  };
+
+  document.addEventListener("DOMContentLoaded", () => { initTraitsSelect(); performLocalSearch(); });
+  document.addEventListener("turbo:load", () => { initTraitsSelect(); performLocalSearch(); });
+</script>

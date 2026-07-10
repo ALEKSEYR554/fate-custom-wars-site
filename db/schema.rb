@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_07_01_200400) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_09_152231) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -37,6 +37,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_01_200400) do
     t.string "agility_rank"
     t.string "alignment"
     t.integer "atlas_id"
+    t.integer "attack_range"
     t.text "class_skills"
     t.datetime "created_at", null: false
     t.integer "damage"
@@ -59,6 +60,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_01_200400) do
     t.integer "rarity"
     t.string "region"
     t.string "servant_class"
+    t.integer "sort_id"
     t.string "strength_rank"
     t.string "traits", default: [], array: true
     t.datetime "updated_at", null: false

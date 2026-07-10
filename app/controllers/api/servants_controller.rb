@@ -27,7 +27,7 @@ module Api
     def get_servant_with_traits
       # Начинаем с выборки всех слуг. Запрос в базу еще НЕ отправляется,
       # Рельсы ждут, пока мы не добавим все фильтры.
-      @servants = Servant.all
+      @servants = Servant.order(:id)
       if params[:name].present?
         @servants = @servants.where("name ILIKE ?", "%#{params[:name]}%")
       end
@@ -47,26 +47,26 @@ module Api
       # 2. Фильтр по РЕДКОСТИ
       if params[:rarity].present?
         rarity_param = params[:rarity].to_s
-        
+
         # Если диапазон (например: 3-5)
-        if rarity_param.include?('-')
-          min, max = rarity_param.split('-').map(&:to_i)
+        if rarity_param.include?("-")
+          min, max = rarity_param.split("-").map(&:to_i)
           @servants = @servants.where(rarity: min..max)
-          
+
         # Если перечисление (например: 3,4,5)
-        elsif rarity_param.include?(',')
-          rarities = rarity_param.split(',').map(&:to_i)
+        elsif rarity_param.include?(",")
+          rarities = rarity_param.split(",").map(&:to_i)
           @servants = @servants.where(rarity: rarities)
-          
+
         # Если знак больше/меньше (например: >2)
         elsif rarity_param.match?(/^[><=]+/)
           operator = rarity_param.match(/^[><=]+/)[0]
           value = rarity_param.match(/\d+/)[0].to_i
           if %w[> < >= <= == =].include?(operator)
-            operator = '=' if operator == '=='
+            operator = "=" if operator == "=="
             @servants = @servants.where("rarity #{operator} ?", value)
           end
-          
+
         # Если просто цифра (например: 5)
         else
           @servants = @servants.where(rarity: rarity_param.to_i)

@@ -1,0 +1,114 @@
+<style>
+  body { background: #121212; color: #fff; font-family: sans-serif; padding: 20px; }
+  .form-group { margin-bottom: 15px; }
+  label { display: block; margin-bottom: 5px; color: #90caf9; }
+  input[type="text"], input[type="number"] { width: 100%; padding: 8px; background: #2d2d2d; color: #fff; border: 1px solid #444; border-radius: 4px; }
+  
+  /* Делаем текстовые поля моноширинными для удобного редактирования навыков и шорткодов */
+  textarea { width: 100%; height: 150px; padding: 8px; background: #2d2d2d; color: #fff; border: 1px solid #444; border-radius: 4px; font-family: monospace; font-size: 14px; line-height: 1.4; white-space: pre-wrap; }
+  
+  .btn-submit { background: #90caf9; color: #000; padding: 10px 20px; border: none; font-size: 1.1em; cursor: pointer; border-radius: 4px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+</style>
+
+<h1>Редактирование: <%= @servant.game_id %> - <%= @servant.name %></h1>
+<a href="<%= admin_servants_path %>" style="color: #ccc;">← Назад к списку</a>
+<br><br>
+
+<%= form_with model: @servant, url: admin_servant_path(@servant.game_id), method: :patch, local: true do |f| %>
+  
+  <div class="grid-2">
+    <div class="form-group">
+      <label>Имя</label>
+      <%= f.text_field :name %>
+    </div>
+    <div class="form-group">
+      <label>Класс</label>
+      <%= f.text_field :servant_class %>
+    </div>
+    <div class="form-group">
+      <label>Редкость</label>
+      <%= f.number_field :rarity %>
+    </div>
+    <div class="form-group">
+      <label>Трейты (через запятую)</label>
+      <!-- Превращаем массив обратно в строку для формы -->
+      <%= f.text_field :traits_string, value: @servant.traits&.join(', ') %>
+    </div>
+  </div>
+
+  <hr style="border-color: #333; margin: 20px 0;">
+
+  <div class="grid-2">
+    <div class="form-group">
+      <label>Очки Жизни (HP)</label>
+      <%= f.number_field :hp %>
+    </div>
+    <div class="form-group">
+      <label>Урон (Damage)</label>
+      <%= f.number_field :damage %>
+    </div>
+    <div class="form-group">
+      <label>Радиус атаки</label>
+      <%= f.number_field :attack_range %>
+    </div>
+  </div>
+
+  <hr style="border-color: #333; margin: 20px 0;">
+
+  <div class="form-group">
+    <label>Классовые Навыки</label>
+    <%= f.text_area :class_skills %>
+  </div>
+
+  <div class="form-group">
+    <label>Личные Навыки</label>
+    <%= f.text_area :personal_skills %>
+  </div>
+
+  <div class="form-group">
+    <label>Небесный Фантазм</label>
+    <%= f.text_area :noble_phantasm %>
+  </div>
+
+  <div class="form-group">
+    <label>Структура страницы (Шорткоды: [preview_image], [галерея...])</label>
+    <%= f.text_area :page_layout, value: @servant.layout_to_use, style: "height: 250px; border-color: #cf6679;" %>
+  </div>
+
+  <%= f.submit "💾 Сохранить изменения", class: "btn-submit" %>
+<% end %>
+
+  <!-- ВЫВОД ОШИБОК ИЛИ УСПЕХОВ ЗАГРУЗКИ ФАЙЛА -->
+<% if flash[:notice] %>
+  <div style="background: #03dac6; color: #000; padding: 10px; margin-bottom: 20px;"><%= flash[:notice] %></div>
+<% elsif flash[:alert] %>
+  <div style="background: #cf6679; color: #000; padding: 10px; margin-bottom: 20px;"><%= flash[:alert] %></div>
+<% end %>
+
+<!-- МЕНЕДЖЕР СПРАЙТОВ -->
+<div style="background: #1e1e1e; border: 1px solid #444; border-radius: 8px; padding: 20px; margin-bottom: 30px;">
+  <h2 style="margin-top: 0; color: #90caf9;">Менеджер спрайтов</h2>
+  
+  <!-- Форма загрузки -->
+  <%= form_with url: upload_sprite_admin_servant_path(@servant.game_id), multipart: true, local: true, style: "display: flex; gap: 10px; align-items: center; margin-bottom: 20px;" do |f| %>
+    <input type="text" name="sprite_name" placeholder="Имя (напр. sprite1)" required style="padding: 8px; background: #2d2d2d; color: #fff; border: 1px solid #444; border-radius: 4px;">
+    <!-- Разрешаем выбирать только PNG -->
+    <input type="file" name="sprite_file" accept="image/png" required style="color: #fff;">
+    <button type="submit" style="background: #90caf9; color: #000; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: bold;">Upload</button>
+  <% end %>
+
+  <!-- Галерея текущих спрайтов -->
+  <% if @sprites.any? %>
+    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+      <% @sprites.each do |sprite| %>
+        <div style="background: #2d2d2d; padding: 10px; border-radius: 4px; text-align: center; border: 1px solid #444;">
+          <img src="//servant-data.<%= Rails.configuration.x.base_domain %>/sprite/<%= @servant.game_id %>/<%= sprite %>" style="height: 120px; width: 120px; object-fit: contain; background: #000; display: block; margin-bottom: 8px;">
+          <span style="font-family: monospace; font-size: 0.9em; color: #ccc;"><%= sprite %></span>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p style="color: #888;">В папке пока нет ни одного спрайта.</p>
+  <% end %>
+</div>

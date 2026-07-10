@@ -1,9 +1,9 @@
 class RandomizerController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: [ :create_draft, :update_draft ]
+  skip_before_action :verify_authenticity_token, only: [ :create_draft, :update_draft, :extend_draft ]
 
   def index
     last_updated = Servant.maximum(:updated_at).to_i
-    @unique_traits = Rails.cache.fetch("unique_traits_#{last_updated}", expires_in: 24.hours) do
+    @unique_traits = Rails.cache.fetch("unique_traits_#{last_updated}") do
       Servant.pluck(Arel.sql("distinct unnest(traits)")).compact.reject(&:empty?).sort
     end
   end
@@ -22,6 +22,16 @@ class RandomizerController < ApplicationController
       render json: { ok: true }
     else
       render json: { error: "Сессия не найдена или истекла" }, status: :not_found
+    end
+  end
+
+  def extend_draft
+    session = DraftSession.find_by(slug: params[:slug])
+    if session
+      session.update!(expires_at: session.expires_at + 1.hour)
+      render json: { ok: true }
+    else
+      render json: { error: "Сессия не найдена" }, status: :not_found
     end
   end
 

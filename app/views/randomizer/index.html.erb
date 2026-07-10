@@ -394,7 +394,11 @@
     <button class="generate-btn" onclick="generateTeams()">Сгенерировать</button>
     <div id="link-box" style="display: none; text-align: center; margin-bottom: 20px; padding: 15px; background: rgba(144, 202, 249, 0.1); border: 1px dashed var(--atlas-blue); border-radius: 4px;">
   <strong style="color: var(--atlas-blue);">🔗 Ссылка для игроков (живет 1 час):</strong><br>
-  <a id="share-link" href="#" target="_blank" style="color: #fff; font-size: 1.2rem; text-decoration: none;"></a>
+  <a id="share-link" href="#" target="_blank" style="color: #fff; font-size: 1.2rem; text-decoration: none; display: block; margin: 10px 0;"></a>
+  <button id="extend-link-btn" style="background: transparent; color: var(--atlas-blue); border: 1px solid var(--atlas-blue); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 0.8rem; transition: 0.2s;">
+    +1 час жизни ссылке
+  </button>
+</div>
 </div>
   </div>
 </div>
@@ -710,7 +714,7 @@
     return card;
   }
   // === ИНТЕРФЕЙС АВТОДОПОЛНЕНИЯ ТРЕЙТОВ ===
-  document.addEventListener("DOMContentLoaded", () => {
+  const initTraitsSelect = () => {
     const searchInput = document.getElementById("in-traits-search");
     const dropdown = document.getElementById("traits-dropdown");
     const selectedContainer = document.getElementById("selected-traits-tags");
@@ -733,6 +737,33 @@
       }
     });
 
+    document.getElementById('extend-link-btn').onclick = async function() {
+      if (!draftSlug) return;
+      
+      const originalText = this.innerText;
+      this.innerText = "Продление...";
+      
+      try {
+        const res = await fetch(`/drafts/${draftSlug}/extend`, { method: 'POST' });
+        const json = await res.json();
+        
+        if (json.ok) {
+          this.innerText = "✅ Продлено на 1 час";
+          this.style.color = "#03dac6";
+          this.style.borderColor = "#03dac6";
+        } else {
+          alert("Ошибка: " + json.error);
+        }
+      } catch (e) {
+        alert("Ошибка сети");
+      }
+      
+      setTimeout(() => {
+        this.innerText = originalText;
+        this.style.color = "var(--atlas-blue)";
+        this.style.borderColor = "var(--atlas-blue)";
+      }, 3000);
+    };
     // Фильтрация вариантов по мере ввода текста
     searchInput.addEventListener("input", () => {
       filterDropdown();
@@ -753,6 +784,7 @@
         }
       });
     }
+
 
     // Клик по элементу выпадающего списка
     // Используем mousedown вместо click, чтобы выбор сработал до того, как инпут потеряет фокус
@@ -841,5 +873,8 @@
       // Небольшая задержка, чтобы UI успел обновиться
       setTimeout(generateTeams, 100);
     }
-  });
+  };
+  
+  document.addEventListener("DOMContentLoaded", initTraitsSelect);
+  document.addEventListener("turbo:load", initTraitsSelect);
 </script>
