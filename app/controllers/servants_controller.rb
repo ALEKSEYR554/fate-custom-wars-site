@@ -14,7 +14,7 @@ class ServantsController < ApplicationController
         Servant.pluck(Arel.sql("distinct unnest(traits)")).compact.reject(&:empty?).sort
       end
       # Грузим в память нужные поля всех слуг сразу
-      @all_servants = Servant.order(:id).select(:game_id, :name, :servant_class, :rarity, :traits)
+      @all_servants = Servant.order(:sort_id, :id).select(:game_id, :name, :servant_class, :rarity, :traits)
     else
       @unique_traits = []
       @all_servants = []

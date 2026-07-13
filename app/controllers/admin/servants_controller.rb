@@ -1,7 +1,7 @@
 module Admin
   class ServantsController < BaseController
     def index
-      @servants = Servant.order(:game_id)
+      @servants = Servant.order(:sort_id, :id)
     end
 
     def edit
@@ -66,7 +66,7 @@ module Admin
     def servant_params
       # Перечисляем все поля, которые разрешено менять через форму
       params.require(:servant).permit(
-        :name, :servant_class, :rarity, :region, :alignment, :attack_range,
+        :name, :servant_class, :rarity, :region, :alignment, :attack_range, :sort_id,
         :hp, :damage, :endurance_rank, :strength_rank, :agility_rank, :agility_modifier,
         :magic_rank, :luck_rank, :np_rank,
         :class_skills, :personal_skills, :noble_phantasm, :page_layout

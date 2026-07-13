@@ -27,7 +27,7 @@ module Api
     def get_servant_with_traits
       # Начинаем с выборки всех слуг. Запрос в базу еще НЕ отправляется,
       # Рельсы ждут, пока мы не добавим все фильтры.
-      @servants = Servant.order(:id)
+      @servants = Servant.order(:sort_id, :id)
       if params[:name].present?
         @servants = @servants.where("name ILIKE ?", "%#{params[:name]}%")
       end
