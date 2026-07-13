@@ -377,13 +377,22 @@
               <div style="font-size: 0.8rem; color: var(--atlas-blue); margin-bottom: 8px;">🎴 Карты:</div>
               <div style="display: flex; gap: 10px; flex-wrap: wrap;">
                 <% player['craft_essences'].each do |ce| %>
-                  <div style="display: flex; align-items: center; background: var(--bg-base); border: 1px solid var(--border-color); border-radius: 4px; padding: 8px; gap: 12px; width: 100%; max-width: 320px;">
-                    <img src="//servant-data.<%= Rails.configuration.x.base_domain %>/ce/<%= ce['game_id'] %>.png" style="width: 60px; height: 60px; object-fit: cover; border-radius: 4px;" onerror="this.src='https://placehold.co/60x60/2d2d2d/555555?text=CE'">
-                    <div style="flex-grow: 1; overflow: hidden;">
-                      <div style="font-size: 0.8rem; color: var(--text-secondary); font-family: monospace;"><%= ce['game_id'] %></div>
-                      <div style="font-size: 0.95rem; font-weight: 500; color: var(--text-primary); white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" title="<%= ce['effect'] %>"><%= ce['name'] %></div>
+                  <% is_personal = ce['is_personal'] == true || ce['is_personal'] == "true" %>
+                  
+                  <div style="display: flex; align-items: center; background: <%= is_personal ? 'rgba(255, 215, 0, 0.08)' : 'var(--bg-base)' %>; border: 1px solid <%= is_personal ? '#ffd700' : 'var(--border-color)' %>; border-radius: 4px; padding: 8px; gap: 12px; width: 100%; max-width: 320px; cursor: pointer;" 
+                    title="Нажмите, чтобы скопировать эффект:\n<%= j(ce['effect']) %>"
+                    onclick="copyCE(`<%= j(ce['effect']) %>`, `<%= j(ce['name']) %>`)">
+                  <img src="//servant-data.<%= Rails.configuration.x.base_domain %>/ce/<%= ce['game_id'] %>.png" style="width: 60px; height: 60px; object-fit: cover; border-radius: 4px;" onerror="this.src='https://placehold.co/60x60/2d2d2d/555555?text=CE'">
+                  <div style="flex-grow: 1; overflow: hidden;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                      <span style="font-size: 0.8rem; color: var(--text-secondary); font-family: monospace;"><%= ce['game_id'] %></span>
+                      <% if is_personal %>
+                        <span style="font-size: 0.65rem; padding: 1px 4px; background: rgba(255,215,0,0.2); border: 1px solid #ffd700; color: #ffd700; border-radius: 2px; font-weight: bold;">★ ИМЕННАЯ</span>
+                      <% end %>
                     </div>
+                    <div style="font-size: 0.95rem; font-weight: 500; color: var(--text-primary); white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" title="<%= h(ce['effect']) %>"><%= ce['name'] %></div>
                   </div>
+                </div>
                 <% end %>
               </div>
             </div>
@@ -422,11 +431,20 @@
               <div style="font-size: 0.8rem; color: var(--atlas-blue); margin-bottom: 8px;">🎴 Карты:</div>
               <div style="display: flex; gap: 10px; flex-wrap: wrap;">
                 <% player['craft_essences'].each do |ce| %>
-                  <div style="display: flex; align-items: center; background: var(--bg-base); border: 1px solid var(--border-color); border-radius: 4px; padding: 8px; gap: 12px; width: 100%; max-width: 320px;">
+                  <% is_personal = ce['is_personal'] == true || ce['is_personal'] == "true" %>
+                  
+                  <div style="display: flex; align-items: center; background: <%= is_personal ? 'rgba(255, 215, 0, 0.08)' : 'var(--bg-base)' %>; border: 1px solid <%= is_personal ? '#ffd700' : 'var(--border-color)' %>; border-radius: 4px; padding: 8px; gap: 12px; width: 100%; max-width: 320px; cursor: pointer;" 
+                      title="Нажмите, чтобы скопировать эффект:\n<%= j(ce['effect']) %>"
+                      onclick="navigator.clipboard.writeText(`<%= j(ce['effect']) %>`).then(() => alert('Эффект скопирован!'))">
                     <img src="//servant-data.<%= Rails.configuration.x.base_domain %>/ce/<%= ce['game_id'] %>.png" style="width: 60px; height: 60px; object-fit: cover; border-radius: 4px;" onerror="this.src='https://placehold.co/60x60/2d2d2d/555555?text=CE'">
                     <div style="flex-grow: 1; overflow: hidden;">
-                      <div style="font-size: 0.8rem; color: var(--text-secondary); font-family: monospace;"><%= ce['game_id'] %></div>
-                      <div style="font-size: 0.95rem; font-weight: 500; color: var(--text-primary); white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" title="<%= ce['effect'] %>"><%= ce['name'] %></div>
+                      <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 0.8rem; color: var(--text-secondary); font-family: monospace;"><%= ce['game_id'] %></span>
+                        <% if is_personal %>
+                          <span style="font-size: 0.65rem; padding: 1px 4px; background: rgba(255,215,0,0.2); border: 1px solid #ffd700; color: #ffd700; border-radius: 2px; font-weight: bold;">★ ИМЕННАЯ</span>
+                        <% end %>
+                      </div>
+                      <div style="font-size: 0.95rem; font-weight: 500; color: var(--text-primary); white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" title="<%= h(ce['effect']) %>"><%= ce['name'] %></div>
                     </div>
                   </div>
                 <% end %>
@@ -465,4 +483,28 @@
     updateTime();
     setInterval(updateTime, 60000); // Обновляем счетчик каждую минуту
   });
+
+  // Хелпер копирования для зрителей (с поддержкой HTTP)
+  function copyCE(effect, name) {
+    const successAction = () => alert(`Эффект карты "${name}" скопирован!`);
+    
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(effect).then(successAction);
+    } else {
+      const textArea = document.createElement("textarea");
+      textArea.value = effect;
+      textArea.style.position = "fixed";
+      textArea.style.left = "-9999px";
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      try {
+        document.execCommand('copy');
+        successAction();
+      } catch (err) {
+        alert("Ошибка копирования");
+      }
+      textArea.remove();
+    }
+  }
 </script>

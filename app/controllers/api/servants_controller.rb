@@ -98,8 +98,8 @@ module Api
       else
         if params[:short] == "true"
           # База данных не читает тяжелые тексты (select). Рельсы сразу делают JSON.
-          formated_servants = @servants.select(:game_id, :name, :servant_class, :rarity)
-                                        .as_json(only: [ :game_id, :name, :servant_class, :rarity ])
+          formated_servants = @servants.select(:game_id, :name, :servant_class, :rarity, :craft_essences)
+                                        .as_json(only: [ :game_id, :name, :servant_class, :rarity, :craft_essences ])
         else
           formated_servants = @servants.map do |servant|
             attrs = servant.attributes.except("id", "created_at", "updated_at")

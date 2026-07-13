@@ -480,6 +480,7 @@
     }
   }
   async function generateTeams() {
+    seenServantIds.clear();
     const statusBox = document.getElementById('status-box');
     const container = document.getElementById('teams-container');
     const linkBox = document.getElementById('link-box');
@@ -699,30 +700,40 @@
       ceGrid.style.gap = '10px';
       ceGrid.style.flexWrap = 'wrap';
 
-      // 1. Ищем уникальные карты у выпавших слуг
-      let requiredCEs = [];
+      // 1. Ищем именные карты у выпавших слуг
+      let personalCEs = [];
       playerObj.servants.forEach(s => {
         if (s.craft_essences && s.craft_essences.length > 0) {
-          requiredCEs.push(...s.craft_essences);
+          s.craft_essences.forEach(ceId => {
+            const ceData = allCEs.find(c => c.game_id === ceId);
+            // Проверяем, что мы еще не добавили эту карту
+            if (ceData && !personalCEs.includes(ceData)) {
+              personalCEs.push(ceData);
+            }
+          });
         }
       });
 
-      // 2. Выдаем карты слуг
-      requiredCEs.forEach(ceId => {
-        const ceData = allCEs.find(c => c.game_id === ceId);
-        if (ceData && playerObj.craft_essences.length < cePerPlayer) {
-          playerObj.craft_essences.push(ceData);
-          ceGrid.appendChild(createCECard(ceData));
-        }
-      });
+      // 2. Тянем карты из виртуального пула (Остаток обычных + Именные)
+      for (let i = 0; i < cePerPlayer; i++) {
+        let regularLeft = availableCEPool.length - currentCEPoolIndex;
+        let totalPoolSize = personalCEs.length + regularLeft;
+        
+        if (totalPoolSize <= 0) break;
 
-      // 3. Добиваем остаток из общего пула
-      while (playerObj.craft_essences.length < cePerPlayer && currentCEPoolIndex < availableCEPool.length) {
-        const randomCE = availableCEPool[currentCEPoolIndex++];
-        // Защита от дубликатов (если эта карта уже выдана как именная)
-        if (!playerObj.craft_essences.some(c => c.game_id === randomCE.game_id)) {
-          playerObj.craft_essences.push(randomCE);
-          ceGrid.appendChild(createCECard(randomCE));
+        // Бросаем кубик от 0 до totalPoolSize - 1
+        let roll = Math.floor(Math.random() * totalPoolSize);
+        
+        if (roll < personalCEs.length) {
+          // Кубик попал в зону именных карт!
+          const pickedCE = personalCEs.splice(roll, 1)[0]; // Вытаскиваем её, чтобы не дублировалась
+          playerObj.craft_essences.push(pickedCE);
+          ceGrid.appendChild(createCECard(pickedCE));
+        } else {
+          // Кубик попал в зону обычных карт
+          const pickedCE = availableCEPool[currentCEPoolIndex++];
+          playerObj.craft_essences.push(pickedCE);
+          ceGrid.appendChild(createCECard(pickedCE));
         }
       }
 
@@ -735,23 +746,61 @@
 
   function createCECard(ce) {
     const card = document.createElement('div');
+    const isPersonal = ce.is_personal === true || ce.is_personal === "true";
+
     card.style.display = 'flex';
     card.style.alignItems = 'center';
-    card.style.background = 'var(--bg-base)';
-    card.style.border = '1px solid var(--border-color)';
+    card.style.background = isPersonal ? 'rgba(255, 215, 0, 0.08)' : 'var(--bg-base)';
+    card.style.border = isPersonal ? '1px solid #ffd700' : '1px solid var(--border-color)';
     card.style.borderRadius = '4px';
     card.style.padding = '8px';
     card.style.gap = '12px';
     card.style.width = '100%';
-    card.style.maxWidth = '320px'; // Было 300px
+    card.style.maxWidth = '320px';
+    card.style.cursor = 'pointer'; // Указываем, что карточка кликабельна
+    card.title = "Нажмите, чтобы скопировать эффект:\n" + ce.effect; // Подсказка на всю карту
+
+    // Клик по всей карте копирует эффект в буфер
+    // Клик по всей карте копирует эффект с поддержкой HTTP
+    card.onclick = () => {
+      const successAction = () => alert(`Эффект карты "${ce.name}" скопирован!`);
+      
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(ce.effect)
+          .then(successAction)
+          .catch(err => console.error(err));
+      } else {
+        const textArea = document.createElement("textarea");
+        textArea.value = ce.effect;
+        textArea.style.position = "fixed";
+        textArea.style.left = "-9999px";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        try {
+          document.execCommand('copy');
+          successAction();
+        } catch (err) {
+          console.error(err);
+        }
+        textArea.remove();
+      }
+    };
 
     const ceImageUrl = `//servant-data.${baseDomain}/ce/${ce.game_id}.png`;
 
+    // Безопасное экранирование кавычек через replace для HTML-атрибутов
+    const safeEffect = (ce.effect || "").replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    const safeName = (ce.name || "").replace(/"/g, '&quot;');
+
     card.innerHTML = `
       <img src="${ceImageUrl}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 4px;" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'60\\' height=\\'60\\'><rect width=\\'60\\' height=\\'60\\' fill=\\'%232d2d2d\\'/><text x=\\'50%\\' y=\\'50%\\' fill=\\'%23555\\' font-family=\\'sans-serif\\' font-size=\\'14\\' text-anchor=\\'middle\\' dy=\\'4\\'>CE</text></svg>'">
-      <div style="flex-grow: 1; overflow: hidden;">
-        <div style="font-size: 0.8rem; color: var(--text-secondary); font-family: monospace;">${ce.game_id}</div>
-        <div style="font-size: 0.95rem; font-weight: 500; color: var(--text-primary); white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" title="${ce.effect}">${ce.name}</div>
+      <div style="flex-grow: 1; overflow: hidden;" title="${safeEffect}">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.8rem; color: var(--text-secondary); font-family: monospace;">${ce.game_id}</span>
+          ${isPersonal ? '<span style="font-size: 0.65rem; padding: 1px 4px; background: rgba(255,215,0,0.2); border: 1px solid #ffd700; color: #ffd700; border-radius: 2px; font-weight: bold;">★ ИМЕННАЯ</span>' : ''}
+        </div>
+        <div style="font-size: 0.95rem; font-weight: 500; color: var(--text-primary); white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">${safeName}</div>
       </div>
     `;
     return card;
@@ -796,8 +845,10 @@
   }
   // === ИНТЕРФЕЙС АВТОДОПОЛНЕНИЯ ТРЕЙТОВ ===
   const initTraitsSelect = () => {
-    const searchInput = document.getElementById("in-traits-search");
     const dropdown = document.getElementById("traits-dropdown");
+    if (!dropdown || dropdown.dataset.initialized) return;
+    dropdown.dataset.initialized = "true";
+    const searchInput = document.getElementById("in-traits-search");
     const selectedContainer = document.getElementById("selected-traits-tags");
     const hiddenInput = document.getElementById("in-traits");
     const dropdownItems = Array.from(document.querySelectorAll(".dropdown-item"));
