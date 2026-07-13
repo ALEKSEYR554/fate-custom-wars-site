@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_07_09_152231) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_13_181825) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "craft_essences", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.text "effect"
+    t.string "game_id"
+    t.boolean "is_personal", default: false
+    t.string "name"
+    t.datetime "updated_at", null: false
+  end
 
   create_table "draft_sessions", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -39,6 +48,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_09_152231) do
     t.integer "atlas_id"
     t.integer "attack_range"
     t.text "class_skills"
+    t.string "craft_essences", default: [], array: true
     t.datetime "created_at", null: false
     t.integer "damage"
     t.string "en_name"

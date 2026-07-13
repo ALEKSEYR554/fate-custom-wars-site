@@ -3,6 +3,7 @@ class RandomizerController < ApplicationController
 
   def index
     last_updated = Servant.maximum(:updated_at).to_i
+    @all_ces = CraftEssence.order(:id).select(:game_id, :name, :effect, :is_personal)
     @unique_traits = Rails.cache.fetch("unique_traits_#{last_updated}") do
       Servant.pluck(Arel.sql("distinct unnest(traits)")).compact.reject(&:empty?).sort
     end

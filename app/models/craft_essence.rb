@@ -1,0 +1,2 @@
+class CraftEssence < ApplicationRecord
+end

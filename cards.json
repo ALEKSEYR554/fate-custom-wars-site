@@ -1,0 +1,6006 @@
+{
+  "guild": {
+    "id": "1097111283993694210",
+    "name": "Fate of John/Brown Country",
+    "iconUrl": "ce\\1f32854190211f7803544a76ccbd0d25-1839017663fc9518.png"
+  },
+  "channel": {
+    "id": "1138799909726867486",
+    "type": "GuildTextChat",
+    "categoryId": "1276618043933458494",
+    "category": "всякая фигня для игр",
+    "name": "карты-с-эффектами",
+    "topic": null
+  },
+  "dateRange": {
+    "after": null,
+    "before": null
+  },
+  "exportedAt": "2026-07-13T20:31:35.5576058+04:00",
+  "messages": [
+    {
+      "id": "1138801127941488784",
+      "type": "Default",
+      "timestamp": "2023-08-09T15:49:06.803+04:00",
+      "timestampEdited": "2023-08-09T16:20:58.193+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-001\nНазвание: Аргонавты\nЭффект: Увеличивает себе и союзникам силу на 2 очка.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138801127115202600",
+          "url": "ce\\latest-5ee0422c2cf28cc9.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 938078
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138801682898243674",
+      "type": "Default",
+      "timestamp": "2023-08-09T15:51:19.115+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-002\nНазвание: Мушкетёры\nЭффект: Увеличивает себе и союзникам силу на 1 очко. Если вы играете на Кухулине или кто-то из ваших союзников играет на нём, то сила поднимается не на 1 очко, а на 2.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138801682659147806",
+          "url": "ce\\latest-c248543d08da1c24.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 775696
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138808900657885305",
+      "type": "Default",
+      "timestamp": "2023-08-09T16:19:59.963+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-003\nНазвание: Четыре Листа\nЭффект: Если вы играете за Кастера, то сила союзников увеличивается на 1, а также вы и ваши союзники получают иммунитет к следующим Дебаффам: Сон, Очарование, Блокировка Навыков и любое накладывание трэйтов",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138808900410413076",
+          "url": "ce\\latest-96f84f5f871ebbe2.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 950203
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138809410534252636",
+      "type": "Default",
+      "timestamp": "2023-08-09T16:22:01.527+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-004\nНазвание: После Пробуждения\nЭффект: Увеличивает вашу Силу на 3 очка, а также увеличивает Защиту. (Наносимый урон по вам уменьшается на 1)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138809410265821318",
+          "url": "ce\\latest-63848113267e1d4e.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 646347
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138810153420996628",
+      "type": "Default",
+      "timestamp": "2023-08-09T16:24:58.645+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-005\nНазвание: Fate GUDAGUDA Order\nЭффект: Увеличивает шанс критических атак (2 на втором кубике считается критической атакой)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138810153144156231",
+          "url": "ce\\latest-cac5fa73c5ecc91f.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 733286
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138811338387365899",
+      "type": "Default",
+      "timestamp": "2023-08-09T16:29:41.163+04:00",
+      "timestampEdited": "2024-03-16T19:16:55.494+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-006\nНазвание: Свиток Собственного Гиса\nЭффект: Даёт Иммунитет к дебаффам  Паралича и Обращения в Свинью.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138811338110545930",
+          "url": "ce\\latest-40a75d4e036a143e.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 830249
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138812643298263040",
+      "type": "Default",
+      "timestamp": "2023-08-09T16:34:52.278+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-010\nНазвание: 500-летняя Самоотверженность\nЭффект: Если вас кто-то убивает, то противник убивший вас получает следующие дебаффы:\n* Невозможность активировать Фантазм на протяжении двух ходов.\n* Накладывается дебафф Проклятья на 10 ходов который в конце каждого хода наносит 3 урона.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138812642950127716",
+          "url": "ce\\latest-de22ea394e967c3c.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 870388
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138813953342971954",
+      "type": "Default",
+      "timestamp": "2023-08-09T16:40:04.617+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-011\nНазвание: Пуля Истока\nЭффект: Если вы атакуете противника с Неуязвимостью, то вы игнорируете этот бафф. (Нельзя пробить Авалон) + Наносимый урон по Кастерам увеличивается на 2 очка.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138813953087111219",
+          "url": "ce\\latest-c3a2a303bcd8f3a9.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 687372
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138814729788325948",
+      "type": "Default",
+      "timestamp": "2023-08-09T16:43:09.736+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-012\nНазвание: Выпуск Первой Стрелы\nЭффект: Даёт игнорирование Уклонений, а также увеличивает силу на 1 очко.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138814729503125535",
+          "url": "ce\\latest-eeb0715596f4870e.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 688624
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138815400080048300",
+      "type": "Default",
+      "timestamp": "2023-08-09T16:45:49.546+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-013\nНазвание: День Святого Валентина в Додзё Слёз\nЭффект: Ваша Шкала Фантазма раз в 3 хода заполняется на 1 очко, но вы больше не сможете блокировать дебафф Очарования.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138815399799033887",
+          "url": "ce\\latest-2d0fa4fe24985202.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 773088
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138817067496259696",
+      "type": "Default",
+      "timestamp": "2023-08-09T16:52:27.089+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-014\nНазвание: Холодная Война\nЭффект: Если вы атакуете противника с Неуязвимостью, то вы игнорируете этот дебафф + Ваша сила увеличивается на 1 очко.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138817067190063224",
+          "url": "ce\\latest-d0a2f8070659762f.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 883374
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138818336466149446",
+      "type": "Default",
+      "timestamp": "2023-08-09T16:57:29.635+04:00",
+      "timestampEdited": "2023-08-09T17:01:55.883+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-015\nНазвание: Улица Вечного Сна\nЭффект: Даёт одно гарантированное уклонение (Можно потратить не сразу), а также увеличивает шанс критических атак (3 на втором кубике считается критической атакой)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138818336139005982",
+          "url": "ce\\latest-681759e20610e02c.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 961414
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138819122025730079",
+      "type": "Default",
+      "timestamp": "2023-08-09T17:00:36.927+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-016\nНазвание: Зрелый Джентльмен\nЭффект: Вы получаете иммунитет к эффекту Мгновенной Смерти.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138819121904103544",
+          "url": "ce\\latest-fb4a82d807d35c2a.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 749110
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138819989500088442",
+      "type": "Default",
+      "timestamp": "2023-08-09T17:04:03.749+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-017\nНазвание: Сидя под Солнечным Светом\nЭффект: Даёт три гарантированных уклонения, а также увеличивает защиту (Проходимый по вам урон уменьшается на 1 очко)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138819989504262144",
+          "url": "ce\\latest-607b0c9a072cf2ec.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 811411
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138820548701470851",
+      "type": "Default",
+      "timestamp": "2023-08-09T17:06:17.073+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-018\nНазвание: Дитя Атласа\nЭффект: Если вы атакуете защищающегося противника, то вы пробиваете его защиту + Наносимый урон по Берсеркерам увеличивается на 2 очка.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138820548365914192",
+          "url": "ce\\latest-8c17e30c8302be6c.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 1119107
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138821899305107506",
+      "type": "Default",
+      "timestamp": "2023-08-09T17:11:39.082+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-019\nНазвание: Следы Снов\nЭффект: Если на вас накладывают дебафф, бросьте кубик вместе с игроком который накладывает дебафф:\n* Если ваш выпавший результат выше чем результат игрока, что накладывал дебафф, то отмените наложение дебаффа на вас.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138821898868891689",
+          "url": "ce\\latest-567cf9781e85e7a2.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 888720
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138822754175570053",
+      "type": "Default",
+      "timestamp": "2023-08-09T17:15:02.899+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-020\nНазвание: Разлом Долины\nЭффект: Если вы играете на \"Хассане\", то на вас нельзя наложить следующие дебаффы: Очарование, Сон, Паралич и Замешательство.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138822753923899544",
+          "url": "ce\\latest-241d9bd86d5c074d.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 928721
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138823045994258473",
+      "type": "Default",
+      "timestamp": "2023-08-09T17:16:12.474+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-021\nНазвание: Бегун\nЭффект: Вы можете передвигаться по полю на одну клетку больше.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138823045792936006",
+          "url": "ce\\latest-60a01fc82d753fdc.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 835948
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138823447489818665",
+      "type": "Default",
+      "timestamp": "2023-08-09T17:17:48.198+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-022\nНазвание: Звезда Артурии\nЭффект: Воскрешает вас с 1 ОЗ, после чего даёт вам иммунитет ко всем дебаффам на три хода.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138823447238148178",
+          "url": "ce\\latest-07e179a9509e23a4.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 666992
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138824102090649660",
+      "type": "Default",
+      "timestamp": "2023-08-09T17:20:24.267+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-023\nНазвание: Освещая Завесу Тьмы\nЭффект: Каждую ночь до восхода солнца вы получаете одно гарантированное уклонение (Можно потратить не сразу). Как только наступит утро, неиспользованное гарантированное уклонение будет убрано.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138824101780275270",
+          "url": "ce\\latest-0843cca11813fb43.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 685695
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138824759740743790",
+      "type": "Default",
+      "timestamp": "2023-08-09T17:23:01.063+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-023\nНазвание: Вольмен Гидраргирум\nЭффект: Даёт Неуязвимость на три атаки, а также увеличивает силу на 1 очко.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138824759430348960",
+          "url": "ce\\latest-da85e33cf550d58d.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 510901
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138825684282777630",
+      "type": "Default",
+      "timestamp": "2023-08-09T17:26:41.491+04:00",
+      "timestampEdited": "2024-11-18T22:57:52.359+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-024\nНазвание: Активация Кода\nЭффект: Увеличивает силу на 5 очков на три хода и защиту вдвое также на три хода.\n(Активируется не сразу)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138825683993378836",
+          "url": "ce\\latest-ae8cc1d0646b5d9b.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 778118
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138826248223727686",
+      "type": "Default",
+      "timestamp": "2023-08-09T17:28:55.945+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-025\nНазвание: Миролюбие\nЭффект: Восполняет ваше здоровье в конце каждого хода на 1 очко, но понижает защиту (Получаемый вами урон увеличивается на 1 очко)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138826247984656394",
+          "url": "ce\\latest-b96097beb2a4940e.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 671203
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138827225316204616",
+      "type": "Default",
+      "timestamp": "2023-08-09T17:32:48.902+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-026\nНазвание: Мистические Глаза Искажения\nЭффект: Увеличивает вашу Силу на 4 очка, но понижает защиту вдвое. Если вы обладаете навыком Мистических Глаз, то Сила увеличивается на 3 очка и защита не понижается.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138827225035190302",
+          "url": "ce\\latest-6ac4b36390cf2210.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 628144
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138828814613495971",
+      "type": "Default",
+      "timestamp": "2023-08-09T17:39:07.82+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-027\nНазвание: Костюм Героической Души: Медуза\nЭффект: Если вы играете за любую вариацию Медузы, то защита увеличивается. (Получаемый вами урон уменьшается на 2 очка)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138828814500233346",
+          "url": "ce\\latest-1fcb0b2c73fd12f5.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 750700
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138829028170682418",
+      "type": "Default",
+      "timestamp": "2023-08-09T17:39:58.736+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-028\nНазвание: Костюм Героической Души: Леонардо Да Винчи\nЭффект: Если вы играете за любую вариацию Леонардо да Винчи, то защита увеличивается. (Получаемый вами урон уменьшается на 2 очка)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138829027948380303",
+          "url": "ce\\latest-5a63650672cc521a.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 799354
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138829354504310906",
+      "type": "Default",
+      "timestamp": "2023-08-09T17:41:16.54+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-029\nНазвание: Костюм Героической Души: Жанна д'Арк\nЭффект: Если вы играете за любую вариацию Жанны, то защита увеличивается. (Получаемый вами урон уменьшается на 2 очка)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138829354261037156",
+          "url": "ce\\latest-85c73cb52fe661d6.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 739714
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138829592879181936",
+      "type": "Default",
+      "timestamp": "2023-08-09T17:42:13.373+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-030\nНазвание: Костюм Героической Души: Неро Клавдия\nЭффект: Если вы играете за любую вариацию Неро, то защита увеличивается. (Получаемый вами урон уменьшается на 2 очка)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138829592501702817",
+          "url": "ce\\latest-a3a1774d2f427879.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 793567
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138830607204483146",
+      "type": "Default",
+      "timestamp": "2023-08-09T17:46:15.207+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-031\nНазвание: Сияющая Богиня\nЭффект: Увеличивает себе и союзникам защиту. (Получаемый урон уменьшается на 3 очка)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138830607191908453",
+          "url": "ce\\latest-661ad7326cff5435.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 725720
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138830815082590269",
+      "type": "Default",
+      "timestamp": "2023-08-09T17:47:04.769+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-032\nНазвание: Божественная Принцесса Штормов\nЭффект: Если вы умираете, то увеличьте защиту своих союзников вдвое на три хода.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138830814847717487",
+          "url": "ce\\latest-b32ae983c8136ce6.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 927404
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138831235641249863",
+      "type": "Default",
+      "timestamp": "2023-08-09T17:48:45.038+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-033\nНазвание: Железная Воля\nЭффект: Увеличивает вашу защиту вдвое.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138831235242803230",
+          "url": "ce\\latest-fc32d565176ba1cb.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 463200
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138831875050324028",
+      "type": "Default",
+      "timestamp": "2023-08-09T17:51:17.485+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-034\nНазвание: Взор Победителя\nЭффект: Заполняет вашу Шкалу Фантазма на 3 очка + Если вы атакуете противников со средством передвижения, то урон увеличивается на 4 очка.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138831874710581342",
+          "url": "ce\\latest-cda78cb7a29e6542.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 948467
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138832928042917918",
+      "type": "Default",
+      "timestamp": "2023-08-09T17:55:28.538+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-035\nНазвание: Змей Горыныч\nЭффект: Урон по Драконам увеличивается на 4 очка, а критический урон по ним удваивается.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138832927761903666",
+          "url": "ce\\latest-d32edd50c8ef4c82.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 917807
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138834064367943800",
+      "type": "Default",
+      "timestamp": "2023-08-09T17:59:59.459+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-036\nНазвание: Противостояние\nЭффект: Наносимый урон по противникам с Божественностью увеличивается на 4 очка, получаемый урон от противников с Божественностью понижается на 2 очка.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138834063923355738",
+          "url": "ce\\latest-479bb00740c9147f.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 643953
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138835528133906532",
+      "type": "Default",
+      "timestamp": "2023-08-09T18:05:48.448+04:00",
+      "timestampEdited": "2023-08-09T18:06:05.267+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-037\nНазвание: Некромантия\nЭффект: Если ваши ОЗ стали равны нулю, подбросьте кубик и в зависимости от результата получите эффект:\n* Если выпало от 1 до 3, то вы умираете\n* Если выпало от 4 до 6, то восполните здоровье на 5 очков",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138835527487991898",
+          "url": "ce\\latest-17f36b9a2f149784.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 1007427
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138837109235531878",
+      "type": "Default",
+      "timestamp": "2023-08-09T18:12:05.412+04:00",
+      "timestampEdited": "2023-08-09T18:13:18.941+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-038\nНазвание: Экстремально Острое Мапо-Тофу\nЭффект: Если ваши Очки Здоровья будут восполняться, то они будут восполнены на 3 очка больше + Если вы играете за Котомине, то он получит дополнительный Классовый Навык: \n* Экстремально Острое Мапо-Тофу: Восполняет здоровье на 1 очко, а также даёт иммунитет на три хода к следующим дебаффам: Очарование, Сон, Замешательство, Страх и Паралич. (Куллдаун - 10)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138837108996460637",
+          "url": "ce\\latest-f31b5da95cbef9b4.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 1002151
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138840704475475999",
+      "type": "Default",
+      "timestamp": "2023-08-09T18:26:22.584+04:00",
+      "timestampEdited": "2024-01-26T20:11:51.709+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-039\nНазвание: Багровый Лотос Царства Теней\nЭффект: Каждый раз когда вы проводите две успешные атаки, то увеличьте свою Силу на 1 очко (Максимум: 3)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138840704521617488",
+          "url": "ce\\latest-2531059ad5310138.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 916013
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138842604432273538",
+      "type": "Default",
+      "timestamp": "2023-08-09T18:33:55.569+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-040\nНазвание: Церемониальный Костюм: ЭМИЯ Альтер\nЭффект: Если вы играете за ЭМИЮ Альтера, то длительность его навыков увеличивается на один ход.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138842603975086210",
+          "url": "ce\\latest-8e08e52603a5f20b.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 769889
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138842933186019520",
+      "type": "Default",
+      "timestamp": "2023-08-09T18:35:13.95+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-041\nНазвание: Церемониальный Костюм: Неро Клавдия\nЭффект: Если вы играете за Неро Клавдию, то Куллдауны её навыков становятся меньше на 1.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138842932481380353",
+          "url": "ce\\latest-455306cf6212a86a.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 935200
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138843222777548883",
+      "type": "Default",
+      "timestamp": "2023-08-09T18:36:22.994+04:00",
+      "timestampEdited": "2023-08-09T18:38:09.942+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-042\nНазвание: Церемониальный Костюм: Шевалье д'Эон\nЭффект: Если вы играете за д'Эона, то его защита увеличивается (Получаемый вами урон уменьшается на 2 очка)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138843222307770439",
+          "url": "ce\\latest-b11aaf1cae6fc43a.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 849950
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138843784201904229",
+      "type": "Default",
+      "timestamp": "2023-08-09T18:38:36.848+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-043\nНазвание: Церемониальный Костюм: Машу Кирелайт\nЭффект: Если вы играете за Машу, то её защитные эффекты длятся на два хода дольше.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138843783967019048",
+          "url": "ce\\latest-99a30805e34a79d6.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 852526
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138844347891195915",
+      "type": "Default",
+      "timestamp": "2023-08-09T18:40:51.242+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-044\nНазвание: Церемониальный Костюм: Бедивэр\nЭффект: Если вы играете за Бедивэра, то куллдаун его навыков уменьшается на 1.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138844348046393384",
+          "url": "ce\\latest-86cc2d08e84925fc.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 929541
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138844623549255740",
+      "type": "Default",
+      "timestamp": "2023-08-09T18:41:56.964+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-045\nНазвание: Церемониальный Костюм: Артурия Пендрагон (Лансер)\nЭффект: Если вы играете за Артурию, то она начинает игру сразу же с тремя снятыми печатями.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138844623284994228",
+          "url": "ce\\latest-603bed57bdae0414.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 791936
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138846267720597625",
+      "type": "Default",
+      "timestamp": "2023-08-09T18:48:28.965+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-046\nНазвание: Церемониальный Костюм: Мария-Антуанетта\nЭффект: Если вы играете за Марию-Антуанетту, то каждый её навык восполняет союзникам здоровье на 3 очка.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138846267489923163",
+          "url": "ce\\latest-da2bb602cc65cc51.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 855061
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138846712388137040",
+      "type": "Default",
+      "timestamp": "2023-08-09T18:50:14.982+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-047\nНазвание: Церемониальный Костюм: Гильгамеш\nЭффект: Если вы играете за Гильгамеша, то его защита увеличивается. (Получаемый урон вами понижается на 2 очка)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138846712136470569",
+          "url": "ce\\latest-bdbcb4a88023703f.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 899419
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138847384575680573",
+      "type": "Default",
+      "timestamp": "2023-08-09T18:52:55.244+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-048\nНазвание: Церемониальный Костюм: Кухулин (Кастер)\nЭффект: Если вы играете за Кухулина, то его третий навык можно использовать и на союзниках",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138847384399532072",
+          "url": "ce\\latest-e8d2b36f4f82f463.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 817440
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138847690986377347",
+      "type": "Default",
+      "timestamp": "2023-08-09T18:54:08.298+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-049\nНазвание: Церемониальный Костюм: Вольфганг Амадэус Моцарт\nЭффект: Если вы играете за Моцарта, то его защита увеличивается (Получаемый вами урон уменьшается на 2 очка)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138847690420133998",
+          "url": "ce\\latest-80a20e37fba22854.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 942854
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138848147645399052",
+      "type": "Default",
+      "timestamp": "2023-08-09T18:55:57.174+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-050\nНазвание: Церемониальный Костюм: Кухулин (Альтер)\nЭффект: Если вы играете за Кухулина, то его куллдаун его навыков уменьшается на 1.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138848147813179464",
+          "url": "ce\\latest-b28b6dc168107b86.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 855071
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138848914406113410",
+      "type": "Default",
+      "timestamp": "2023-08-09T18:58:59.984+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-051\nНазвание: Путешествующие Героические Духи: Машу Кирелайт\nЭффект: Если вы играете за Машу, то её сила увеличивается на 3 очка.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138848914125099069",
+          "url": "ce\\latest-98395a2dd438e5ba.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 842409
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138849158766284962",
+      "type": "Default",
+      "timestamp": "2023-08-09T18:59:58.244+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-052\nНазвание: Путешествующие Героические Духи: Антонио Сальери\nЭффект: Если вы играете за Сальери, то пока на нём не одеты доспехи его защита увеличивается вдвое.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138849158472675378",
+          "url": "ce\\latest-a50da81f54b8694e.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 823850
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138849445224665198",
+      "type": "Default",
+      "timestamp": "2023-08-09T19:01:06.541+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-053\nНазвание: Путешествующие Героические Духи: Артурия Пендрагон (Альтер)\nЭффект: Если вы играете за Артурию, то радиус её атаки увеличивается до двух клеток.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138849444981379102",
+          "url": "ce\\latest-7528f799be7743ee.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 834023
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138850187876503592",
+      "type": "Default",
+      "timestamp": "2023-08-09T19:04:03.603+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-054\nНазвание: Фестиваль Героических Духов: Святая Марта\nЭффект: Если вы играете за Марту, то её навык исцеления восполняет на 5 очков больше.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138850187629051954",
+          "url": "ce\\latest-434e43935af14bf9.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 847931
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138850425274118145",
+      "type": "Default",
+      "timestamp": "2023-08-09T19:05:00.203+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-055\nНазвание: Фестиваль Героических Духов: Мордред \nЭффект: Если вы играете за Мордред, то её сила увеличивается на 1 очко.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138850425307668621",
+          "url": "ce\\latest-14051a3a686bf531.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 856949
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138850657491755038",
+      "type": "Default",
+      "timestamp": "2023-08-09T19:05:55.568+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-056\nНазвание: Фестиваль Героических Духов: Брадаманта\nЭффект: Если вы играете за Брадаманту, то её защиту нельзя понизить.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138850657248481300",
+          "url": "ce\\latest-da7d157404c7fdae.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 881953
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138851169876320288",
+      "type": "Default",
+      "timestamp": "2023-08-09T19:07:57.73+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-057\nНазвание: Фестиваль Героических Духов: Ситонай\nЭффект: Если вы играете за Ситонай, то её защита увеличивается. (Получаемый урон понижается на 2 очка)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138851169620463788",
+          "url": "ce\\latest-47969a0aa7623503.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 829018
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138851799302934612",
+      "type": "Default",
+      "timestamp": "2023-08-09T19:10:27.797+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-058\nНазвание: Записи Путешествий Героических Духов: Геракл\nЭффект: Если вы играете за Геракла, то куллдаун его Продолжения Битвы уменьшен на 3.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138851799089021019",
+          "url": "ce\\latest-b8a742303df9ca64.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 923674
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138851984674398298",
+      "type": "Default",
+      "timestamp": "2023-08-09T19:11:11.993+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-059\nНазвание: Записи Путешествий Героических Духов: Сузука Гозен\nЭффект: Если вы играете за Сузуку, то её радиус атаки увеличивается до двух клеток.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138851984422748240",
+          "url": "ce\\latest-efffcbdb69e4f399.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 947142
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138852344654741726",
+      "type": "Default",
+      "timestamp": "2023-08-09T19:12:37.819+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-060\nНазвание: Записи Путешествий Героических Духов: Георгий Победоносец\nЭффект: Если вы играете за Георгия, то его сила увеличивается на 1 очко.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138852344356950047",
+          "url": "ce\\latest-43ef690978248f83.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 897190
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138852616311406642",
+      "type": "Default",
+      "timestamp": "2023-08-09T19:13:42.587+04:00",
+      "timestampEdited": "2023-08-09T19:13:50.788+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-061\nНазвание: Записи Путешествия Героических Духов: Анастасия Романова\nЭффект: Если вы играете за Анастасию, то её защита увеличивается (Получаемый урон снижается на 2 очка)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138852616042987530",
+          "url": "ce\\latest-df66798803bc45a9.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 888340
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138853204025683999",
+      "type": "Default",
+      "timestamp": "2023-08-09T19:16:02.709+04:00",
+      "timestampEdited": "2023-08-09T19:16:36.819+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-062\nНазвание: Тур Героических Духов: Сенджи Мурамаса\nЭффект: Если вы играете за Мурамасу, то его защита увеличивается (Получаемый урон уменьшается на 2 очка)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138853203765641256",
+          "url": "ce\\latest-a3a98ce808bf1ad9.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 906809
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138853450210357309",
+      "type": "Default",
+      "timestamp": "2023-08-09T19:17:01.404+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-063\nНазвание: Тур Героических Духов: Артурия Пендрагон (Кастер)\nЭффект: Если вы играете за Артурию, то её защита увеличивается (Получаемый урон уменьшается на 3 очка)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138853449870614549",
+          "url": "ce\\latest-2b037a276fe2b867.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 1044779
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138853689331822612",
+      "type": "Default",
+      "timestamp": "2023-08-09T19:17:58.415+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-064\nНазвание: Тур Героических Духов: Джагер-Мен\nЭффект: Если вы играете за Джагер-Мена, то её сила увеличивается на 1 очко.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138853689113706556",
+          "url": "ce\\latest-622396405d11243a.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 909492
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138853875412123728",
+      "type": "Default",
+      "timestamp": "2023-08-09T19:18:42.78+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-065\nНазвание: Тур Героических Духов: Елена Блаватская\nЭффект: Если вы играете за Елену, то её защита увеличивается (Получаемый урон уменьшается на 2)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138853875089154058",
+          "url": "ce\\latest-5337f6f43cd1e65a.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 993056
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1138854193273245727",
+      "type": "Default",
+      "timestamp": "2023-08-09T19:19:58.564+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-066\nНазвание: Тур Героических Духов: Ода Нобукатсу\nЭффект: Если вы играете за Нобукатсу, то его сила увеличивается на 2 очка.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1138854193160003614",
+          "url": "ce\\latest-66d3988936f45168.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 996935
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1200470250550992957",
+      "type": "Default",
+      "timestamp": "2024-01-26T20:00:11.39+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-067\nНазвание: Калейдоскоп\nЭффект: Даёт 5 очков фантазма со старта игры.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1200470250299326587",
+          "url": "ce\\latest-830c698139a195da.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 652644
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1219977206885912618",
+      "type": "Default",
+      "timestamp": "2024-03-20T15:53:52.202+04:00",
+      "timestampEdited": "2024-03-20T19:31:26.795+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-007\nНазвание: Бездна\nЭффект: Даёт 3 очка фантазма с начала игры, а также следующий одноразовый бафф:\n* Если вы используете фантазм в обычном состоянии, то он может считаться фантазмом в режиме оверчарджа. После того, как фантазм активируется, восполните Шкалу Фантазма на 1 очко.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1219977206587981844",
+          "url": "ce\\9407310a-6aaa5f5cf27e80a2.png",
+          "fileName": "9407310a.png",
+          "fileSizeBytes": 902046
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1219978659440365608",
+      "type": "Default",
+      "timestamp": "2024-03-20T15:59:38.518+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-008\nНазвание: Лифт Покаяния\nЭффект: Если противник атакует вас (не на вашем ходу) критической атакой, то сила вашего слуги увеличивается вдвое до конца вашего следующего хода.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1219978659188703363",
+          "url": "ce\\9407120a-8acf883cf3b78510.png",
+          "fileName": "9407120a.png",
+          "fileSizeBytes": 828831
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1219978869587578940",
+      "type": "Default",
+      "timestamp": "2024-03-20T16:00:28.621+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-009\nНазвание: Лабиринт Последних Распустившихся Цветов\nЭффект: Если вас атаковали критической атакой, то ваша Шкала Фантазма восполнится на 1 очко фантазма.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1219978869310881953",
+          "url": "ce\\9407130a-c5cb91f23c0771fe.png",
+          "fileName": "9407130a.png",
+          "fileSizeBytes": 929234
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1219980228550594561",
+      "type": "Default",
+      "timestamp": "2024-03-20T16:05:52.623+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-068\nНазвание: Разнос Всего, Что Стоит На Пути\nЭффект: Если на вас наложили дебафф, что понижает атаку, то вы можете наносить урон игнорируя уклонения.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1219980228487544932",
+          "url": "ce\\9406920a-54bab22af4dcd056.png",
+          "fileName": "9406920a.png",
+          "fileSizeBytes": 934048
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1219981474904936618",
+      "type": "Default",
+      "timestamp": "2024-03-20T16:10:49.777+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-069\nНазвание: Магия Трансмутации\nЭффект: На вас не действуют критические атаки.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1219981474682503229",
+          "url": "ce\\9406170a-84a13418280dc03e.png",
+          "fileName": "9406170a.png",
+          "fileSizeBytes": 753914
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1219981910009319484",
+      "type": "Default",
+      "timestamp": "2024-03-20T16:12:33.514+04:00",
+      "timestampEdited": "2024-03-20T16:12:44.016+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-070\nНазвание: Загрузка Проецирования\nЭффект: Если ваша Шкала Фантазма ниже 6 очков, то при получении урона вы будете восполнять её на 1 очко.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1219981909778628608",
+          "url": "ce\\9406150a-b9bc00d4819a1bc5.png",
+          "fileName": "9406150a.png",
+          "fileSizeBytes": 979398
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": "1462865379159179465",
+            "name": "Charlemagne",
+            "code": "Charlemagne",
+            "isAnimated": false,
+            "imageUrl": "ce\\1462865379159179465-1e8e260ebb8024fd.png"
+          },
+          "count": 3,
+          "users": [
+            {
+              "id": "211095927946084352",
+              "name": "some_svin",
+              "discriminator": "0000",
+              "nickname": "Some Svin",
+              "color": null,
+              "isBot": false,
+              "avatarUrl": "ce\\075337e20f38e2e6ff2e53646649dd73-1bfb491d60d49304.png"
+            },
+            {
+              "id": "402338778431356938",
+              "name": "frosty_spikes",
+              "discriminator": "0000",
+              "nickname": "Frosty",
+              "color": null,
+              "isBot": false,
+              "avatarUrl": "ce\\8582fc4b574dc69fc89c6ba73b620fd8-5eefd7aa5edd64b8.png"
+            },
+            {
+              "id": "403859302479036417",
+              "name": "alekseyr554",
+              "discriminator": "0000",
+              "nickname": "ALEKSEYR554",
+              "color": null,
+              "isBot": false,
+              "avatarUrl": "ce\\34d2f1073063d7c2e001d80cbbcfe4d9-3f0fe9b9011dae5e.png"
+            }
+          ]
+        }
+      ],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1219983772150272040",
+      "type": "Default",
+      "timestamp": "2024-03-20T16:19:57.483+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-071\nНазвание: Daddy's Letter Show\nЭффект: Если вашу атаку парировали, то ваша следующая атака будет вдвое сильнее.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1219983771869380628",
+          "url": "ce\\9404440a-b2e9ffe4ee591be9.png",
+          "fileName": "9404440a.png",
+          "fileSizeBytes": 906934
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1229503487381999737",
+      "type": "Default",
+      "timestamp": "2024-04-15T22:47:54.462+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-072\nНазвание: Limited/Zero Over\nЭффект: Если ваш Слуга владеет мечом, то сила увеличивается на 2 очка.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1229503487415419041",
+          "url": "ce\\latest-6905dba07897146d.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 913092
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1229506661182476349",
+      "type": "Default",
+      "timestamp": "2024-04-15T23:00:31.155+04:00",
+      "timestampEdited": "2024-04-15T23:01:22.525+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-073\nНазвание: Чёрный Грааль\nЭффект: Увеличивает силу фантазма вдвое, но каждый ход теряешь по 5 очков здоровья. (СЛУГА МОЖЕТ УМЕРЕТЬ)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1229506660889002126",
+          "url": "ce\\latest-f5de835b434f5f85.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 766872
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1229507298292924477",
+      "type": "Default",
+      "timestamp": "2024-04-15T23:03:03.054+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-074\nНазвание: Собственная Слава\nЭффект: В начале хода игрок может объявить цифру которая будет считаться критической до конца хода.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1229507298053984419",
+          "url": "ce\\latest-23a9c9dc07045dff.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 709599
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1229507856139817120",
+      "type": "Default",
+      "timestamp": "2024-04-15T23:05:16.055+04:00",
+      "timestampEdited": "2024-12-26T00:17:01.362+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-075\nНазвание: Героический Новый Год\nЭффект: Даёт иммунитет к дебаффам (до трёх раз), а также повышает защиту на 1 (Понижает получаемый урон на 1)\n* Эффект иммунитета к дебаффам можно активировать по желанию.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1229507855942422599",
+          "url": "ce\\latest-96b22b57b0029fb9.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 738134
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1229508254330130514",
+      "type": "Default",
+      "timestamp": "2024-04-15T23:06:50.991+04:00",
+      "timestampEdited": "2024-04-15T23:07:22.024+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-076\nНазвание: Послеобраз на Песчаном Столе\nЭффект: Увеличивает силу на 1 очко, увеличивает силу фантазма на 1 очко, а также даёт 1 очка фантазма со старта.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1229508254048981013",
+          "url": "ce\\latest-a70db428fd628014.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 843659
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1229508607687786496",
+      "type": "Default",
+      "timestamp": "2024-04-15T23:08:15.238+04:00",
+      "timestampEdited": "2024-04-15T23:08:40.72+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-077\nНазвание: А'\nЭффект: Заряжает Шкалу Фантазма на 3 очка, а также увеличивает Магический урон на 2 очка.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1229508607440195586",
+          "url": "ce\\latest-5220502d83641a00.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 876785
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": "",
+            "name": "\uD83C\uDFF3️‍\uD83C\uDF08",
+            "code": "rainbow_flag",
+            "isAnimated": false,
+            "imageUrl": "ce\\1f3f3-fe0f-200d-1f308-f64a24dfd1dfb210.svg"
+          },
+          "count": 1,
+          "users": [
+            {
+              "id": "402338778431356938",
+              "name": "frosty_spikes",
+              "discriminator": "0000",
+              "nickname": "Frosty",
+              "color": null,
+              "isBot": false,
+              "avatarUrl": "ce\\8582fc4b574dc69fc89c6ba73b620fd8-5eefd7aa5edd64b8.png"
+            }
+          ]
+        }
+      ],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1229509111541010433",
+      "type": "Default",
+      "timestamp": "2024-04-15T23:10:15.366+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-078\nНазвание: Сказка Любви и Надежды\nЭффект: Заряжает Шкалу Фантазма на 3 очка, а также увеличивает шанс критической атаки (1 на втором кубике считается критической атакой).",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1229509111599857785",
+          "url": "ce\\latest-194282b64f80802f.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 918694
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1229509397894533160",
+      "type": "Default",
+      "timestamp": "2024-04-15T23:11:23.638+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-079\nНазвание: Как Пожелаете\nЭффект: Даёт Неуязвимость на 1 ход. (Можно использовать не сразу)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1229509397647200368",
+          "url": "ce\\latest-687cda3fc24ed16d.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 846027
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1229509807522971648",
+      "type": "Default",
+      "timestamp": "2024-04-15T23:13:01.301+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-080\nНазвание: Голые Короли\nЭффект: Даёт одно воскрешение (Воскрешает с 1 ОЗ). После воскрешения сила увеличивается вдвое на один ход.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1229509807229108366",
+          "url": "ce\\latest-484dd693118b8a41.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 1045706
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1229512596525158462",
+      "type": "Default",
+      "timestamp": "2024-04-15T23:24:06.251+04:00",
+      "timestampEdited": "2024-04-15T23:33:03.216+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-081\nНазвание: Нежная Привязанность\nЭффект: Увеличивает восполнение здоровья (Если очки здоровья восполняются на какое-либо значение, то они восполняются на 4 очка больше).",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1229512596156317848",
+          "url": "ce\\latest-1cc35c90f379c07d.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 666293
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1229513323687575652",
+      "type": "Default",
+      "timestamp": "2024-04-15T23:26:59.62+04:00",
+      "timestampEdited": "2025-02-03T14:54:31.348+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-082\nНазвание: Искусство Смерти\nЭффект: Если ваш противник Гуманойд, то урон по нему увеличивается на 4 очка.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1229513323268276254",
+          "url": "ce\\latest-3e49a6bb4fa5f073.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 960348
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1229514418056859741",
+      "type": "Default",
+      "timestamp": "2024-04-15T23:31:20.538+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-083\nНазвание: С Одного Удара\nЭффект: Даёт игнорирование уклонений.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1229514417847140352",
+          "url": "ce\\latest-e2199fb15b7b997a.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 800925
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1229514891279204372",
+      "type": "Default",
+      "timestamp": "2024-04-15T23:33:13.363+04:00",
+      "timestampEdited": "2024-04-15T23:34:55.506+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-084\nНазвание: Миккото! Подготовка Невесты\nЭффект: В начале хода бросьте кубик. \n* Если выпадает 1, 3 или 6 - Здоровье восполняется на 2 очка\n* Если выпадает 2, 4 или 5 - Ничего не происходит",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1229514891069755513",
+          "url": "ce\\latest-67d1725dce6e4d22.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 760308
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1229517843851247646",
+      "type": "Default",
+      "timestamp": "2024-04-15T23:44:57.311+04:00",
+      "timestampEdited": "2024-04-15T23:46:04.897+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-085\nНазвание: Идеальный Святой Король\nЭффект: Ваше максимальное здоровье и здоровье союзников выше на 5 очков. (Со старта максимальное здоровье заполнено до конца. При воскрешении максимальное здоровье всё ещё увеличено на 5)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1229517843599462480",
+          "url": "ce\\latest-b01848c4b9fac48d.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 606297
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1229518687783092265",
+      "type": "Default",
+      "timestamp": "2024-04-15T23:48:18.52+04:00",
+      "timestampEdited": "2024-04-15T23:48:27.035+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-086\nНазвание: Дьявольская Бодхисватта\nЭффект: Даёт 3 очка фантазма с начала игры, а также следующий одноразовый бафф:\n* Если вы используете фантазм в обычном состоянии, то он может считаться фантазмом в режиме оверчарджа.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1229518687724245092",
+          "url": "ce\\latest-3b880780a108423d.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 702284
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1229519192768774256",
+      "type": "Default",
+      "timestamp": "2024-04-15T23:50:18.918+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-087\nНазвание: Гонка Богинь на Трёх Ногах\nЭффект: Даёт одно воскрешение (Воскрешает с 1 ОЗ). После воскрешение увеличивает силу фантазма вдвое на три хода.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1229519192718577744",
+          "url": "ce\\latest-3ebf0068709c2617.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 1013536
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1229519728716943430",
+      "type": "Default",
+      "timestamp": "2024-04-15T23:52:26.698+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-088\nНазвание: Медовое Озеро\nЭффект: Даёт пробивание Неуязвимости, а также увеличивает наносимый урон по противникам с дебаффом Горения на 4 очка.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1229519728377073854",
+          "url": "ce\\latest-ee039c2b6ff62e04.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 669542
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1229520848822472796",
+      "type": "Default",
+      "timestamp": "2024-04-15T23:56:53.752+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-089\nНазвание: Фантазмическая Принцесса\nЭффект: Увеличивает силу фантазма вдвое, но только Берсеркерам.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1229520848583655457",
+          "url": "ce\\latest-004624c1d0149752.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 671422
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309564189031010354",
+      "type": "Default",
+      "timestamp": "2024-11-22T21:00:33.191+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-090\nНазвание: Лунный Камень\nЭффект: Даёт иммунитет к очарованию.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309564188686815353",
+          "url": "ce\\latest-19f2f0f750771421.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 856951
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309564494175010907",
+      "type": "Default",
+      "timestamp": "2024-11-22T21:01:45.943+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-091\nНазвание: Читинский Кабан Кирью Кошикаге\nЭффект: Даёт +3 к уклонению на три хода (Можно использовать не сразу)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309564493864501299",
+          "url": "ce\\latest-34d8ec59320c32dc.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 1006540
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309564790162849792",
+      "type": "Default",
+      "timestamp": "2024-11-22T21:02:56.512+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-092\nНазвание: Окита\nЭффект: Если вы Сэйбер, то вы можете один раз за ход спарировать атаку любым числом",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309564789952872559",
+          "url": "ce\\latest-be2dbbf291886a50.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 536993
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309564955581874229",
+      "type": "Default",
+      "timestamp": "2024-11-22T21:03:35.951+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-093\nНазвание: Ноббу\nЭффект: Если вы Арчер, то вы можете один раз за ход спарировать атаку любым числом",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309564955518832660",
+          "url": "ce\\latest-f6c6d250115fc05c.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 585612
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309565810636881951",
+      "type": "Default",
+      "timestamp": "2024-11-22T21:06:59.812+04:00",
+      "timestampEdited": "2026-01-07T08:43:51.24+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-094\nНазвание: ГУДАГУДА Небесный Демонический Король Х3\nЭффект: Даёт +3 урона против противников с Божественностью, а также иммунитет к дебаффу Горения",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309565810758651984",
+          "url": "ce\\latest-e39ac13dd6849f42.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 707073
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309566691717681172",
+      "type": "Default",
+      "timestamp": "2024-11-22T21:10:29.878+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-095\nНазвание: ГУДАГУДА Тоса Тоумэй\nЭффект: Даёт +1 дополнительный шаг вне учёт основных действий призываемым существам или персонажам, что призываются вместе со Слугой",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309566691428139149",
+          "url": "ce\\latest-425ab60c92f322c3.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 508834
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309567733704167486",
+      "type": "Default",
+      "timestamp": "2024-11-22T21:14:38.307+04:00",
+      "timestampEdited": "2024-11-22T21:15:09.635+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-096\nНазвание: ГУДАГУДА Мэйджи Ишин\nЭффект: Если вас предал и убил союзник, но после этого вы воскресли, то вы получаете 3 очка фантазма. (Предавший вас союзник обязан сражаться с вами до конца)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309567733431533649",
+          "url": "ce\\latest-62d72980138b9ab2.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 667563
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": "",
+            "name": "\uD83C\uDDE9",
+            "code": "regional_indicator_d",
+            "isAnimated": false,
+            "imageUrl": "ce\\1f1e9-d989e12500a1691d.svg"
+          },
+          "count": 1,
+          "users": [
+            {
+              "id": "814441421863780372",
+              "name": "fenixx_zer0",
+              "discriminator": "0000",
+              "nickname": "Spartac",
+              "color": null,
+              "isBot": false,
+              "avatarUrl": "ce\\3ae22d90d488fe8c81dbd5a797b9b04f-e36a17f7e3eb73dd.png"
+            }
+          ]
+        },
+        {
+          "emoji": {
+            "id": "",
+            "name": "\uD83C\uDDF7",
+            "code": "regional_indicator_r",
+            "isAnimated": false,
+            "imageUrl": "ce\\1f1f7-4320e053186c895e.svg"
+          },
+          "count": 1,
+          "users": [
+            {
+              "id": "814441421863780372",
+              "name": "fenixx_zer0",
+              "discriminator": "0000",
+              "nickname": "Spartac",
+              "color": null,
+              "isBot": false,
+              "avatarUrl": "ce\\3ae22d90d488fe8c81dbd5a797b9b04f-e36a17f7e3eb73dd.png"
+            }
+          ]
+        },
+        {
+          "emoji": {
+            "id": "",
+            "name": "\uD83C\uDDEA",
+            "code": "regional_indicator_e",
+            "isAnimated": false,
+            "imageUrl": "ce\\1f1ea-6381fdbcc70d453c.svg"
+          },
+          "count": 1,
+          "users": [
+            {
+              "id": "814441421863780372",
+              "name": "fenixx_zer0",
+              "discriminator": "0000",
+              "nickname": "Spartac",
+              "color": null,
+              "isBot": false,
+              "avatarUrl": "ce\\3ae22d90d488fe8c81dbd5a797b9b04f-e36a17f7e3eb73dd.png"
+            }
+          ]
+        },
+        {
+          "emoji": {
+            "id": "",
+            "name": "\uD83C\uDDE6",
+            "code": "regional_indicator_a",
+            "isAnimated": false,
+            "imageUrl": "ce\\1f1e6-19170dbdde3d8b5b.svg"
+          },
+          "count": 1,
+          "users": [
+            {
+              "id": "814441421863780372",
+              "name": "fenixx_zer0",
+              "discriminator": "0000",
+              "nickname": "Spartac",
+              "color": null,
+              "isBot": false,
+              "avatarUrl": "ce\\3ae22d90d488fe8c81dbd5a797b9b04f-e36a17f7e3eb73dd.png"
+            }
+          ]
+        },
+        {
+          "emoji": {
+            "id": "",
+            "name": "Ⓜ️",
+            "code": "m",
+            "isAnimated": false,
+            "imageUrl": "ce\\24c2-1e118b545699c30e.svg"
+          },
+          "count": 1,
+          "users": [
+            {
+              "id": "814441421863780372",
+              "name": "fenixx_zer0",
+              "discriminator": "0000",
+              "nickname": "Spartac",
+              "color": null,
+              "isBot": false,
+              "avatarUrl": "ce\\3ae22d90d488fe8c81dbd5a797b9b04f-e36a17f7e3eb73dd.png"
+            }
+          ]
+        },
+        {
+          "emoji": {
+            "id": "",
+            "name": "❤️",
+            "code": "heart",
+            "isAnimated": false,
+            "imageUrl": "ce\\2764-a3d2500d7e491034.svg"
+          },
+          "count": 1,
+          "users": [
+            {
+              "id": "814441421863780372",
+              "name": "fenixx_zer0",
+              "discriminator": "0000",
+              "nickname": "Spartac",
+              "color": null,
+              "isBot": false,
+              "avatarUrl": "ce\\3ae22d90d488fe8c81dbd5a797b9b04f-e36a17f7e3eb73dd.png"
+            }
+          ]
+        }
+      ],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309569299450429481",
+      "type": "Default",
+      "timestamp": "2024-11-22T21:20:51.61+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-097\nНазвание: Представление Халдеи в театре Окуни\nЭффект: Если ваш параметр Магии равен рангу F-D, то вы получаете вдвое меньше магического урона",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309569299102437447",
+          "url": "ce\\latest-3b09cdc1690d291f.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 655453
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": "",
+            "name": "❤️",
+            "code": "heart",
+            "isAnimated": false,
+            "imageUrl": "ce\\2764-a3d2500d7e491034.svg"
+          },
+          "count": 1,
+          "users": [
+            {
+              "id": "814441421863780372",
+              "name": "fenixx_zer0",
+              "discriminator": "0000",
+              "nickname": "Spartac",
+              "color": null,
+              "isBot": false,
+              "avatarUrl": "ce\\3ae22d90d488fe8c81dbd5a797b9b04f-e36a17f7e3eb73dd.png"
+            }
+          ]
+        }
+      ],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309569644633526322",
+      "type": "Default",
+      "timestamp": "2024-11-22T21:22:13.908+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-098\nНазвание: Бесстрашные и Непобедимые\nЭффект: Если вы и ваш союзник класса Сэйбер, то ваш Параметр Ловкости увеличивается на один ранг.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309569644411093093",
+          "url": "ce\\latest-406aabba72a850d2.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 638843
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309570817226444801",
+      "type": "Default",
+      "timestamp": "2024-11-22T21:26:53.476+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-099\nНазвание: Оставьте это Сайке\nЭффект: Если вы атакуете критической атакой, то вы игнорируете защитные баффы. (Если на вас стоят баффы, но выпала критическая атака, то вы атакуете именно обычной атакой увеличенной вдвое)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309570817121849394",
+          "url": "ce\\latest-f0ad3e940f5ac046.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 697361
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309571686911316010",
+      "type": "Default",
+      "timestamp": "2024-11-22T21:30:20.825+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-100\nНазвание: Постепенно Цветущая\nЭффект: Каждый ход сила вашего фантазма увеличивается на 1 очко (Максимум: 10)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309571686944735283",
+          "url": "ce\\latest-0d91f4db53e6890e.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 807791
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309572264949321819",
+      "type": "Default",
+      "timestamp": "2024-11-22T21:32:38.64+04:00",
+      "timestampEdited": "2025-01-21T21:09:37.624+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-101\nНазвание: Тройной Барьер\nЭффект: Даёт защиту х3 на три атаки. (Активируется на сразу)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309572264844328980",
+          "url": "ce\\latest-7c8da558212b302b.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 1019816
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309572538803683421",
+      "type": "Default",
+      "timestamp": "2024-11-22T21:33:43.932+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-102\nНазвание: Яркий Танец Кулаков\nЭффект: Если вы атакует кого-то в радиусе одной клетки, то ваша атака увеличивается на 2 очка.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309572538665406485",
+          "url": "ce\\latest-7fec624235deb6ad.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 954871
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309573088454643763",
+      "type": "Default",
+      "timestamp": "2024-11-22T21:35:54.979+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-103\nНазвание: Повторная Магия\nЭффект: Вы получаете 2 очка фантазма со старта, а также бафф увеличенного восполнения фантазма (Если ваша Шкала Фантазма должна увеличиться на 1 очко, то она увеличивается на 2)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309573088366821416",
+          "url": "ce\\latest-03d2c655f52b0160.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 959900
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309573560137682965",
+      "type": "Default",
+      "timestamp": "2024-11-22T21:37:47.437+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-104\nНазвание: Наставник и Я\nЭффект: Вы получаете 3 очка фантазма и увеличенный шанс критической атакой (Если на втором кубике вам выпадает 4, то это считается критической атакой)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309573559986819243",
+          "url": "ce\\latest-9b97c0a0aa832648.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 686604
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309574289892053032",
+      "type": "Default",
+      "timestamp": "2024-11-22T21:40:41.424+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-105\nНазвание: Школа Халдеи\nЭффект: Вы получаете 3 очка фантазма со старта, а также, если вы восполняете здоровье, то оно увеличивается на 2 очка больше.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309574289640656927",
+          "url": "ce\\latest-9586ef480b6b06d7.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 898394
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309574590648811530",
+      "type": "Default",
+      "timestamp": "2024-11-22T21:41:53.13+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-106\nНазвание: Святая Дева Ведущая Халдэю\nЭффект: Увеличивает силу на 2 очка, а также увеличивает шанс критической атаки (Если на втором кубике выпадает 2, то это считается критической атакой)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309574590447747093",
+          "url": "ce\\latest-62fabb1fd648c894.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 728591
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309574875983118426",
+      "type": "Default",
+      "timestamp": "2024-11-22T21:43:01.159+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-107\nНазвание: Безжалостный Человек\nЭффект: Если вы умерли, то все союзники получают 2 очка фантазма и увеличивает силу на 2 очка на три хода.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309574875685589002",
+          "url": "ce\\latest-bea6620854ec9e78.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 942377
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309575881986936862",
+      "type": "Default",
+      "timestamp": "2024-11-22T21:47:01.009+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-108\nНазвание: Скрытое Лезвие - Разворот Фазана\nЭффект: Если противник уклоняется от вашей атаки и вы по нему попадаете, то урон по нему увеличивается на 2 очка.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309575881710374958",
+          "url": "ce\\latest-4c353599e6bdf7d8.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 906886
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309577436538736650",
+      "type": "Default",
+      "timestamp": "2024-11-22T21:53:11.643+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-109\nНазвание: Лунные Горячие Источники\nЭффект: Если вы находитесь на захваченной территории которую захватили вы или ваши союзники, то у вас увеличивается шанс критической атаки (1 и 6 считаются критической атакой)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309577436182216826",
+          "url": "ce\\latest-67b27e81705d919a.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 782949
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309577830723752101",
+      "type": "Default",
+      "timestamp": "2024-11-22T21:54:45.624+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-110\nНазвание: Битва при Камлане\nЭффект: Если вы умираете, то союзники получают 2 очка фантазма.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309577830715228251",
+          "url": "ce\\latest-7d519626f6fa7058.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 545729
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309578970525863947",
+      "type": "Default",
+      "timestamp": "2024-11-22T21:59:17.374+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-111\nНазвание: Спасители Халдэи\nЭффект: Даёт одно воскрешение (Воскрешает с 1 ОЗ). Если вы воскрешаетесь от этой карточки, то вы получаете бафф увеличенного восполнения фантазма (Если ваша Шкала Фантазма должна увеличиться на 1 очко, то она увеличивается на 2) до конца игры.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309578970374607022",
+          "url": "ce\\latest-58a38dff66d97852.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 564987
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309579614519300108",
+      "type": "Default",
+      "timestamp": "2024-11-22T22:01:50.914+04:00",
+      "timestampEdited": "2024-11-22T22:04:20.173+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-112\nНазвание: Воющий на Луну\nЭффект: Увеличивает вашу силу на 4 очка, но вы теряете одно действие.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309579614430953512",
+          "url": "ce\\latest-8956914dfe2dd603.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 869819
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309581440438243348",
+      "type": "Default",
+      "timestamp": "2024-11-22T22:09:06.247+04:00",
+      "timestampEdited": "2024-11-22T22:10:21.006+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-113\nНазвание: Священная Ночь Познаний\nЭффект: Если вы получаете баффы от союзников, то сила вашего фантазма увеличивается на 1 очко за каждый бафф. (Максимум 5 АТК)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309581440014352474",
+          "url": "ce\\latest-44fa8cdb26bf3451.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 886378
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309582613924679812",
+      "type": "Default",
+      "timestamp": "2024-11-22T22:13:46.028+04:00",
+      "timestampEdited": "2024-11-22T22:14:09.959+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-114\nНазвание: Горький Чёрный\nЭффект: Если вы передаёте Командные Заклинания, Предметы или накладываете на кого-то бафф, то вы получаете бафф увеличенного восполнения фантазма (Если ваша Шкала Фантазма увеличивается на 1 очко, то она увеличивается на 2) на один ход (Максимум 1 бафф).",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309582613727678524",
+          "url": "ce\\latest-38a8eceeb2903954.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 602642
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309583604841447524",
+      "type": "Default",
+      "timestamp": "2024-11-22T22:17:42.281+04:00",
+      "timestampEdited": "2024-11-22T23:28:23.921+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-115\nНазвание: Гнев\nЭффект: Накладывает на вас бафф \"Таунт\" на три хода. Если вас бьют пока на вас стоит этот бафф, то ваша Шкала Фантазма увеличивается на 1 очко. (Можно использовать не сразу)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309583604531331244",
+          "url": "ce\\latest-9376e68d73e2c192.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 784920
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309584516347592705",
+      "type": "Default",
+      "timestamp": "2024-11-22T22:21:19.601+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-116\nНазвание: Король Демон Шести Небес\nЭффект: Увеличивает основную силу и силу фантазма на 2 очка.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309584516221767841",
+          "url": "ce\\latest-a2d8137ec33ddca9.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 968306
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309585002635202571",
+      "type": "Default",
+      "timestamp": "2024-11-22T22:23:15.541+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-117\nНазвание: Волки Мибу\nЭффект: Если вы успешно уклонились три раза подряд (Не в счёт баффа уклонений), то увеличьте вашу силу на 1 очко (Макс: 3)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309585002551443586",
+          "url": "ce\\latest-d8fefc8b9c19df45.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 691185
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309586193062826046",
+      "type": "Default",
+      "timestamp": "2024-11-22T22:27:59.361+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-118\nНазвание: Детективное Бюро Сакамото\nЭффект: Если у вас есть призванное существо или персонаж который призывается со слугой со старта, то защита вашего слуги увеличивается вдвое.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309586193045786644",
+          "url": "ce\\latest-ae493024e9ef93da.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 849972
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309588447589306529",
+      "type": "Default",
+      "timestamp": "2024-11-22T22:36:56.882+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-119\nНазвание: Шоколадный Ангел\nЭффект: Увеличивает силу на 1 очко и даёт одно очко фантазма раз в три хода себе или союзнику.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309588447303958578",
+          "url": "ce\\latest-8a082b8de8140c90.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 711858
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309591507518492743",
+      "type": "Default",
+      "timestamp": "2024-11-22T22:49:06.426+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-120\nНазвание: Приветственный Кролик\nЭффект: Увеличивает магическую защиту на 5 очков.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309591507266965564",
+          "url": "ce\\latest-6f49163c770f6354.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 860522
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309592124139769916",
+      "type": "Default",
+      "timestamp": "2024-11-22T22:51:33.44+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-121\nНазвание: Сделка Богов\nЭффект: Если у вашего противника есть бафф повышения атаки, то он наносит вам вдвое меньше урона.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309592123787710484",
+          "url": "ce\\latest-4a97ceb4294e574b.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 718066
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309592424837943400",
+      "type": "Default",
+      "timestamp": "2024-11-22T22:52:45.132+04:00",
+      "timestampEdited": "2024-11-22T22:53:10.253+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-122\nНазвание: Устройство Победных Бросков\nЭффект: Даёт одно уклонение и увеличивает силу на 2 очка. (Уклонение можно использоват не сразу)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309592424691011614",
+          "url": "ce\\latest-86955e9c40990d6a.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 768264
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309594313164062791",
+      "type": "Default",
+      "timestamp": "2024-11-22T23:00:15.344+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-123\nНазвание: Абсолютная Гармония\nЭффект: Увеличивает шанс критической атаки, который каждый ход меняется. (Изначально 1, на следующий ход 2 и т.д. вплоть до 6. После 6 всё возвращается к 1)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309594312891305995",
+          "url": "ce\\latest-acde42ed14526123.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 759696
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309595002078498836",
+      "type": "Default",
+      "timestamp": "2024-11-22T23:02:59.594+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-124\nНазвание: Халдэя Элевен\nЭффект: Если вы проводите успешно две атаки подряд, то увеличьте вашу Шкалу Фантазма на 1 очко.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309595001759469568",
+          "url": "ce\\latest-78b6b5d08ae54a36.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 891666
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309595657782165616",
+      "type": "Default",
+      "timestamp": "2024-11-22T23:05:35.926+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-125\nНазвание: Случайная Встреча под Луной\nЭффект: Если вы используете фантазм в первый раз, то он активируется в состоянии Оверчарджа. + Увеличивает вашу основную силу на 1 очко.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309595657488695336",
+          "url": "ce\\latest-4179d90dd8b679d4.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 912132
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309596480465535006",
+      "type": "Default",
+      "timestamp": "2024-11-22T23:08:52.069+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-126\nНазвание: Последний Пир Энфонсера\nЭффект: Увеличивает Магическую Защиту вдвое, а также даёт шанс игнорирования критической атаки. (Если у противника выпадает критическая атака и он попадает по вам, после атаки вы бросаете кубики. Если ваше число выше чем у противника, то критическая атака аннулируется)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309596480142704701",
+          "url": "ce\\latest-4bfab696148b63b1.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 794956
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309597033748889632",
+      "type": "Default",
+      "timestamp": "2024-11-22T23:11:03.982+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-127\nНазвание: Весенние Ветра\nЭффект: Даёт игнорирование неуязвимости, а также увеличивает силу фантазма на 4 очка.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309597033916797059",
+          "url": "ce\\latest-199ee83dcc8ca94e.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 669481
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309597627330859119",
+      "type": "Default",
+      "timestamp": "2024-11-22T23:13:25.503+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-128\nНазвание: Симпатичная Девушка Сидящая Позади Меня\nЭффект: Даёт 3 очка фантазма со старта, а также +3 урона против противником с атрибутом Человек.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309597621802762303",
+          "url": "ce\\latest-29ad29ab8aa776f9.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 699574
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309598975246209144",
+      "type": "Default",
+      "timestamp": "2024-11-22T23:18:46.871+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-129\nНазвание: Из NFF с Любовью\nЭффект: Увеличивает силу на 3 очка. Если ваши союзники наполовину животные (к таким слугам относятся Тамамо, Баргест, Мелюзина, Коянская, Добрыня, Джагер-Мен и т.д.), то их сила увеличивается на 2 очка.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309598974872785058",
+          "url": "ce\\latest-6e5a8da4ec7959a7.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 743905
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309599763339018270",
+      "type": "Default",
+      "timestamp": "2024-11-22T23:21:54.767+04:00",
+      "timestampEdited": "2025-02-03T08:27:56.139+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-130\nНазвание: Этикет Тауматургии \nЭффект: Заряжает Шкалу Фантазма на одно очко раз в три хода, а также увеличивает силу фантазма на 1 очко раз в два хода (Максимум: 5)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309599763053809795",
+          "url": "ce\\latest-edfb70e04f44c765.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 847674
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309600436046663730",
+      "type": "Default",
+      "timestamp": "2024-11-22T23:24:35.153+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-131\nНазвание: Мистер Красный Гаджет\nЭффект: Даёт игнорирование защиты, а также 3 очка фантазма со старта.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309600435711246426",
+          "url": "ce\\latest-86e69d3f7e21d6cb.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 523293
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309600678439813260",
+      "type": "Default",
+      "timestamp": "2024-11-22T23:25:32.944+04:00",
+      "timestampEdited": "2024-11-22T23:26:07.23+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-132\nНазвание: С Луной\nЭффект: Понижает магический урон вдвое.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309600678171246675",
+          "url": "ce\\latest-a82c067ccb7121cb.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 599656
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309601843760074765",
+      "type": "Default",
+      "timestamp": "2024-11-22T23:30:10.778+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-133\nНазвание: BRD\nЭффект: Даёт пробивание неуязвимости и увеличивает силу на 1 очко.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309601843793494117",
+          "url": "ce\\latest-87fa9a40398e236c.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 799733
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309603917146886155",
+      "type": "Default",
+      "timestamp": "2024-11-22T23:38:25.112+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-134\nНазвание: Долгий Путь до Горы Фудзи\nЭффект: Если у вашего противника больше ОЗ чем у вас, то у вас увеличивается шанс критических атак (1 и 6 считаются критической атакой)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309603916916457552",
+          "url": "ce\\latest-47aa531068616497.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 876774
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309604617159442483",
+      "type": "Default",
+      "timestamp": "2024-11-22T23:41:12.008+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-135\nНазвание: Три Божественных Формы\nЭффект: Увеличивает защиту на 2 очка, а также восполняет здоровье на одно очко раз в три хода.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309604616781959189",
+          "url": "ce\\latest-6253ed96cdf488c9.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 949090
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309605898238300180",
+      "type": "Default",
+      "timestamp": "2024-11-22T23:46:17.441+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-136\nНазвание: Президент Океана\nЭффект: Если у вашего противника больше ОЗ чем у вас, то он наносит вам вдвое меньше урона.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309605897940500500",
+          "url": "ce\\latest-73bd7d6190961c6d.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 811408
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309606535202345090",
+      "type": "Default",
+      "timestamp": "2024-11-22T23:48:49.305+04:00",
+      "timestampEdited": "2026-01-07T08:55:50.338+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-137\nНазвание: Король Академии Тсукимихара\nЭффект: Увеличивает себе и союзникам силу на 4 очка на три хода (Можно активировать не сразу)",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309606534870732942",
+          "url": "ce\\latest-7731d892ed4d3366.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 600732
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309606872768057394",
+      "type": "Default",
+      "timestamp": "2024-11-22T23:50:09.787+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-138\nНазвание: Синдзи-Танк, Огонь!\nЭффект: Позволяет накладывать на противников дебаффы игнорируя иммунитет и пассивные навыки. Если у противника имеется что-то из ранее перечисленного, то он бросает вместе с вами кубики. Если ваше число выше, то вы накладываете дебафф.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309606872395022427",
+          "url": "ce\\latest-49f66c0d4838fd90.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 977529
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309607745280020520",
+      "type": "Default",
+      "timestamp": "2024-11-22T23:53:37.81+04:00",
+      "timestampEdited": "2024-11-22T23:53:50.862+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-139\nНазвание: Повседневная Жизнь за Гранью\nЭффект: Вы можете бросить кубик, чтобы увеличить себе или противнику здоровье на 3 очка. У кого число будет выше, тот и восполняет здоровье.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309607745053265930",
+          "url": "ce\\latest-0e28e10dad17e1f0.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 785718
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1309608928526733332",
+      "type": "Default",
+      "timestamp": "2024-11-22T23:58:19.918+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-140\nНазвание: Калейдо-Сапфир\nЭффект: Увеличивает Магический Урон на 2 и силу фантазмана на 2.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1309608928144920629",
+          "url": "ce\\latest-4020b0d29fbe7951.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 846500
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1458318286981693681",
+      "type": "Default",
+      "timestamp": "2026-01-07T08:36:13.86+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-141\nНазвание: Святая Плащаница Магдалины\nЭффект: Увеличивает защиту вдвое против мужчин.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1458318286742622218",
+          "url": "ce\\latest-11a86b5ca3a63bd1.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 687558
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1458318787211296818",
+      "type": "Default",
+      "timestamp": "2026-01-07T08:38:13.124+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-142\nНазвание: Зная Свой Далёкий Путь\nЭффект: Даёт игнорирование защитных баффов (Увеличение защиты и Неуязвимость. Авалон не в счёт) и увеличивает силу фантазма на 3 очка.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1458318786909180106",
+          "url": "ce\\latest-f1abb79f4f30f6e2.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 810365
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1458321209694355486",
+      "type": "Default",
+      "timestamp": "2026-01-07T08:47:50.689+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-143\nНазвание: Специалист по Запечатыванию\nЭффект: Если вы получили урон от фантазма противника, то ваша следующая атака будет критической.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1458321209547690005",
+          "url": "ce\\latest-bbab692ab3a68e22.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 313808
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1458321764156440703",
+      "type": "Default",
+      "timestamp": "2026-01-07T08:50:02.883+04:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-144\nНазвание: Стихотворение о Страстной Любви\nЭффект: Увеличивает силу против мужчин на 4 очка.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1458321763686551685",
+          "url": "ce\\latest-361c0970096d4407.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 692976
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1458324400624373810",
+      "type": "Default",
+      "timestamp": "2026-01-07T09:00:31.466+04:00",
+      "timestampEdited": "2026-01-07T09:02:40.532+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-145\nНазвание: Ностальгическая Форма\nЭффект: Если у вас есть защитный бафф, а ваши ОЗ равны максимальному, то ваша сила увеличивается на 4 очка.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1458324400410726572",
+          "url": "ce\\latest-0d2c65dd8b1a68f7.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 680557
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1458325528200089821",
+      "type": "Default",
+      "timestamp": "2026-01-07T09:05:00.301+04:00",
+      "timestampEdited": "2026-01-07T09:05:13.147+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-146\nНазвание: КОМАНДА Феникс\nЭффект: Критическая атака будет срабатывать только при числе 4, но каждая критическая атака будет увеличена вдвое.",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1458325527965339690",
+          "url": "ce\\latest-d16227b107e1b54c.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 836260
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    },
+    {
+      "id": "1458326377672736922",
+      "type": "Default",
+      "timestamp": "2026-01-07T09:08:22.831+04:00",
+      "timestampEdited": "2026-01-07T09:09:14.853+04:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "CE-147\nНазвание: Гигантский Бабах\nЭффект: Если вы получаете урон, то защита союзников увеличивается вдвое на одну атаку (Нельзя стакать; Бафф не накладывается, если у союзников уже есть бафф защиты).",
+      "author": {
+        "id": "297995395173187584",
+        "name": "higureroom",
+        "discriminator": "0000",
+        "nickname": "Higure",
+        "color": "#F1C40F",
+        "isBot": false,
+        "roles": [
+          {
+            "id": "1409184667734773840",
+            "name": "Геннадий долг косарь",
+            "color": "#F1C40F",
+            "position": 4
+          }
+        ],
+        "avatarUrl": "ce\\e25bdd0dd4b99b903723cf264c035047-5ad38edc15844315.png"
+      },
+      "attachments": [
+        {
+          "id": "1458326377399975986",
+          "url": "ce\\latest-be59ec96375f6460.png",
+          "fileName": "latest.png",
+          "fileSizeBytes": 530755
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "inlineEmojis": []
+    }
+  ],
+  "messageCount": 148
+}

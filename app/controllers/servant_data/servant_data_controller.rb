@@ -14,6 +14,16 @@ module ServantData
       end
     end
 
+    def serve_ce
+      safe_filename = File.basename(params[:filename])
+      file_path = Rails.root.join("storage", "craft_essences", safe_filename)
+      if File.exist?(file_path)
+        send_file file_path, disposition: "inline"
+      else
+        render plain: "Карта не найдена", status: :not_found
+      end
+    end
+
     def serve_servant_page
       # тут пока пусто
     end

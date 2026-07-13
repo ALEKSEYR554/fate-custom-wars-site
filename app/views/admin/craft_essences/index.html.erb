@@ -8,11 +8,11 @@
 </style>
 
 <div class="nav-bar">
-  <a href="<%= admin_servants_path %>"style="color: #fff;">Слуги</a>
-  <a href="<%= admin_craft_essences_path %>">Карты (CE)</a>
+  <a href="<%= admin_servants_path %>">Слуги</a>
+  <a href="<%= admin_craft_essences_path %>" style="color: #fff;">Карты (CE)</a>
 </div>
 
-<h1>Админ-панель: Список Слуг</h1>
+<h1>Админ-панель: Карты (Craft Essences)</h1>
 <% if flash[:notice] %>
   <div style="background: #03dac6; color: #000; padding: 10px; margin-bottom: 20px;"><%= flash[:notice] %></div>
 <% end %>
@@ -20,20 +20,15 @@
 <table class="admin-table">
   <tr>
     <th>ID</th>
-    <th>Имя</th>
-    <th>Класс</th>
-    <th>Редкость</th>
+    <th>Название</th>
     <th>Действия</th>
   </tr>
-  <% @servants.each do |s| %>
+  <% @ces.each do |ce| %>
     <tr>
-      <td><%= s.game_id %></td>
-      <td><%= s.name %></td>
-      <td><%= s.servant_class %></td>
-      <td><%= s.rarity %>★</td>
+      <td><%= ce.game_id %></td>
+      <td><%= ce.name %></td>
       <td>
-        <a href="<%= edit_admin_servant_path(s.game_id) %>" class="btn">✏️ Редактировать</a>
-        <a href="/servants/<%= s.game_id %>" target="_blank" class="btn" style="background: #ccc;">👁 Просмотр</a>
+        <a href="<%= edit_admin_craft_essence_path(ce.game_id) %>" class="btn">✏️ Редактировать</a>
       </td>
     </tr>
   <% end %>

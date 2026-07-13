@@ -359,6 +359,10 @@
       <input type="checkbox" id="in-rarity-lock" style="width: 18px; height: 18px; cursor: pointer;">
       <label for="in-rarity-lock" style="margin: 0; cursor: pointer; color: var(--text-primary);">Слуги одной редкости</label>
     </div>
+    <div class="input-group" style="max-width: 100px;">
+      <label>Карт на 1 чел.</label>
+      <input type="number" id="in-ce-count" value="0" min="0">
+    </div>
     <div class="input-group">
       <label>Имя</label>
       <input type="text" id="in-name" placeholder="Часть имени">
@@ -410,6 +414,11 @@
   const baseDomain = "<%= Rails.configuration.x.base_domain %>";
   let availablePool = [];
   let seenServantIds = new Set();
+
+  const allCEs = <%= raw @all_ces.to_json %>;
+  let availableCEPool = [];
+  let currentCEPoolIndex = 0;
+  let cePerPlayer = 0;
 
   let draftSlug = null;
   let draftData = { teams: [], solo: [] };
@@ -538,6 +547,9 @@
 
       // Перемешиваем очищенный пул
       availablePool = shuffleArray(availablePool);
+      availableCEPool = shuffleArray(allCEs.filter(c => !c.is_personal));
+      currentCEPoolIndex = 0;
+      cePerPlayer = parseInt(document.getElementById('in-ce-count').value) || 0;
       currentPoolIndex = 0;
 
       playerNames = shuffleArray(playerNames);
@@ -671,9 +683,78 @@
       playerObj.servants.push(servant);
       grid.appendChild(createServantCard(servant, playerObj, playerObj.servants.length - 1));
     }
-    
+    playerObj.craft_essences = [];
+
+    if (cePerPlayer > 0) {
+      const ceContainer = document.createElement('div');
+      ceContainer.style.marginTop = '10px';
+      ceContainer.style.padding = '10px';
+      ceContainer.style.background = 'rgba(144, 202, 249, 0.05)';
+      ceContainer.style.border = '1px dashed var(--atlas-blue)';
+      ceContainer.style.borderRadius = '4px';
+      ceContainer.innerHTML = `<div style="font-size: 0.8rem; color: var(--atlas-blue); margin-bottom: 5px;">🎴 Карты:</div>`;
+
+      const ceGrid = document.createElement('div');
+      ceGrid.style.display = 'flex';
+      ceGrid.style.gap = '10px';
+      ceGrid.style.flexWrap = 'wrap';
+
+      // 1. Ищем уникальные карты у выпавших слуг
+      let requiredCEs = [];
+      playerObj.servants.forEach(s => {
+        if (s.craft_essences && s.craft_essences.length > 0) {
+          requiredCEs.push(...s.craft_essences);
+        }
+      });
+
+      // 2. Выдаем карты слуг
+      requiredCEs.forEach(ceId => {
+        const ceData = allCEs.find(c => c.game_id === ceId);
+        if (ceData && playerObj.craft_essences.length < cePerPlayer) {
+          playerObj.craft_essences.push(ceData);
+          ceGrid.appendChild(createCECard(ceData));
+        }
+      });
+
+      // 3. Добиваем остаток из общего пула
+      while (playerObj.craft_essences.length < cePerPlayer && currentCEPoolIndex < availableCEPool.length) {
+        const randomCE = availableCEPool[currentCEPoolIndex++];
+        // Защита от дубликатов (если эта карта уже выдана как именная)
+        if (!playerObj.craft_essences.some(c => c.game_id === randomCE.game_id)) {
+          playerObj.craft_essences.push(randomCE);
+          ceGrid.appendChild(createCECard(randomCE));
+        }
+      }
+
+      ceContainer.appendChild(ceGrid);
+      block.appendChild(ceContainer);
+    }
     block.appendChild(grid);
     return block;
+  }
+
+  function createCECard(ce) {
+    const card = document.createElement('div');
+    card.style.display = 'flex';
+    card.style.alignItems = 'center';
+    card.style.background = 'var(--bg-base)';
+    card.style.border = '1px solid var(--border-color)';
+    card.style.borderRadius = '4px';
+    card.style.padding = '8px';
+    card.style.gap = '12px';
+    card.style.width = '100%';
+    card.style.maxWidth = '320px'; // Было 300px
+
+    const ceImageUrl = `//servant-data.${baseDomain}/ce/${ce.game_id}.png`;
+
+    card.innerHTML = `
+      <img src="${ceImageUrl}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 4px;" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'60\\' height=\\'60\\'><rect width=\\'60\\' height=\\'60\\' fill=\\'%232d2d2d\\'/><text x=\\'50%\\' y=\\'50%\\' fill=\\'%23555\\' font-family=\\'sans-serif\\' font-size=\\'14\\' text-anchor=\\'middle\\' dy=\\'4\\'>CE</text></svg>'">
+      <div style="flex-grow: 1; overflow: hidden;">
+        <div style="font-size: 0.8rem; color: var(--text-secondary); font-family: monospace;">${ce.game_id}</div>
+        <div style="font-size: 0.95rem; font-weight: 500; color: var(--text-primary); white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" title="${ce.effect}">${ce.name}</div>
+      </div>
+    `;
+    return card;
   }
 
   function createServantCard(servant, playerObj, servantIndex) {

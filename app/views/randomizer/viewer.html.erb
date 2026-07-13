@@ -354,16 +354,12 @@
       <div class="team-header"><%= team['name'] %></div>
       <% team['players'].each do |player| %>
         <div style="padding: 10px; border-bottom: 1px solid var(--border-color);">
-          <div style="padding: 10px; border-bottom: 1px solid var(--border-color);">
-          <!-- Если displayName записан в базу, выводим его (Ход 1 | Вася), иначе фолбэк -->
-          <h4 style="margin: 0 0 10px 0; color: var(--atlas-blue);">
-            🎲 <%= player['displayName'] || "👤 #{player['name']}" %>
-          </h4>
+          <h4 style="margin: 0 0 10px 0; color: var(--atlas-blue);">🎲 <%= player['displayName'] || "👤 #{player['name']}" %></h4>
           <div class="team-grid">
             <% player['servants'].each do |servant| %>
               <div class="servant-card">
                 <a href="/servants/<%= servant['game_id'] %>" target="_blank" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
-                  <img src="//servant-data.<%= Rails.configuration.x.base_domain %>/sprite/<%= servant['game_id'] %>/preview.png" class="servant-avatar" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'180\' height=\'180\'><rect width=\'180\' height=\'180\' fill=\'%232d2d2d\'/><text x=\'50%\' y=\'50%\' fill=\'%23555\' font-family=\'sans-serif\' font-size=\'14\' text-anchor=\'middle\' dy=\'4\'>No Image</text></svg>'">
+                  <img src="//servant-data.<%= Rails.configuration.x.base_domain %>/sprite/<%= servant['game_id'] %>/preview.png" class="servant-avatar" onerror="this.src='https://placehold.co/180x180/2d2d2d/555555?text=No+Img'">
                   <div class="servant-info">
                     <div class="servant-id"><%= servant['game_id'] %></div>
                     <div class="servant-name" title="<%= servant['name'] %>"><%= servant['name'] %></div>
@@ -376,6 +372,67 @@
               </div>
             <% end %>
           </div>
+          <% if player['craft_essences'].present? && player['craft_essences'].any? %>
+            <div style="margin-top: 15px; padding: 10px; background: rgba(144, 202, 249, 0.05); border: 1px dashed var(--atlas-blue); border-radius: 4px;">
+              <div style="font-size: 0.8rem; color: var(--atlas-blue); margin-bottom: 8px;">🎴 Карты:</div>
+              <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <% player['craft_essences'].each do |ce| %>
+                  <div style="display: flex; align-items: center; background: var(--bg-base); border: 1px solid var(--border-color); border-radius: 4px; padding: 8px; gap: 12px; width: 100%; max-width: 320px;">
+                    <img src="//servant-data.<%= Rails.configuration.x.base_domain %>/ce/<%= ce['game_id'] %>.png" style="width: 60px; height: 60px; object-fit: cover; border-radius: 4px;" onerror="this.src='https://placehold.co/60x60/2d2d2d/555555?text=CE'">
+                    <div style="flex-grow: 1; overflow: hidden;">
+                      <div style="font-size: 0.8rem; color: var(--text-secondary); font-family: monospace;"><%= ce['game_id'] %></div>
+                      <div style="font-size: 0.95rem; font-weight: 500; color: var(--text-primary); white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" title="<%= ce['effect'] %>"><%= ce['name'] %></div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%# БЛОК ДЛЯ СОЛО ИГРОКОВ %>
+  <% if @session.data['solo'].present? && @session.data['solo'].any? %>
+    <div class="team" style="border-color: var(--danger);">
+      <div class="team-header" style="color:var(--danger); background:rgba(239,83,80,0.1);">Соло / Вне команд</div>
+      <% @session.data['solo'].each do |player| %>
+        <div style="padding: 10px; border-bottom: 1px solid var(--border-color);">
+          <h4 style="margin: 0 0 10px 0; color: var(--atlas-blue);">🎲 <%= player['displayName'] || "👤 #{player['name']}" %></h4>
+          <div class="team-grid">
+            <% player['servants'].each do |servant| %>
+              <div class="servant-card">
+                <a href="/servants/<%= servant['game_id'] %>" target="_blank" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+                  <img src="//servant-data.<%= Rails.configuration.x.base_domain %>/sprite/<%= servant['game_id'] %>/preview.png" class="servant-avatar" onerror="this.src='https://placehold.co/180x180/2d2d2d/555555?text=No+Img'">
+                  <div class="servant-info">
+                    <div class="servant-id"><%= servant['game_id'] %></div>
+                    <div class="servant-name" title="<%= servant['name'] %>"><%= servant['name'] %></div>
+                    <div class="badges">
+                      <span class="badge"><%= servant['servant_class'] %></span>
+                      <span class="badge rarity"><%= servant['rarity'] %>★</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            <% end %>
+          </div>
+          <% if player['craft_essences'].present? && player['craft_essences'].any? %>
+            <div style="margin-top: 15px; padding: 10px; background: rgba(144, 202, 249, 0.05); border: 1px dashed var(--atlas-blue); border-radius: 4px;">
+              <div style="font-size: 0.8rem; color: var(--atlas-blue); margin-bottom: 8px;">🎴 Карты:</div>
+              <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <% player['craft_essences'].each do |ce| %>
+                  <div style="display: flex; align-items: center; background: var(--bg-base); border: 1px solid var(--border-color); border-radius: 4px; padding: 8px; gap: 12px; width: 100%; max-width: 320px;">
+                    <img src="//servant-data.<%= Rails.configuration.x.base_domain %>/ce/<%= ce['game_id'] %>.png" style="width: 60px; height: 60px; object-fit: cover; border-radius: 4px;" onerror="this.src='https://placehold.co/60x60/2d2d2d/555555?text=CE'">
+                    <div style="flex-grow: 1; overflow: hidden;">
+                      <div style="font-size: 0.8rem; color: var(--text-secondary); font-family: monospace;"><%= ce['game_id'] %></div>
+                      <div style="font-size: 0.95rem; font-weight: 500; color: var(--text-primary); white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" title="<%= ce['effect'] %>"><%= ce['name'] %></div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
         </div>
       <% end %>
     </div>

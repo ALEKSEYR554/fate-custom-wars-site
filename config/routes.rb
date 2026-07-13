@@ -32,16 +32,20 @@ Rails.application.routes.draw do
     scope module: "servant_data" do
       get "sprite/:servant_code/:filename", to: "servant_data#serve_sprite", constraints: { filename: /[^\/]+/ }
       get "servant-page/:servant_code", to: "servant_data#serve_servant_page"
+      get "ce/:filename", to: "servant_data#serve_ce", constraints: { filename: /[^\/]+/ }
     end
   end
 
 
+
   # === АДМИН-ПАНЕЛЬ ===
   namespace :admin do
+    root to: "servants#index"
     resources :servants, param: :game_id, only: [ :index, :edit, :update ] do
       # Добавляем метод для загрузки спрайтов
       post :upload_sprite, on: :member
     end
+    resources :craft_essences, param: :game_id, only: [ :index, :edit, :update ]
   end
 
   get "randomizer", to: "randomizer#index"
@@ -56,7 +60,7 @@ Rails.application.routes.draw do
 
 
 
-  get 'servants', to: 'servants#index'
+  get "servants", to: "servants#index"
   # Страница слуги
   get "servants/:game_id", to: "servants#show"
 

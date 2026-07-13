@@ -1,0 +1,37 @@
+<style>
+  body { background: #121212; color: #fff; font-family: sans-serif; padding: 20px; }
+  .form-group { margin-bottom: 15px; }
+  label { display: block; margin-bottom: 5px; color: #90caf9; }
+  input[type="text"] { width: 100%; padding: 8px; background: #2d2d2d; color: #fff; border: 1px solid #444; border-radius: 4px; }
+  textarea { width: 100%; height: 200px; padding: 8px; background: #2d2d2d; color: #fff; border: 1px solid #444; border-radius: 4px; font-family: monospace; font-size: 14px; line-height: 1.4; white-space: pre-wrap; }
+  .btn-submit { background: #90caf9; color: #000; padding: 10px 20px; border: none; font-size: 1.1em; cursor: pointer; border-radius: 4px; }
+</style>
+
+<h1>Редактирование: <%= @ce.game_id %></h1>
+<a href="<%= admin_craft_essences_path %>" style="color: #ccc;">← Назад к списку</a>
+<br><br>
+
+<div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 20px;">
+  <!-- Превью картинки карты -->
+  <img src="//servant-data.<%= Rails.configuration.x.base_domain %>/ce/<%= @ce.game_id %>.png" style="width: 150px; border-radius: 4px; border: 1px solid #444;" onerror="this.src='https://placehold.co/150x150/2d2d2d/555555?text=CE'">
+  
+  <%= form_with model: @ce, url: admin_craft_essence_path(@ce.game_id), method: :patch, local: true, style: "flex-grow: 1;" do |f| %>
+    <div class="form-group">
+      <label>Название</label>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="form-group">
+      <label>Эффект</label>
+      <%= f.text_area :effect %>
+    </div>
+    <div class="form-group">
+      <label style="display: flex; align-items: center; gap: 8px;">
+        <%= f.check_box :is_personal, style: "width: 18px; height: 18px;" %>
+        Именная карта (Привязана к слуге)
+      </label>
+    </div>
+
+    <%= f.submit "💾 Сохранить", class: "btn-submit" %>
+  <% end %>
+</div>

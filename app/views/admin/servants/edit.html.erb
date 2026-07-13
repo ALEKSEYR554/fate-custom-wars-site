@@ -35,6 +35,10 @@
       <!-- Превращаем массив обратно в строку для формы -->
       <%= f.text_field :traits_string, value: @servant.traits&.join(', ') %>
     </div>
+    <div class="form-group">
+      <label>Именные Карты (через запятую, напр. CE-027)</label>
+      <%= f.text_field :craft_essences_string, value: @servant.craft_essences&.join(', ') %>
+    </div>
   </div>
 
   <hr style="border-color: #333; margin: 20px 0;">

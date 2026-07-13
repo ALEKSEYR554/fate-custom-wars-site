@@ -25,6 +25,11 @@ module Admin
         @servant.traits = traits_str.split(",").map(&:strip).reject(&:empty?)
       end
 
+      ce_str = params[:servant].delete(:craft_essences_string)
+      if ce_str
+        @servant.craft_essences = ce_str.split(",").map(&:strip).reject(&:empty?)
+      end
+
       if @servant.update(servant_params)
         # Возвращаем в список после успеха
         redirect_to admin_servants_path, notice: "Слуга #{@servant.name} успешно обновлен!"
