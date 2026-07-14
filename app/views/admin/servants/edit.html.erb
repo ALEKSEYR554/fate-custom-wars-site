@@ -39,6 +39,26 @@
       <label>Именные Карты (через запятую, напр. CE-027)</label>
       <%= f.text_field :craft_essences_string, value: @servant.craft_essences&.join(', ') %>
     </div>
+    <div class="form-group">
+      <label>Atlas ID</label>
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <%= f.number_field :atlas_id, style: "flex-grow: 1;" %>
+        
+        <%# Используем link_to c turbo_method для обхода блокировки форм %>
+        <%= link_to "🔄 Синхронизировать", 
+                    sync_atlas_admin_servant_path(@servant.game_id), 
+                    data: { turbo_method: :post }, 
+                    style: "background: #cf6679; color: #000; padding: 8px 12px; border-radius: 4px; font-weight: bold; text-decoration: none; cursor: pointer; display: inline-block; white-space: nowrap;" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>English Name (Авто)</label>
+      <%= f.text_field :en_name %>
+    </div>
+    <div class="form-group">
+      <label>English Class (Авто)</label>
+      <%= f.text_field :en_servant_class %>
+    </div>
   </div>
 
   <hr style="border-color: #333; margin: 20px 0;">

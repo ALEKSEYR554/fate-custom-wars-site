@@ -44,7 +44,8 @@ Rails.application.routes.draw do
     resources :servants, param: :game_id, only: [ :index, :new, :create, :edit, :update ] do
       # Добавляем метод для загрузки спрайтов
       post :upload_sprite, on: :member
-      post :backup_telegram, on: :collection # <-- Новый маршрут
+      post :backup_telegram, on: :collection
+      post :sync_atlas, on: :member
     end
     resources :craft_essences, param: :game_id, only: [ :index, :edit, :update ]
   end

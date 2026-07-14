@@ -41,6 +41,57 @@ module Admin
 
     def new
       @servant = Servant.new
+
+      max_sort = Servant.maximum(:sort_id) || -100
+
+      # Задаем значение по умолчанию для формы
+      @servant.sort_id = max_sort + 100
+    end
+
+    def sync_atlas
+      @servant = Servant.find_by!(game_id: params[:game_id])
+
+      if @servant.atlas_id.blank?
+        redirect_to edit_admin_servant_path(@servant.game_id), alert: "Сначала укажите Atlas ID и сохраните слугу!"
+        return
+      end
+
+      require "net/http"
+      require "uri"
+      require "json"
+
+      begin
+        uri = URI("https://api.atlasacademy.io/nice/JP/servant/#{@servant.atlas_id}?lang=en")
+        response = Net::HTTP.get(uri)
+        data = JSON.parse(response)
+
+        # Собираем трейты (Основной + Возвышения + Костюмы)
+        traits_temp = data["traits"] || []
+
+        if data.dig("ascensionAdd", "individuality", "ascension")
+          data["ascensionAdd"]["individuality"]["ascension"].values.each { |t| traits_temp += t }
+        end
+
+        if data.dig("ascensionAdd", "individuality", "costume")
+          data["ascensionAdd"]["individuality"]["costume"].values.each { |t| traits_temp += t }
+        end
+
+        # Фильтруем unknown и берем только уникальные имена
+        traits_out = traits_temp.reject { |t| t["name"] == "unknown" }.map { |t| t["name"] }.uniq
+
+        # Обновляем слугу
+        @servant.update!(
+          en_name: data["name"],
+          en_servant_class: data["className"],
+          traits: traits_out
+        )
+
+        schedule_backup("servants") # Сохраняем бэкап
+
+        redirect_to edit_admin_servant_path(@servant.game_id), notice: "Успешно синхронизировано с Atlas Academy!"
+      rescue => e
+        redirect_to edit_admin_servant_path(@servant.game_id), alert: "Ошибка API: #{e.message}"
+      end
     end
 
     def create
@@ -102,7 +153,8 @@ module Admin
         :name, :servant_class, :rarity, :region, :alignment, :attack_range, :sort_id, :game_id,
         :hp, :damage, :endurance_rank, :strength_rank, :agility_rank, :agility_modifier,
         :magic_rank, :luck_rank, :np_rank,
-        :class_skills, :personal_skills, :noble_phantasm, :page_layout
+        :class_skills, :personal_skills, :noble_phantasm, :page_layout,
+        :atlas_id, :en_name, :en_servant_class
       )
     end
   end

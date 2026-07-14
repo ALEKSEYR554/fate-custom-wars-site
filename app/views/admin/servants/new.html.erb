@@ -11,6 +11,14 @@
 <h1>Создание нового слуги</h1>
 <a href="<%= admin_servants_path %>" style="color: #ccc;">← Назад к списку</a>
 <p style="color: #bbb; font-size: 0.9em;">(Спрайты можно будет загрузить после сохранения слуги)</p>
+<!-- ПАНЕЛЬ БЫСТРОГО ПАРСИНГА -->
+<div style="background: #1e1e1e; border: 1px solid #424242; padding: 15px; border-radius: 4px; margin-bottom: 25px;">
+  <label style="color: #90caf9; font-weight: bold; margin-bottom: 10px; display: block;">Авто-заполнение из текста (Discord)</label>
+  <textarea id="raw-paste" placeholder="Вставьте сырой текст слуги сюда..." style="width: 100%; height: 100px; background: #2d2d2d; color: #fff; border: 1px solid #444; border-radius: 4px; padding: 8px; font-family: monospace; margin-bottom: 10px;"></textarea>
+  <button type="button" onclick="parseRawText()" style="background: #90caf9; color: #000; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: bold;">
+    ⚡ Разобрать текст
+  </button>
+</div>
 <br>
 
 <%= form_with model: @servant, url: admin_servants_path, method: :post, local: true do |f| %>
@@ -49,18 +57,19 @@
   <hr style="border-color: #333; margin: 20px 0;">
 
   <div class="grid-2">
-    <div class="form-group">
-      <label>Очки Жизни (HP)</label>
-      <%= f.number_field :hp %>
-    </div>
-    <div class="form-group">
-      <label>Урон (Damage)</label>
-      <%= f.number_field :damage %>
-    </div>
-    <div class="form-group">
-      <label>Радиус атаки</label>
-      <%= f.number_field :attack_range %>
-    </div>
+    <div class="form-group"><label>Atlas ID</label><%= f.number_field :atlas_id %></div>
+    <div class="form-group"><label>English Name</label><%= f.text_field :en_name %></div>
+    <div class="form-group"><label>Очки Жизни (HP)</label><%= f.number_field :hp %></div>
+    <div class="form-group"><label>Урон (Damage)</label><%= f.number_field :damage %></div>
+    <div class="form-group"><label>Радиус атаки</label><%= f.number_field :attack_range %></div>
+    <div class="form-group"><label>Выносливость (Буква)</label><%= f.text_field :endurance_rank %></div>
+    <div class="form-group"><label>Сила (Буква)</label><%= f.text_field :strength_rank %></div>
+    <div class="form-group"><label>Ловкость (Буква)</label><%= f.text_field :agility_rank %></div>
+    <div class="form-group"><label>Магия (Буква)</label><%= f.text_field :magic_rank %></div>
+    <div class="form-group"><label>Удача (Буква)</label><%= f.text_field :luck_rank %></div>
+    <div class="form-group"><label>Фантазм (Буква)</label><%= f.text_field :np_rank %></div>
+    <div class="form-group"><label>Мировоззрение</label><%= f.text_field :alignment %></div>
+    <div class="form-group"><label>Регион</label><%= f.text_field :servant_region %></div>
   </div>
 
   <hr style="border-color: #333; margin: 20px 0;">
@@ -87,3 +96,78 @@
 
   <%= f.submit "➕ Создать слугу", class: "btn-submit" %>
 <% end %>
+
+<script>
+  function parseRawText() {
+    const text = document.getElementById('raw-paste').value;
+    if (!text) return;
+
+    // Безопасное присвоение значения (если поле существует на форме)
+    const setVal = (id, val) => {
+      const el = document.getElementById(id);
+      if (el && val) el.value = val;
+    };
+
+    // 1. Базовые параметры
+    const mId = text.match(/^(\dS-\d{3})/i);
+    if (mId) {
+      setVal('servant_game_id', mId[1]);
+      setVal('servant_rarity', parseInt(mId[1].split('S')[0]));
+    }
+
+    const mReg = text.match(/^\dS-\d{3}\s*\((.*?)\)/i);
+    if (mReg) setVal('servant_region', mReg[1].trim());
+
+    const mAlign = text.match(/Мировоззрение:\s*(.+)/i);
+    if (mAlign) setVal('servant_alignment', mAlign[1].trim());
+
+    const mClass = text.match(/Класс:\s*(.+)/i);
+    if (mClass) setVal('servant_servant_class', mClass[1].trim());
+
+    const mName = text.match(/Имя:\s*(.+)/i);
+    if (mName) setVal('servant_name', mName[1].trim());
+
+    // 2. Характеристики (HP, Урон, Радиус)
+    const mHp = text.match(/Выносливость:\s*([^\s\(]+)(?:\s*\((.*?)\))?/i);
+    if (mHp) {
+      setVal('servant_endurance_rank', mHp[1]);
+      const hpVal = mHp[2] ? mHp[2].match(/\d+/) : null;
+      if (hpVal) setVal('servant_hp', hpVal[0]);
+    }
+
+    const mStr = text.match(/Сила:\s*([^\s\(]+)(?:\s*\((.*?)\))?/i);
+    if (mStr) {
+      setVal('servant_strength_rank', mStr[1]);
+      const dmgVal = mStr[2] ? mStr[2].match(/\d+/) : null;
+      if (dmgVal) setVal('servant_damage', dmgVal[0]);
+
+      const rangeVal = mStr[2] ? mStr[2].match(/Радиус(?: атаки)?\s*(\d+)/i) : null;
+      if (rangeVal) setVal('servant_attack_range', rangeVal[1]);
+    }
+
+    const mAgi = text.match(/Ловкость:\s*([^\s\(]+)/i);
+    if (mAgi) setVal('servant_agility_rank', mAgi[1]);
+
+    const mMag = text.match(/(?:Магия|Мана):\s*([^\s\(]+)/i);
+    if (mMag) setVal('servant_magic_rank', mMag[1]);
+
+    const mLuck = text.match(/Удача:\s*([^\s\(]+)/i);
+    if (mLuck) setVal('servant_luck_rank', mLuck[1]);
+
+    const mNp = text.match(/Н\.?Фантазм:\s*([^\s\(]+)/i);
+    if (mNp) setVal('servant_np_rank', mNp[1]);
+
+    // 3. Тексты навыков
+    // Флаги /is - игнорируют регистр (i) и заставляют точку совладать с переносами строк (s)
+    const mClassSk = text.match(/Классовые Навыки:(.*?)(?=Личные Навыки:|Небесны[ей]\sФантазм[ы]?)/is);
+    if (mClassSk) setVal('servant_class_skills', mClassSk[1].trim());
+
+    const mPersSk = text.match(/Личные Навыки:(.*?)(?=Небесны[ей]\sФантазм[ы]?)/is);
+    if (mPersSk) setVal('servant_personal_skills', mPersSk[1].trim());
+
+    const mPhantasm = text.match(/Небесны[ей]\sФантазм[ы]?[:\s-]+(.*)/is);
+    if (mPhantasm) setVal('servant_noble_phantasm', mPhantasm[1].trim());
+
+    alert("Текст разобран! Проверьте заполненные поля.");
+  }
+</script>
