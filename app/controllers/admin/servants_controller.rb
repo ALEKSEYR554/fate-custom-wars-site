@@ -154,7 +154,8 @@ module Admin
         :hp, :damage, :endurance_rank, :strength_rank, :agility_rank, :agility_modifier,
         :magic_rank, :luck_rank, :np_rank,
         :class_skills, :personal_skills, :noble_phantasm, :page_layout,
-        :atlas_id, :en_name, :en_servant_class
+        :atlas_id, :en_name, :en_servant_class,
+        :magic_defense, :magic_damage
       )
     end
   end

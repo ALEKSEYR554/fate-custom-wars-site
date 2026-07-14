@@ -66,6 +66,8 @@
     <div class="form-group"><label>Сила (Буква)</label><%= f.text_field :strength_rank %></div>
     <div class="form-group"><label>Ловкость (Буква)</label><%= f.text_field :agility_rank %></div>
     <div class="form-group"><label>Магия (Буква)</label><%= f.text_field :magic_rank %></div>
+    <div class="form-group"><label>Магическая защита</label><%= f.number_field :magic_defense %></div>
+    <div class="form-group"><label>Магическая атака (Урон)</label><%= f.number_field :magic_damage %></div>
     <div class="form-group"><label>Удача (Буква)</label><%= f.text_field :luck_rank %></div>
     <div class="form-group"><label>Фантазм (Буква)</label><%= f.text_field :np_rank %></div>
     <div class="form-group"><label>Мировоззрение</label><%= f.text_field :alignment %></div>
@@ -148,8 +150,21 @@
     const mAgi = text.match(/Ловкость:\s*([^\s\(]+)/i);
     if (mAgi) setVal('servant_agility_rank', mAgi[1]);
 
-    const mMag = text.match(/(?:Магия|Мана):\s*([^\s\(]+)/i);
-    if (mMag) setVal('servant_magic_rank', mMag[1]);
+    // Ищем Магию/Ману, ранг и числа в скобках
+    const mMag = text.match(/(?:Магия|Мана):\s*([^\s\(]+)(?:\s*\((.*?)\))?/i);
+    if (mMag) {
+      setVal('servant_magic_rank', mMag[1]);
+      if (mMag[2]) {
+        // Ищем все числа внутри скобок (например, "Защита - 4 / Урон - 8")
+        const nums = mMag[2].match(/\d+/g);
+        if (nums) {
+          setVal('servant_magic_defense', nums[0]); // Первое число - защита
+          if (nums[1]) {
+            setVal('servant_magic_damage', nums[1]); // Второе число - атака
+          }
+        }
+      }
+    }
 
     const mLuck = text.match(/Удача:\s*([^\s\(]+)/i);
     if (mLuck) setVal('servant_luck_rank', mLuck[1]);
