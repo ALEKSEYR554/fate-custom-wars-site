@@ -7,9 +7,14 @@
   .nav-bar a { color: #90caf9; text-decoration: none; margin-right: 15px; font-weight: bold; }
 </style>
 
-<div class="nav-bar">
-  <a href="<%= admin_servants_path %>">Слуги</a>
-  <a href="<%= admin_craft_essences_path %>" style="color: #fff;">Карты (CE)</a>
+<div class="nav-bar" style="display: flex; justify-content: space-between; align-items: center;">
+  <div>
+    <a href="<%= admin_servants_path %>">Слуги</a>
+    <a href="<%= admin_craft_essences_path %>" style="color: #fff;">Карты (CE)</a>
+  </div>
+
+  <%= button_to "💾 Бэкап в Telegram", backup_telegram_admin_servants_path, method: :post, form: {style: "margin:0;"}, style: "background: #cf6679; color: #000; border: none; padding: 5px 10px; border-radius: 3px; font-weight: bold; cursor: pointer;" %>
+
 </div>
 
 <h1>Админ-панель: Карты (Craft Essences)</h1>

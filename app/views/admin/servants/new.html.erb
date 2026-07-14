@@ -1,0 +1,89 @@
+<style>
+  body { background: #121212; color: #fff; font-family: sans-serif; padding: 20px; }
+  .form-group { margin-bottom: 15px; }
+  label { display: block; margin-bottom: 5px; color: #90caf9; }
+  input[type="text"], input[type="number"] { width: 100%; padding: 8px; background: #2d2d2d; color: #fff; border: 1px solid #444; border-radius: 4px; }
+  textarea { width: 100%; height: 150px; padding: 8px; background: #2d2d2d; color: #fff; border: 1px solid #444; border-radius: 4px; font-family: monospace; font-size: 14px; line-height: 1.4; white-space: pre-wrap; }
+  .btn-submit { background: #03dac6; color: #000; padding: 10px 20px; border: none; font-size: 1.1em; cursor: pointer; border-radius: 4px; font-weight: bold; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+</style>
+
+<h1>Создание нового слуги</h1>
+<a href="<%= admin_servants_path %>" style="color: #ccc;">← Назад к списку</a>
+<p style="color: #bbb; font-size: 0.9em;">(Спрайты можно будет загрузить после сохранения слуги)</p>
+<br>
+
+<%= form_with model: @servant, url: admin_servants_path, method: :post, local: true do |f| %>
+  
+  <div class="grid-2">
+    <div class="form-group">
+      <label>ID Слуги (например, 6S-001)</label>
+      <%= f.text_field :game_id, required: true %>
+    </div>
+    <div class="form-group">
+      <label>Имя</label>
+      <%= f.text_field :name %>
+    </div>
+    <div class="form-group">
+      <label>Класс</label>
+      <%= f.text_field :servant_class %>
+    </div>
+    <div class="form-group">
+      <label>Редкость</label>
+      <%= f.number_field :rarity %>
+    </div>
+    <div class="form-group">
+      <label>Трейты (через запятую)</label>
+      <%= f.text_field :traits_string %>
+    </div>
+    <div class="form-group">
+      <label>Именные Карты (через запятую, напр. CE-027)</label>
+      <%= f.text_field :craft_essences_string %>
+    </div>
+    <div class="form-group">
+      <label>Sort ID (Порядок)</label>
+      <%= f.number_field :sort_id %>
+    </div>
+  </div>
+
+  <hr style="border-color: #333; margin: 20px 0;">
+
+  <div class="grid-2">
+    <div class="form-group">
+      <label>Очки Жизни (HP)</label>
+      <%= f.number_field :hp %>
+    </div>
+    <div class="form-group">
+      <label>Урон (Damage)</label>
+      <%= f.number_field :damage %>
+    </div>
+    <div class="form-group">
+      <label>Радиус атаки</label>
+      <%= f.number_field :attack_range %>
+    </div>
+  </div>
+
+  <hr style="border-color: #333; margin: 20px 0;">
+
+  <div class="form-group">
+    <label>Классовые Навыки</label>
+    <%= f.text_area :class_skills %>
+  </div>
+
+  <div class="form-group">
+    <label>Личные Навыки</label>
+    <%= f.text_area :personal_skills %>
+  </div>
+
+  <div class="form-group">
+    <label>Небесный Фантазм</label>
+    <%= f.text_area :noble_phantasm %>
+  </div>
+
+  <div class="form-group">
+    <label>Структура страницы (Шорткоды)</label>
+    <%= f.text_area :page_layout, style: "height: 250px; border-color: #cf6679;" %>
+  </div>
+
+  <%= f.submit "➕ Создать слугу", class: "btn-submit" %>
+<% end %>
