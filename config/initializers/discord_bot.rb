@@ -5,7 +5,7 @@ if ENV["DISCORD_BOT_TOKEN"].present? && !defined?(Rails::Console)
   Thread.new do
     CHANNEL_ID = 1097158993207631902
     DEBUG_CHANNEL_ID = 1529870425440391198
-    bot = Discordrb::Bot.new(token: ENV["DISCORD_BOT_TOKEN"], intents: [ :server_messages, :message_content ])
+    bot = Discordrb::Bot.new(token: ENV["DISCORD_BOT_TOKEN"], intents: [ :all ])
 
     def sync_servant(message, bot)
       text = message.content
