@@ -13,7 +13,7 @@ class WebhooksController < ApplicationController
     # иначе Gitea будет ждать окончания перезагрузки и выдаст ошибку таймаута.
     Thread.new do
       sleep 2
-      system("(cd /home/fate-custom-wars-site-rails && git checkout db/schema.rb && git pull origin main && RAILS_ENV=production /root/.local/share/mise/shims/bundle exec rails db:migrate && systemctl restart fate-puma) > log/update.log 2>&1")
+      system("(cd /home/fate-custom-wars-site-rails && git fetch --all && git reset --hard origin/main && RAILS_ENV=production /root/.local/share/mise/shims/bundle exec rails db:migrate && systemctl restart fate-puma) > log/update.log 2>&1")
     end
 
     render json: { ok: true, message: "Обновление запущено" }
