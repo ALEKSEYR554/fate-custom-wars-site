@@ -1,0 +1,64 @@
+require "discordrb"
+
+# Запускать бота только если есть токен и это не консоль (чтобы не мешать rails c)
+if ENV["DISCORD_BOT_TOKEN"].present? && !defined?(Rails::Console)
+  Thread.new do
+    CHANNEL_ID = 1097158993207631902
+    bot = Discordrb::Bot.new(token: ENV["DISCORD_BOT_TOKEN"], intents: [ :server_messages, :message_content ])
+
+    def sync_servant(message)
+      text = message.content
+      return if text.blank?
+
+      if message.thread?
+        history = message.thread.history(100).sort_by(&:timestamp)
+        history.each { |msg| text += "\n" + msg.content }
+      end
+
+      parser = DiscordParserService.new(nil)
+      parsed_data = parser.send(:parse_text, text)
+
+      if parsed_data && parsed_data[:game_id]
+        servant = Servant.find_or_initialize_by(game_id: parsed_data[:game_id])
+        is_new = servant.new_record?
+
+        # Даем новому слуге номер в конец списка
+        if is_new
+          max_sort = Servant.maximum(:sort_id) || -100
+          servant.sort_id = max_sort + 100
+        end
+
+        servant.assign_attributes(parsed_data)
+
+        if servant.changed?
+          # servant.save! # Раскомментируй для сохранения в базу
+          if is_new
+            Rails.logger.info "✨ [Discord Bot] Создан НОВЫЙ слуга: #{servant.game_id}"
+          else
+            Rails.logger.info "🔄 [Discord Bot] Обновлен слуга: #{servant.game_id}"
+          end
+        end
+      end
+    end
+
+    bot.message(in: CHANNEL_ID) { |event| sync_servant(event.message) }
+    bot.message_edit(in: CHANNEL_ID) { |event| sync_servant(event.message) }
+
+    bot.message do |event|
+      if event.channel.type == 11 && event.channel.parent_id == CHANNEL_ID
+        parent_message = event.channel.parent.load_message(event.channel.id)
+        sync_servant(parent_message) if parent_message
+      end
+    end
+
+    bot.message_edit do |event|
+      if event.channel.type == 11 && event.channel.parent_id == CHANNEL_ID
+        parent_message = event.channel.parent.load_message(event.channel.id)
+        sync_servant(parent_message) if parent_message
+      end
+    end
+
+    Rails.logger.info "🤖 Discord Бот запущен внутри Puma!"
+    bot.run
+  end
+end

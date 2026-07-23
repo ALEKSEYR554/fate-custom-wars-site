@@ -101,14 +101,51 @@ class DiscordParserService
     data[:np_rank] = np_match&.captures&.first
 
     # 3. Навыки (сделал поиск более надежным, если вдруг пропущен блок Классовых навыков)
-    class_skills_match = text.match(/(Классовые Навыки|Классовый Навык):(.*?)(?=(Личные Навыки:|(Небесный Фантазм|Небесные Фантазмы)))/mi)
-    data[:class_skills] = class_skills_match ? class_skills_match[2].strip : nil
+    # === 3. УМНЫЙ ПАРСЕР НАВЫКОВ (State Machine) ===
+    data[:class_skills] = ""
+    data[:personal_skills] = ""
+    data[:noble_phantasm] = ""
 
-    personal_skills_match = text.match(/Личные Навыки:(.*?)(?=(Небесный Фантазм|Небесные Фантазмы))/mi)
-    data[:personal_skills] = personal_skills_match ? personal_skills_match[1].strip : nil
+    current_section = :none
 
-    noble_phantasm_match = text.match(/(Небесный Фантазм|Небесные Фантазмы)[:\s-]+(.*)/mi)
-    data[:noble_phantasm] = noble_phantasm_match ? noble_phantasm_match[2].strip : nil
+    text.each_line do |line|
+      clean_line = line.strip
+
+      # Игнорируем мусорные строки
+      next if clean_line.match?(/^\(?Смотр.*?ветк.*?\)?$/i)
+      next if clean_line.match?(/^Спрайт/i)
+
+      # Переключаем "тумблер" записи, если видим заголовок
+      if clean_line.match?(/^[\(\*\_]*Классовые Навыки/i)
+        current_section = :class_skills
+        next
+      elsif clean_line.match?(/^[\(\*\_]*Личные Навыки/i)
+        current_section = :personal_skills
+        next
+      elsif clean_line.match?(/^[\(\*\_]*Небесны[ей]\sФантазм[ы]?/i)
+        current_section = :noble_phantasm
+
+        # Обрезаем заголовок (вместе со скобками и цифрами), если текст написан на этой же строке
+        remainder = clean_line.sub(/^[\(\*\_]*Небесны[ей]\sФантазм[ы]?(?:\s*\d+)?[\)\*\_]*[:\s-]+/i, "")
+        data[:noble_phantasm] << remainder + "\n" if remainder.present?
+        next
+      end
+
+      # Пишем строку в ту секцию, которая сейчас активна
+      case current_section
+      when :class_skills
+        data[:class_skills] << line
+      when :personal_skills
+        data[:personal_skills] << line
+      when :noble_phantasm
+        data[:noble_phantasm] << line
+      end
+    end
+
+    # Очищаем пустоты по краям
+    data[:class_skills] = data[:class_skills].strip.presence
+    data[:personal_skills] = data[:personal_skills].strip.presence
+    data[:noble_phantasm] = data[:noble_phantasm].strip.presence
 
     # if text.include?("Нобукатсу")
     # p data
