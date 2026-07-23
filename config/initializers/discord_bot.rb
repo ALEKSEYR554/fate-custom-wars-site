@@ -4,9 +4,10 @@ require "discordrb"
 if ENV["DISCORD_BOT_TOKEN"].present? && !defined?(Rails::Console)
   Thread.new do
     CHANNEL_ID = 1097158993207631902
+    DEBUG_CHANNEL_ID = 1529870425440391198
     bot = Discordrb::Bot.new(token: ENV["DISCORD_BOT_TOKEN"], intents: [ :server_messages, :message_content ])
 
-    def sync_servant(message)
+    def sync_servant(message, bot)
       text = message.content
       return if text.blank?
 
@@ -37,29 +38,32 @@ if ENV["DISCORD_BOT_TOKEN"].present? && !defined?(Rails::Console)
             Rails.logger.info "   -> #{field}: #{servant.send(field).inspect}"
           end
           servant.save! # Раскомментируй для сохранения в базу
-          if is_new
-            Rails.logger.info "✨ [Discord Bot] Создан НОВЫЙ слуга: #{servant.game_id}"
+
+          msg_text = if is_new
+            "✨ ** Слуга #{servant.game_id} (#{servant.name})** создан в базе!"
           else
-            Rails.logger.info "🔄 [Discord Bot] Обновлен слуга: #{servant.game_id}"
+            "🔄 **[#{servant.game_id}] #{servant.name}** обновлен!\nИзменились: `#{changed_fields.join(', ')}`"
           end
+
+          bot.send_message(DEBUG_CHANNEL_ID, msg_text)
         end
       end
     end
 
-    bot.message(in: CHANNEL_ID) { |event| sync_servant(event.message) }
-    bot.message_edit(in: CHANNEL_ID) { |event| sync_servant(event.message) }
+    bot.message(in: CHANNEL_ID) { |event| sync_servant(event.message, bot) }
+    bot.message_edit(in: CHANNEL_ID) { |event| sync_servant(event.message, bot) }
 
     bot.message do |event|
       if event.channel.type == 11 && event.channel.parent_id == CHANNEL_ID
         parent_message = event.channel.parent.load_message(event.channel.id)
-        sync_servant(parent_message) if parent_message
+        sync_servant(parent_message, bot) if parent_message
       end
     end
 
     bot.message_edit do |event|
       if event.channel.type == 11 && event.channel.parent_id == CHANNEL_ID
         parent_message = event.channel.parent.load_message(event.channel.id)
-        sync_servant(parent_message) if parent_message
+        sync_servant(parent_message, bot) if parent_message
       end
     end
 
