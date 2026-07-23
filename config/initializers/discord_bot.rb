@@ -31,7 +31,12 @@ if ENV["DISCORD_BOT_TOKEN"].present? && !defined?(Rails::Console)
         servant.assign_attributes(parsed_data)
 
         if servant.changed?
-          # servant.save! # Раскомментируй для сохранения в базу
+          changed_fields = servant.changes.keys
+          Rails.logger.info "🔄 [#{servant.game_id}] Обнаружены изменения в полях: #{changed_fields.join(', ')}"
+          changed_fields.each do |field|
+            Rails.logger.info "   -> #{field}: #{servant.send(field).inspect}"
+          end
+          servant.save! # Раскомментируй для сохранения в базу
           if is_new
             Rails.logger.info "✨ [Discord Bot] Создан НОВЫЙ слуга: #{servant.game_id}"
           else
