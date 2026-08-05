@@ -32,12 +32,13 @@ module Content
       # 2. Проверяем, есть ли там вообще видео
       if videos.any?
         # sample — это встроенный метод Ruby, который выбирает случайный элемент из массива
-        random_video_path = videos.sample
+
+        random_filename = File.basename(videos.sample)
 
         # 3. Отдаем случайный файл
-        send_file random_video_path, type: "video/mp4", disposition: "inline"
+        redirect_to "/videos/#{random_filename}", status: :found
       else
-        render plain: "Файл не найден", status: :not_found
+        render plain: "Видео файлы не найдены", status: :not_found
       end
     end
   end

@@ -175,13 +175,22 @@
   <div class="section">
     <h2>Трейлер / Геймплей</h2>
     <p>Их пока что нет, так что смотрите какой-то видос</p>
+    <%
+      # Выбираем случайный файл прямо во время сборки HTML страницы
+      video_files = Dir.glob(Rails.root.join('storage', 'placeholders', 'videos', '*.mp4'))
+      selected_video = video_files.any? ? File.basename(video_files.sample) : nil
+    %>
     <div class="video-container">
       <!-- Обрати внимание на ссылку! Она использует наш роут. -->
       <!-- Если файла intro.mp4 там нет, плеер просто будет пустым -->
-      <video controls poster="">
-        <source src="//content.<%= Rails.configuration.x.base_domain %>/videos/random?cb=<%= Time.now.to_f %>" type="video/mp4">
-        Ваш браузер не поддерживает HTML5 видео.
-      </video>
+      <% if selected_video %>
+        <video controls poster="">
+          <source src="//content.<%= Rails.configuration.x.base_domain %>/videos/<%= selected_video %>" type="video/mp4">
+          Ваш браузер не поддерживает HTML5 видео.
+        </video>
+      <% else %>
+        <p style="color: var(--text-secondary); text-align: center;">Видео не найдены в хранилище.</p>
+      <% end %>
     </div>
   </div>
 
