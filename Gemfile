@@ -1,6 +1,9 @@
 source "https://rubygems.org"
 
 gem "discordrb"
+gem "yabeda-rails"
+gem "yabeda-prometheus"
+gem "yabeda-puma-plugin"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.1.3"
