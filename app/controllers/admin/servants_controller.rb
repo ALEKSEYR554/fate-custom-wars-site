@@ -148,28 +148,31 @@ module Admin
       redirect_to edit_admin_servant_path(@servant.game_id), notice: "Спрайт #{filename} удален."
     end
 
-    def rename_sprite
+    def bulk_rename_sprites
       @servant = Servant.find_by!(game_id: params[:game_id])
-      old_name = params[:old_filename]
-      new_name = params[:new_filename].to_s.strip
+      renamed_count = 0
+      dir_path = Rails.root.join("storage", "servant_data", @servant.game_id)
 
-      if old_name.present? && new_name.present?
-        new_name += ".png" unless new_name.end_with?(".png")
+      if params[:sprites].present?
+        params[:sprites].each do |old_name, new_name|
+          new_name = new_name.strip
+          next if new_name.blank?
 
-        dir_path = Rails.root.join("storage", "servant_data", @servant.game_id)
-        old_path = File.join(dir_path, old_name)
-        new_path = File.join(dir_path, new_name)
+          new_name += ".png" unless new_name.end_with?(".png")
+          next if old_name == new_name # Пропускаем, если имя не меняли
 
-        if File.exist?(old_path)
-          File.rename(old_path, new_path)
-          flash[:notice] = "Спрайт переименован в #{new_name}."
-        else
-          flash[:alert] = "Файл #{old_name} не найден."
+          old_path = File.join(dir_path, old_name)
+          new_path = File.join(dir_path, new_name)
+
+          # Переименовываем, только если старый файл есть, а нового еще нет
+          if File.exist?(old_path) && !File.exist?(new_path)
+            File.rename(old_path, new_path)
+            renamed_count += 1
+          end
         end
-      else
-        flash[:alert] = "Укажите новое имя файла."
       end
 
+      flash[:notice] = "Переименовано файлов: #{renamed_count}"
       redirect_to edit_admin_servant_path(@servant.game_id)
     end
 

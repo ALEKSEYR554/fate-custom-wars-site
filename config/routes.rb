@@ -48,7 +48,7 @@ Rails.application.routes.draw do
       post :upload_sprite, on: :member
       post :backup_telegram, on: :collection
       delete :delete_sprite, on: :member
-      patch :rename_sprite, on: :member
+      patch :bulk_rename_sprites, on: :member
       post :sync_atlas, on: :member
     end
     resources :craft_essences, param: :game_id, only: [ :index, :edit, :update ]

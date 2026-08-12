@@ -134,26 +134,24 @@
 
   <!-- Галерея текущих спрайтов -->
   <% if @sprites.any? %>
-    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-      <% @sprites.each do |sprite| %>
-        <div style="background: #2d2d2d; padding: 10px; border-radius: 4px; text-align: center; border: 1px solid #444; position: relative;">
-          
-          <!-- Кнопка удаления (Крестик в углу) -->
-          <%= button_to "❌", delete_sprite_admin_servant_path(@servant.game_id, filename: sprite), method: :delete, form: {style: "position: absolute; top: 5px; right: 5px; margin: 0;"}, style: "background: #ef5350; border: none; border-radius: 3px; cursor: pointer; padding: 2px 5px; font-size: 0.8rem;" %>
+    <!-- ОДНА БОЛЬШАЯ ФОРМА ДЛЯ ВСЕХ КАРТИНОК -->
+    <%= form_with url: bulk_rename_sprites_admin_servant_path(@servant.game_id), method: :patch, local: true do |f| %>
+      <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 15px;">
+        <% @sprites.each do |sprite| %>
+          <div style="background: #2d2d2d; padding: 10px; border-radius: 4px; text-align: center; border: 1px solid #444; position: relative;">
+            
+            <!-- Заменили button_to на link_to (с turbo_method: :delete), чтобы избежать вложенных форм -->
+            <%= link_to "❌", delete_sprite_admin_servant_path(@servant.game_id, filename: sprite), data: { turbo_method: :delete, turbo_confirm: "Удалить #{sprite}?" }, style: "position: absolute; top: 5px; right: 5px; background: #ef5350; color: #fff; text-decoration: none; border-radius: 3px; padding: 2px 5px; font-size: 0.8rem;" %>
 
-          <!-- ?v=Time... заставляет браузер сбросить кэш и показать новую картинку при перезаписи -->
-          <img src="//servant-data.<%= Rails.configuration.x.base_domain %>/sprite/<%= @servant.game_id %>/<%= sprite %>?v=<%= Time.now.to_i %>" style="height: 120px; width: 120px; object-fit: contain; background: #000; display: block; margin-bottom: 8px;">
-          <%= form_with url: rename_sprite_admin_servant_path(@servant.game_id), method: :patch, local: true, style: "display: flex; gap: 5px; justify-content: center;" do |f| %>
-            <%= f.hidden_field :old_filename, value: sprite %>
+            <img src="//servant-data.<%= Rails.configuration.x.base_domain %>/sprite/<%= @servant.game_id %>/<%= sprite %>?v=<%= Time.now.to_i %>" style="height: 120px; width: 120px; object-fit: contain; background: #000; display: block; margin-bottom: 8px;">
             
-            <!-- Выводим имя без .png для удобства редактирования -->
-            <%= f.text_field :new_filename, value: sprite.sub('.png', ''), style: "width: 90px; padding: 4px; font-size: 0.8rem; background: #1e1e1e; color: #fff; border: 1px solid #555; border-radius: 3px; text-align: center;" %>
-            
-            <button type="submit" title="Сохранить имя" style="background: #03dac6; border: none; border-radius: 3px; cursor: pointer; font-size: 0.8rem; padding: 4px 6px;">💾</button>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
+            <!-- Инпут передает старое имя в ключе (sprites[старое]) и новое в значении -->
+            <input type="text" name="sprites[<%= sprite %>]" value="<%= sprite.sub('.png', '') %>" style="width: 100px; padding: 4px; font-size: 0.8rem; background: #1e1e1e; color: #fff; border: 1px solid #555; border-radius: 3px; text-align: center;">
+          </div>
+        <% end %>
+      </div>
+      <button type="submit" style="background: #03dac6; color: #000; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: bold;">💾 Сохранить все имена</button>
+    <% end %>
   <% else %>
     <p style="color: #888;">В папке пока нет ни одного спрайта.</p>
   <% end %>
