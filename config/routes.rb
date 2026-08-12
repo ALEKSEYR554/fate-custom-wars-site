@@ -47,6 +47,8 @@ Rails.application.routes.draw do
       # Добавляем метод для загрузки спрайтов
       post :upload_sprite, on: :member
       post :backup_telegram, on: :collection
+      delete :delete_sprite, on: :member
+      patch :rename_sprite, on: :member
       post :sync_atlas, on: :member
     end
     resources :craft_essences, param: :game_id, only: [ :index, :edit, :update ]

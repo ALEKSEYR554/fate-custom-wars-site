@@ -113,29 +113,63 @@ module Admin
 
     def upload_sprite
       @servant = Servant.find_by!(game_id: params[:game_id])
-      uploaded_file = params[:sprite_file]
-      sprite_name = params[:sprite_name].strip
+      files = params[:sprite_files]
 
-      if uploaded_file && sprite_name.present?
-        # Защита: принудительно добавляем .png, если пользователь забыл
-        sprite_name += ".png" unless sprite_name.end_with?(".png")
-
-        # Создаем папку, если её еще нет
+      if files.present?
         dir_path = Rails.root.join("storage", "servant_data", @servant.game_id)
         require "fileutils"
         FileUtils.mkdir_p(dir_path)
 
-        # Сохраняем файл
-        File.open(File.join(dir_path, sprite_name), "wb") do |file|
-          file.write(uploaded_file.read)
-        end
+        # Массовая загрузка. Имя файла берется из оригинала.
+        files.each do |uploaded_file|
+          filename = uploaded_file.original_filename
+          filename += ".png" unless filename.end_with?(".png")
 
-        flash[:notice] = "Спрайт #{sprite_name} успешно загружен!"
+          # 'wb' всегда жестко перезаписывает старый файл с таким же именем
+          File.open(File.join(dir_path, filename), "wb") do |file|
+            file.write(uploaded_file.read)
+          end
+        end
+        flash[:notice] = "Спрайты успешно загружены!"
       else
-        flash[:alert] = "Укажите имя файла и выберите PNG изображение."
+        flash[:alert] = "Выберите файлы."
       end
 
-      # Возвращаем обратно на страницу редактирования
+      redirect_to edit_admin_servant_path(@servant.game_id)
+    end
+
+    def delete_sprite
+      @servant = Servant.find_by!(game_id: params[:game_id])
+      filename = params[:filename]
+      file_path = Rails.root.join("storage", "servant_data", @servant.game_id, filename)
+
+      File.delete(file_path) if File.exist?(file_path)
+
+      redirect_to edit_admin_servant_path(@servant.game_id), notice: "Спрайт #{filename} удален."
+    end
+
+    def rename_sprite
+      @servant = Servant.find_by!(game_id: params[:game_id])
+      old_name = params[:old_filename]
+      new_name = params[:new_filename].to_s.strip
+
+      if old_name.present? && new_name.present?
+        new_name += ".png" unless new_name.end_with?(".png")
+
+        dir_path = Rails.root.join("storage", "servant_data", @servant.game_id)
+        old_path = File.join(dir_path, old_name)
+        new_path = File.join(dir_path, new_name)
+
+        if File.exist?(old_path)
+          File.rename(old_path, new_path)
+          flash[:notice] = "Спрайт переименован в #{new_name}."
+        else
+          flash[:alert] = "Файл #{old_name} не найден."
+        end
+      else
+        flash[:alert] = "Укажите новое имя файла."
+      end
+
       redirect_to edit_admin_servant_path(@servant.game_id)
     end
 

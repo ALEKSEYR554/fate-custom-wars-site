@@ -123,24 +123,34 @@
 <% end %>
 
 <!-- МЕНЕДЖЕР СПРАЙТОВ -->
-<div style="background: #1e1e1e; border: 1px solid #444; border-radius: 8px; padding: 20px; margin-bottom: 30px;">
+<div style="background: #1e1e1e; border: 1px solid #444; border-radius: 8px; padding: 20px; margin-bottom: 30px; margin-top: 30px;">
   <h2 style="margin-top: 0; color: #90caf9;">Менеджер спрайтов</h2>
   
-  <!-- Форма загрузки -->
+  <!-- Форма загрузки. Атрибуты name="sprite_files[]" и multiple разрешают грузить пачку файлов -->
   <%= form_with url: upload_sprite_admin_servant_path(@servant.game_id), multipart: true, local: true, style: "display: flex; gap: 10px; align-items: center; margin-bottom: 20px;" do |f| %>
-    <input type="text" name="sprite_name" placeholder="Имя (напр. sprite1)" required style="padding: 8px; background: #2d2d2d; color: #fff; border: 1px solid #444; border-radius: 4px;">
-    <!-- Разрешаем выбирать только PNG -->
-    <input type="file" name="sprite_file" accept="image/png" required style="color: #fff;">
-    <button type="submit" style="background: #90caf9; color: #000; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: bold;">Upload</button>
+    <input type="file" name="sprite_files[]" accept="image/png" multiple required style="color: #fff;">
+    <button type="submit" style="background: #90caf9; color: #000; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: bold;">Загрузить файлы</button>
   <% end %>
 
   <!-- Галерея текущих спрайтов -->
   <% if @sprites.any? %>
     <div style="display: flex; gap: 15px; flex-wrap: wrap;">
       <% @sprites.each do |sprite| %>
-        <div style="background: #2d2d2d; padding: 10px; border-radius: 4px; text-align: center; border: 1px solid #444;">
-          <img src="//servant-data.<%= Rails.configuration.x.base_domain %>/sprite/<%= @servant.game_id %>/<%= sprite %>" style="height: 120px; width: 120px; object-fit: contain; background: #000; display: block; margin-bottom: 8px;">
-          <span style="font-family: monospace; font-size: 0.9em; color: #ccc;"><%= sprite %></span>
+        <div style="background: #2d2d2d; padding: 10px; border-radius: 4px; text-align: center; border: 1px solid #444; position: relative;">
+          
+          <!-- Кнопка удаления (Крестик в углу) -->
+          <%= button_to "❌", delete_sprite_admin_servant_path(@servant.game_id, filename: sprite), method: :delete, form: {style: "position: absolute; top: 5px; right: 5px; margin: 0;"}, style: "background: #ef5350; border: none; border-radius: 3px; cursor: pointer; padding: 2px 5px; font-size: 0.8rem;" %>
+
+          <!-- ?v=Time... заставляет браузер сбросить кэш и показать новую картинку при перезаписи -->
+          <img src="//servant-data.<%= Rails.configuration.x.base_domain %>/sprite/<%= @servant.game_id %>/<%= sprite %>?v=<%= Time.now.to_i %>" style="height: 120px; width: 120px; object-fit: contain; background: #000; display: block; margin-bottom: 8px;">
+          <%= form_with url: rename_sprite_admin_servant_path(@servant.game_id), method: :patch, local: true, style: "display: flex; gap: 5px; justify-content: center;" do |f| %>
+            <%= f.hidden_field :old_filename, value: sprite %>
+            
+            <!-- Выводим имя без .png для удобства редактирования -->
+            <%= f.text_field :new_filename, value: sprite.sub('.png', ''), style: "width: 90px; padding: 4px; font-size: 0.8rem; background: #1e1e1e; color: #fff; border: 1px solid #555; border-radius: 3px; text-align: center;" %>
+            
+            <button type="submit" title="Сохранить имя" style="background: #03dac6; border: none; border-radius: 3px; cursor: pointer; font-size: 0.8rem; padding: 4px 6px;">💾</button>
+          <% end %>
         </div>
       <% end %>
     </div>
@@ -148,3 +158,23 @@
     <p style="color: #888;">В папке пока нет ни одного спрайта.</p>
   <% end %>
 </div>
+
+
+
+<script>
+  // Перед тем как страница начнет перезагружаться (отправка формы или клик) - запоминаем высоту
+  window.addEventListener("turbo:before-visit", () => sessionStorage.setItem("edit_scroll", window.scrollY));
+  window.addEventListener("beforeunload", () => sessionStorage.setItem("edit_scroll", window.scrollY));
+
+  // Как только страница загрузилась заново - прокручиваем обратно
+  const restoreScroll = () => {
+    let scrollPos = sessionStorage.getItem("edit_scroll");
+    if (scrollPos) {
+      window.scrollTo(0, parseInt(scrollPos));
+      sessionStorage.removeItem("edit_scroll"); // Очищаем память
+    }
+  };
+  
+  document.addEventListener("turbo:load", restoreScroll);
+  document.addEventListener("DOMContentLoaded", restoreScroll);
+</script>
