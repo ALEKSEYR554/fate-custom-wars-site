@@ -1,5 +1,6 @@
 module ServantData
   class ServantDataController < ApplicationController
+    before_action :set_cache_headers, only: [ :serve_sprite, :serve_ce ]
     def serve_sprite
       safe_filename = File.basename(params[:filename])
 
@@ -26,6 +27,11 @@ module ServantData
 
     def serve_servant_page
       # тут пока пусто
+    end
+
+    def set_cache_headers
+      # Cache-Control: public, max-age=31536000
+      expires_in 1.year, public: true
     end
   end
 end
